@@ -1,15 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naruto Ninja Cards - Meta Deck Builder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-slate-950 text-slate-100 min-h-screen">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naruto Deck Builder PRO - Tabbed Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <span class="logo-icon">🍥</span>
+        <h1>Naruto Deck Builder <span>PRO</span></h1>
+      </div>
+      
+      <!-- Tab Controls -->
+      <nav class="nav-tabs">
+        <button class="tab-btn active" data-tab="collectionTab" onclick="switchTab('collectionTab')">
+          🗃️ Collection (<span id="uniqueOwnedCount">0</span>)
+        </button>
+        <button class="tab-btn" data-tab="deckTab" onclick="switchTab('deckTab')">
+          🃏 Active Deck (<span id="deckCountBadge">0</span>/10)
+        </button>
+        <button class="tab-btn" data-tab="aiTab" onclick="switchTab('aiTab')">
+          ⚡ AI Deck Calculator
+        </button>
+      </nav>
+
+      <div class="stats-bar">
+        <span>Total Cards: <strong id="totalOwnedCount">0</strong></span>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- TAB 1: COLLECTION VIEW -->
+      <section id="collectionTab" class="tab-content active">
+        <div class="panel-header">
+          <h2>Your Collection</h2>
+          <div class="controls-row">
+            <label for="collectionFileInput" class="file-upload-btn">
+              📂 Import Collection JSON
+            </label>
+            <input type="file" id="collectionFileInput" accept=".json" onchange="handleCollectionUpload(event)" />
+            <input type="text" id="searchInput" placeholder="Search cards, clan, jutsu..." oninput="filterCollection()" />
+            <select id="rarityFilter" onchange="filterCollection()">
+              <option value="ALL">All Rarities</option>
+              <option value="Legendary">Legendary</option>
+              <option value="Epic">Epic</option>
+              <option value="Rare">Rare</option>
+              <option value="Common">Common</option>
+            </select>
+          </div>
+        </div>
+        <p class="tab-hint">💡 <strong>Click any card</strong> to manually add it to your Active Deck!</p>
+
+        <div id="collectionGrid" class="card-grid">
+          <div class="placeholder-msg">Import your <code>naruto_collection_2.json</code> file to view your cards.</div>
+        </div>
+      </section>
+
+      <!-- TAB 2: ACTIVE DECK BUILDER VIEW -->
+      <section id="deckTab" class="tab-content">
+        <div class="panel-header">
+          <h2>Active Deck (<span id="deckTitleBadge">0 / 10 Cards</span>)</h2>
+          <div class="controls-row">
+            <button class="action-btn success" onclick="saveDeckToLocalStorage()">
+              💾 Save Deck (Browser)
+            </button>
+            <button class="action-btn primary" onclick="exportDeckJSON()">
+              📄 Export JSON Deck
+            </button>
+            <button class="action-btn danger" onclick="clearActiveDeck()">
+              🗑️ Clear Deck
+            </button>
+          </div>
+        </div>
+        <p class="tab-hint">💡 <strong>Click any card in your deck</strong> to remove it!</p>
+
+        <div id="activeDeckGrid" class="card-grid">
+          <div class="placeholder-msg">Your deck is currently empty. Click cards in your Collection or use the AI Calculator to populate your deck!</div>
+        </div>
+      </section>
+
+      <!-- TAB 3: AI DECK CALCULATOR -->
+      <section id="aiTab" class="tab-content">
+        <div class="panel-header">
+          <h2>AI Deck Synergy Calculator</h2>
+          <div class="controls-row">
+            <select id="strategySelect" class="styled-select">
+              <option value="balanced">⚡ Balanced Team & Clan Synergy</option>
+              <option value="team7">🔥 Team 7 Synergistic Aggro</option>
+              <option value="rarity">🌟 Highest Rarity Power Deck</option>
+              <option value="jutsu">📜 Jutsu Combo Focus</option>
+            </select>
+            <button id="calcBtn" class="action-btn primary" onclick="generateOptimalDeckUI()" disabled>
+              ⚡ Calculate & Load Deck
+            </button>
+          </div>
+        </div>
+
+        <div id="aiSummary" class="ai-summary-box">
+          <h3>Calculated Deck Performance</h3>
+          <p id="aiSynergyScore">Synergy Score: --</p>
+          <p id="aiStrategyInfo">Select strategy and click Calculate to compute optimal 10-card deck from your owned collection.</p>
+        </div>
+
+        <div id="aiDeckGrid" class="card-grid">
+          <div class="placeholder-msg">Import collection first to run AI deck optimization.</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="calculator.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
