@@ -3,170 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naruto Deck Builder PRO - 6 Card Edition</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Naruto Deck Builder PRO</title>
+  <link rel="stylesheet" href="/src/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="app-container">
-    <!-- Top Navbar -->
     <header class="navbar">
       <div class="logo">
         <span class="logo-icon">🍥</span>
         <h1>Naruto Deck Builder <span>PRO</span></h1>
       </div>
-      
-      <!-- Tab Controls -->
       <nav class="nav-tabs">
-        <button class="tab-btn active" data-tab="collectionTab" onclick="switchTab('collectionTab')">
-          🗃️ Collection (<span id="uniqueOwnedCount">0</span>)
-        </button>
-        <button class="tab-btn" data-tab="deckTab" onclick="switchTab('deckTab')">
-          🃏 Active Deck (<span id="deckCountBadge">0</span>/6)
-        </button>
-        <button class="tab-btn" data-tab="aiTab" onclick="switchTab('aiTab')">
-          ⚡ AI Deck Calculator
-        </button>
+        <button class="tab-btn active" id="tab-col" onclick="switchTab('collectionTab')">🗃️ Collection (<span id="uniqueCount">0</span>)</button>
+        <button class="tab-btn" id="tab-deck" onclick="switchTab('deckTab')">🃏 Active Deck (<span id="deckCount">0</span>/6)</button>
+        <button class="tab-btn" id="tab-ai" onclick="switchTab('aiTab')">⚡ AI Calculator</button>
       </nav>
-
-      <div class="stats-bar">
-        <span>Total Owned: <strong id="totalOwnedCount">0</strong></span>
-      </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="main-content">
-
-      <!-- TAB 1: COLLECTION VIEW -->
+    <main>
+      <!-- COLLECTION TAB -->
       <section id="collectionTab" class="tab-content active">
         <div class="panel-header">
           <h2>Your Collection</h2>
           <div class="controls-row">
-            <!-- Explicit Trigger Button for File Input -->
-            <button class="action-btn primary" onclick="triggerFileInput()">
-              📂 Import Collection JSON
-            </button>
-            <input type="file" id="collectionFileInput" accept=".json" style="display: none;" onchange="handleCollectionUpload(event)" />
-            
-            <button class="action-btn help-btn" onclick="toggleHelpModal(true)">
-              ❓ How to Get JSON?
-            </button>
-
-            <input type="text" id="searchInput" placeholder="Search cards, clan, jutsu..." oninput="filterCollection()" />
-            <select id="rarityFilter" onchange="filterCollection()">
-              <option value="ALL">All Rarities</option>
-              <option value="Legendary">Legendary</option>
-              <option value="Epic">Epic</option>
-              <option value="Rare">Rare</option>
-              <option value="Common">Common</option>
-            </select>
+            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">📂 Import Collection JSON</button>
+            <input type="file" id="fileInput" accept=".json" style="display:none" onchange="importCollectionJSON(event)">
+            <button class="btn btn-blue" onclick="toggleModal(true)">❓ How to Get JSON?</button>
           </div>
         </div>
-        
-        <p class="tab-hint">💡 <strong>Click any card</strong> in your collection to add it to your 6-card Active Deck!</p>
-
+        <p style="color:var(--text-muted); font-size:0.85rem;">💡 Click any card below to add it to your 6-card Active Deck!</p>
         <div id="collectionGrid" class="card-grid">
-          <div class="placeholder-msg">
-            <p>No collection loaded yet.</p>
-            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--accent-orange);">
-              Click <strong>📂 Import Collection JSON</strong> to select your exported file!
-            </p>
-          </div>
+          <div class="placeholder-msg">No collection imported yet. Click <strong>Import Collection JSON</strong> to start!</div>
         </div>
       </section>
 
-      <!-- TAB 2: ACTIVE DECK BUILDER VIEW -->
+      <!-- ACTIVE DECK TAB -->
       <section id="deckTab" class="tab-content">
         <div class="panel-header">
-          <h2>Active Deck (<span id="deckTitleBadge">0 / 6 Cards</span>)</h2>
+          <h2>Active Deck (<span id="deckBadge">0 / 6 Cards</span>)</h2>
           <div class="controls-row">
-            <button class="action-btn success" onclick="saveDeckToLocalStorage()">
-              💾 Save Deck (Browser)
-            </button>
-            <button class="action-btn primary" onclick="exportDeckJSON()">
-              📄 Export JSON Deck
-            </button>
-            <button class="action-btn danger" onclick="clearActiveDeck()">
-              🗑️ Clear Deck
-            </button>
+            <button class="btn btn-success" onclick="saveDeckToLocalStorage()">💾 Save Deck</button>
+            <button class="btn btn-primary" onclick="exportDeckJSON()">📄 Export JSON</button>
+            <button class="btn btn-danger" onclick="clearDeck()">🗑️ Clear Deck</button>
           </div>
         </div>
-        <p class="tab-hint">💡 <strong>Click any card in your deck</strong> to remove it! Decks are limited to exactly 6 cards.</p>
-
-        <div id="activeDeckGrid" class="card-grid">
-          <div class="placeholder-msg">Your deck is currently empty. Click cards in your Collection or run the AI Calculator to populate your 6-card deck!</div>
+        <p style="color:var(--text-muted); font-size:0.85rem;">💡 Click any card in your deck to remove it.</p>
+        <div id="deckGrid" class="card-grid">
+          <div class="placeholder-msg">Your deck is empty. Add cards from your collection or run the AI Calculator!</div>
         </div>
       </section>
 
-      <!-- TAB 3: AI DECK CALCULATOR -->
+      <!-- AI CALCULATOR TAB -->
       <section id="aiTab" class="tab-content">
         <div class="panel-header">
           <h2>AI 6-Card Deck Calculator</h2>
           <div class="controls-row">
-            <select id="strategySelect" class="styled-select">
-              <option value="balanced">⚡ Balanced Team & Clan Synergy</option>
-              <option value="team7">🔥 Team 7 Synergistic Aggro</option>
-              <option value="rarity">🌟 Highest Rarity Power Deck</option>
-              <option value="jutsu">📜 Jutsu Combo Focus</option>
-            </select>
-            <button id="calcBtn" class="action-btn primary" onclick="generateOptimalDeckUI()" disabled>
-              ⚡ Calculate & Load 6-Card Deck
-            </button>
+            <button id="calcBtn" class="btn btn-primary" onclick="runAICalculator()" disabled>⚡ Calculate Best 6-Card Deck</button>
           </div>
         </div>
-
-        <div id="aiSummary" class="ai-summary-box">
-          <h3>Calculated Deck Performance</h3>
-          <p id="aiSynergyScore">Synergy Score: --</p>
-          <p id="aiStrategyInfo">Import your collection first, select a strategy, and click calculate to compute the best 6 cards.</p>
-        </div>
-
-        <div id="aiDeckGrid" class="card-grid">
-          <div class="placeholder-msg">Import collection first to run AI deck optimization.</div>
+        <div id="aiGrid" class="card-grid">
+          <div class="placeholder-msg">Import collection first to run AI deck calculation.</div>
         </div>
       </section>
-
     </main>
   </div>
 
-  <!-- INSTRUCTIONS MODAL -->
+  <!-- HELP MODAL -->
   <div id="helpModal" class="modal-backdrop">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3>📜 How to Get Your Collection JSON File</h3>
-        <button class="modal-close-btn" onclick="toggleHelpModal(false)">&times;</button>
-      </div>
-      <div class="modal-body">
-        <ol class="steps-list">
-          <li>
-            <strong>Log In:</strong> Go to <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a> and sign in.
-          </li>
-          <li>
-            <strong>Open Developer Tools:</strong> Press <kbd>F12</kbd> (or <kbd>Ctrl + Shift + I</kbd>).
-          </li>
-          <li>
-            <strong>Open Network Tab:</strong> Click the <strong>Network</strong> tab in DevTools.
-          </li>
-          <li>
-            <strong>Locate Response:</strong> Click <strong>Collection</strong> on the site, find the <code>me</code> request, right-click &rarr; <strong>Copy response</strong>.
-          </li>
-          <li>
-            <strong>Save File:</strong> Paste text into Notepad and save as <code>naruto_collection.json</code>.
-          </li>
-          <li>
-            <strong>Console Shortcut:</strong>
-            <p style="margin-top: 4px; font-size:0.85rem;">Or paste this into the DevTools <strong>Console</strong> tab and press Enter:</p>
-            <pre class="code-snippet">fetch('/api/user/me').then(r=>r.json()).then(d=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));a.download='naruto_collection.json';a.click();});</pre>
-          </li>
-        </ol>
-      </div>
-      <div class="modal-footer">
-        <button class="action-btn primary" onclick="toggleHelpModal(false)">Got It!</button>
+    <div class="modal-box">
+      <h3>📜 How to Get Your Collection File</h3>
+      <ol>
+        <li>Log into <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a>.</li>
+        <li>Press <kbd>F12</kbd> to open Developer Tools and select the <strong>Network</strong> tab.</li>
+        <li>Click <strong>Collection</strong> on the site.</li>
+        <li>Find the <code>me</code> request in the network list, right-click it &rarr; <strong>Copy response</strong>.</li>
+        <li>Paste it into Notepad and save it as <code>collection.json</code>.</li>
+      </ol>
+      <div style="text-align:right; margin-top:16px;">
+        <button class="btn btn-primary" onclick="toggleModal(false)">Close</button>
       </div>
     </div>
   </div>
 
-  <script src="calculator.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
