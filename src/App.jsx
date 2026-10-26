@@ -11,15 +11,24 @@ import {
   Trash2
 } from 'lucide-react';
 
-// Generate Season 1 Cards List using light small.png images (85 cards total)
-const ALL_CARDS = Array.from({ length: 85 }, (_, i) => {
-  const num = (i + 1).toString().padStart(3, '0');
-  return {
-    id: `S1_${num}`,
-    name: `Card #${num}`,
-    imageUrl: `https://assets.narutoninjacards.com/cards/S1_${num}/3/cropped/small.png`
-  };
-});
+// Load all cards across S1, S2, and S3 dynamically from local assets
+const SEASONS_CONFIG = [
+  { prefix: 'S1', count: 85 },
+  { prefix: 'S2', count: 85 },
+  { prefix: 'S3', count: 85 }
+];
+
+const ALL_CARDS = SEASONS_CONFIG.flatMap(season => 
+  Array.from({ length: season.count }, (_, i) => {
+    const num = (i + 1).toString().padStart(3, '0');
+    const id = `${season.prefix}_${num}`;
+    return {
+      id,
+      name: `${season.prefix} Card #${num}`,
+      imageUrl: `/cards/${id}.png`
+    };
+  })
+);
 
 export default function App() {
   const [deck, setDeck] = useState([]);
