@@ -1,10 +1,17 @@
 // Main Application Logic
 let ownedCardsList = [];
-let activeDeck = []; // Max 10 cards
+let activeDeck = []; // Limited to 6 cards
 
 document.addEventListener('DOMContentLoaded', () => {
   loadDeckFromLocalStorage();
 });
+
+// Help Modal Toggle
+function toggleHelpModal(show) {
+  const modal = document.getElementById('helpModal');
+  if (show) modal.classList.add('open');
+  else modal.classList.remove('open');
+}
 
 // Tab Navigation
 function switchTab(tabId) {
@@ -18,7 +25,7 @@ function switchTab(tabId) {
   if (selectedContent) selectedContent.classList.add('active');
 }
 
-// Collection Upload Handler
+// Ultra Robust Collection Upload Handler
 function handleCollectionUpload(event) {
   const file = event.target.files[0];
   if (!file) return;
@@ -26,44 +33,97 @@ function handleCollectionUpload(event) {
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
-      const data = JSON.parse(e.target.result);
+      const text = e.target.result;
+      const data = JSON.parse(text);
+      
       parseCollectionJSON(data);
+      
+      if (ownedCardsList.length === 0) {
+        alert("Warning: No owned cards were found in this JSON file. Make sure you exported your 'me' or collection payload!");
+        return;
+      }
+
       document.getElementById('calcBtn').disabled = false;
       renderCollectionUI(ownedCardsList);
-      alert(`Collection loaded! Found ${ownedCardsList.length} unique cards.`);
+      alert(`Collection loaded successfully! Found ${ownedCardsList.length} unique cards.`);
+      
     } catch (err) {
-      alert('Error parsing collection JSON file: ' + err.message);
+      console.error("JSON Parsing Error:", err);
+      alert('Failed to parse JSON file! Ensure it is valid JSON text. Error: ' + err.message);
+    } finally {
+      // Reset input value so re-importing the same file triggers onchange reliably
+      event.target.value = '';
     }
   };
+  
   reader.readAsText(file);
 }
 
+// Universal Robust Collection Parser (Handles any nested layout)
 function parseCollectionJSON(data) {
   ownedCardsList = [];
   let totalCardsCount = 0;
+  let rawItems = [];
 
+  if (!data) return;
+
+  // 1. Check for seasons format (naruto_collection_2.json)
   if (data.seasons && Array.isArray(data.seasons)) {
     data.seasons.forEach(season => {
       if (season.cards && Array.isArray(season.cards)) {
-        season.cards.forEach(card => {
-          if (card.count > 0) {
-            const attr = (card.metadata && card.metadata.attributes) ? card.metadata.attributes : {};
-            const imgUrl = (card.metadata && card.metadata.images && card.metadata.images.folio)
-              ? card.metadata.images.folio.medium
-              : `./card_images/${card.id}.webp`;
-
-            ownedCardsList.push({
-              id: card.id,
-              count: card.count,
-              attributes: attr,
-              imageUrl: imgUrl
-            });
-            totalCardsCount += card.count;
-          }
-        });
+        rawItems.push(...season.cards);
       }
     });
+  } 
+  // 2. Direct cards array
+  else if (Array.isArray(data.cards)) {
+    rawItems = data.cards;
   }
+  // 3. Direct collection array
+  else if (Array.isArray(data.collection)) {
+    rawItems = data.collection;
+  }
+  // 4. Raw array of cards
+  else if (Array.isArray(data)) {
+    rawItems = data;
+  }
+  // 5. Fallback object search for card array inside arbitrary keys
+  else if (typeof data === 'object') {
+    for (const key in data) {
+      if (Array.isArray(data[key])) {
+        const sample = data[key][0];
+        if (sample && (sample.id || sample.metadata)) {
+          rawItems = data[key];
+          break;
+        }
+      }
+    }
+  }
+
+  // Parse items into normalized array
+  rawItems.forEach(card => {
+    const count = card.count !== undefined ? card.count : 1;
+    if (count > 0) {
+      const attr = (card.metadata && card.metadata.attributes) ? card.metadata.attributes : (card.attributes || {});
+      
+      let imgUrl = `./card_images/${card.id}.webp`;
+      if (card.metadata && card.metadata.images && card.metadata.images.folio && card.metadata.images.folio.medium) {
+        imgUrl = card.metadata.images.folio.medium;
+      } else if (card.imageUrl) {
+        imgUrl = card.imageUrl;
+      }
+
+      ownedCardsList.push({
+        id: card.id || 'UNKNOWN',
+        count: count,
+        attributes: attr,
+        imageUrl: imgUrl
+      });
+      totalCardsCount += count;
+    }
+  });
+
+  console.log(`Parsed ${ownedCardsList.length} unique cards out of ${totalCardsCount} total owned.`);
 
   document.getElementById('totalOwnedCount').textContent = totalCardsCount;
   document.getElementById('uniqueOwnedCount').textContent = ownedCardsList.length;
@@ -73,20 +133,20 @@ function parseCollectionJSON(data) {
 function renderCollectionUI(cards) {
   const grid = document.getElementById('collectionGrid');
   if (!cards || cards.length === 0) {
-    grid.innerHTML = '<div class="placeholder-msg">No cards found.</div>';
+    grid.innerHTML = '<div class="placeholder-msg">No cards found matching your search.</div>';
     return;
   }
 
   grid.innerHTML = cards.map(card => createCardHTML(card, 'add')).join('');
 }
 
-// Add Card to Active Deck
+// Add Card to Active Deck (Max 6)
 function addCardToActiveDeck(cardId) {
   const cardData = ownedCardsList.find(c => c.id === cardId);
   if (!cardData) return;
 
-  if (activeDeck.length >= 10) {
-    alert("Deck limit reached! Maximum 10 cards allowed in a deck.");
+  if (activeDeck.length >= 6) {
+    alert("Deck limit reached! Active decks are capped at exactly 6 cards.");
     return;
   }
 
@@ -120,7 +180,7 @@ function updateDeckUI() {
   const badge2 = document.getElementById('deckTitleBadge');
 
   badge1.textContent = activeDeck.length;
-  badge2.textContent = `${activeDeck.length} / 10 Cards`;
+  badge2.textContent = `${activeDeck.length} / 6 Cards`;
 
   if (activeDeck.length === 0) {
     grid.innerHTML = '<div class="placeholder-msg">Your deck is empty. Click cards in Collection to add them!</div>';
@@ -154,7 +214,7 @@ function createCardHTML(card, actionType = 'add') {
   `;
 }
 
-// AI Calculator Generation
+// AI Calculator Generation (Cap at 6)
 function generateOptimalDeckUI() {
   const strategy = document.getElementById('strategySelect').value;
   const result = DeckCalculator.calculateBestDeck(ownedCardsList, strategy);
@@ -164,18 +224,15 @@ function generateOptimalDeckUI() {
     return;
   }
 
-  // Set active deck to calculated optimal deck
   activeDeck = result.deck;
   updateDeckUI();
 
-  // Render AI Tab preview
   const grid = document.getElementById('aiDeckGrid');
   grid.innerHTML = activeDeck.map(card => createCardHTML(card, 'remove')).join('');
 
   document.getElementById('aiSynergyScore').textContent = `Synergy Score: ${result.totalScore}`;
   document.getElementById('aiStrategyInfo').textContent = `Successfully loaded ${activeDeck.length} cards into your Active Deck using strategy: ${strategy.toUpperCase()}`;
 
-  // Switch user to Active Deck tab automatically
   switchTab('deckTab');
 }
 

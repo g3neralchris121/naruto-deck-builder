@@ -1,5 +1,5 @@
 /**
- * Naruto Card Deck Optimization Engine
+ * Naruto Card Deck Optimization Engine (6-Card Deck Cap)
  */
 class DeckCalculator {
   static RARITY_WEIGHTS = {
@@ -10,8 +10,8 @@ class DeckCalculator {
   };
 
   static calculateBestDeck(ownedCardsArray, strategy = 'balanced') {
-    if (!ownedCardsArray || ownedCardsArray.length < 10) {
-      return { error: "You need at least 10 cards in your collection to build a deck." };
+    if (!ownedCardsArray || ownedCardsArray.length < 6) {
+      return { error: "You need at least 6 cards in your collection to build a 6-card deck." };
     }
 
     const cardPool = [];
@@ -33,7 +33,7 @@ class DeckCalculator {
     scoredPool.sort((a, b) => b.score - a.score);
 
     for (const card of scoredPool) {
-      if (deck.length === 10) break;
+      if (deck.length === 6) break; // 6 Card limit
 
       const currentCount = usedIdsCount[card.id] || 0;
       if (currentCount >= 2) continue;
