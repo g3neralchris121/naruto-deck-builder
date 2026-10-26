@@ -1,37 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, doc, setDoc, getDoc, collection, getDocs } from 'firebase/firestore';
 import html2canvas from 'html2canvas';
 import { 
   Shield, 
   ExternalLink, 
   Download, 
   Save, 
-  Trash2, 
   FolderOpen, 
   RefreshCw, 
-  LogOut, 
-  LogIn, 
-  CheckCircle,
   X,
-  HelpCircle,
-  Sparkles
+  Trash2
 } from 'lucide-react';
-
-// Firebase configuration from environment variables
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
 // Generate Season 1 Cards List (85 cards total)
 const ALL_CARDS = Array.from({ length: 85 }, (_, i) => {
@@ -44,62 +22,28 @@ const ALL_CARDS = Array.from({ length: 85 }, (_, i) => {
 });
 
 export default function App() {
-  const [user, setUser] = useState(null);
   const [deck, setDeck] = useState([]);
   const [deckName, setDeckName] = useState('My Shinobi Meta Deck');
   const [savedDecks, setSavedDecks] = useState([]);
   const [userCollection, setUserCollection] = useState([]);
   const [isSyncModalOpen, setIsSyncModalOpen] = useState(false);
   const [jsonInput, setJsonInput] = useState('');
-  const [isExporting, setIsExporting] = useState(false);
   const exportRef = useRef(null);
 
-  // Monitor auth state
+  // Load saved collection and decks from Local Storage on launch
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      setUser(currentUser);
-      if (currentUser) {
-        loadUserData(currentUser.uid);
-      } else {
-        setSavedDecks([]);
-        setUserCollection([]);
-      }
-    });
-    return () => unsubscribe();
+    const localCollection = localStorage.getItem('ninja_user_collection');
+    if (localCollection) {
+      try { setUserCollection(JSON.parse(localCollection)); } catch (e) {}
+    }
+
+    const localDecks = localStorage.getItem('ninja_saved_decks');
+    if (localDecks) {
+      try { setSavedDecks(JSON.parse(localDecks)); } catch (e) {}
+    }
   }, []);
 
-  const handleGoogleLogin = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (err) {
-      console.error('Login error:', err);
-    }
-  };
-
-  const handleLogout = () => signOut(auth);
-
-  const loadUserData = async (uid) => {
-    try {
-      // Load owned collection
-      const collectionDoc = await getDoc(doc(db, 'users', uid, 'data', 'collection'));
-      if (collectionDoc.exists()) {
-        setUserCollection(collectionDoc.data().ownedCards || []);
-      }
-
-      // Load saved decks
-      const querySnapshot = await getDocs(collection(db, 'users', uid, 'decks'));
-      const decks = [];
-      querySnapshot.forEach((docSnap) => {
-        decks.push({ id: docSnap.id, ...docSnap.data() });
-      });
-      setSavedDecks(decks);
-    } catch (err) {
-      console.error('Error loading user data:', err);
-    }
-  };
-
-  const saveCollection = async () => {
+  const saveCollection = () => {
     try {
       let parsed = JSON.parse(jsonInput);
       if (parsed.seasons) {
@@ -111,9 +55,7 @@ export default function App() {
       if (!Array.isArray(parsed)) throw new Error('Invalid format');
 
       setUserCollection(parsed);
-      if (user) {
-        await setDoc(doc(db, 'users', user.uid, 'data', 'collection'), { ownedCards: parsed });
-      }
+      localStorage.setItem('ninja_user_collection', JSON.stringify(parsed));
       setIsSyncModalOpen(false);
       setJsonInput('');
     } catch (err) {
@@ -134,21 +76,24 @@ export default function App() {
     setDeck(deck.filter((_, i) => i !== index));
   };
 
-  const saveCurrentDeck = async () => {
-    if (!user) {
-      alert('Please log in to save your deck.');
-      return;
-    }
+  const saveCurrentDeck = () => {
     if (deck.length === 0) {
       alert('Add cards to your deck before saving.');
       return;
     }
     const deckId = Date.now().toString();
-    const newDeck = { name: deckName, cards: deck.map(c => c.id), createdAt: new Date() };
+    const newDeck = { id: deckId, name: deckName, cards: deck.map(c => c.id) };
+    const updatedDecks = [...savedDecks, newDeck];
     
-    await setDoc(doc(db, 'users', user.uid, 'decks', deckId), newDeck);
-    setSavedDecks([...savedDecks, { id: deckId, ...newDeck }]);
-    alert('Deck saved successfully!');
+    setSavedDecks(updatedDecks);
+    localStorage.setItem('ninja_saved_decks', JSON.stringify(updatedDecks));
+    alert('Deck saved locally!');
+  };
+
+  const deleteDeck = (id) => {
+    const updatedDecks = savedDecks.filter(d => d.id !== id);
+    setSavedDecks(updatedDecks);
+    localStorage.setItem('ninja_saved_decks', JSON.stringify(updatedDecks));
   };
 
   const loadDeck = (savedDeck) => {
@@ -159,16 +104,12 @@ export default function App() {
 
   const exportDeckImage = async () => {
     if (!exportRef.current) return;
-    setIsExporting(true);
-    setTimeout(async () => {
-      const canvas = await html2canvas(exportRef.current, { useCORS: true, scale: 2 });
-      const image = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = image;
-      link.download = `${deckName.replace(/\s+/g, '_')}_Deck.png`;
-      link.click();
-      setIsExporting(false);
-    }, 500);
+    const canvas = await html2canvas(exportRef.current, { useCORS: true, scale: 2 });
+    const image = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = image;
+    link.download = `${deckName.replace(/\s+/g, '_')}_Deck.png`;
+    link.click();
   };
 
   return (
@@ -180,36 +121,22 @@ export default function App() {
             <Shield className="text-orange-500 w-8 h-8" />
             <h1 className="text-2xl font-bold tracking-wide text-orange-500">NINJA CARDS META BUILDER</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <a 
-              href="https://app.narutoninjacards.com/naruto/u/collection" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg text-sm transition"
-            >
-              <span>Official Folio</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            {user ? (
-              <div className="flex items-center gap-3">
-                <img src={user.photoURL} alt={user.displayName} className="w-8 h-8 rounded-full border border-orange-500" />
-                <button onClick={handleLogout} className="flex items-center gap-1 bg-red-600/20 text-red-400 hover:bg-red-600/30 px-3 py-1.5 rounded text-sm">
-                  <LogOut className="w-4 h-4" /> Logout
-                </button>
-              </div>
-            ) : (
-              <button onClick={handleGoogleLogin} className="flex items-center gap-2 bg-orange-600 hover:bg-orange-500 px-4 py-2 rounded-lg text-sm font-semibold transition">
-                <LogIn className="w-4 h-4" /> Login with Google
-              </button>
-            )}
-          </div>
+          <a 
+            href="https://app.narutoninjacards.com/naruto/u/collection" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg text-sm transition"
+          >
+            <span>Official Folio</span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
         
-        {/* Left Column: Gallery */}
+        {/* Gallery */}
         <section className="lg:col-span-2 space-y-4">
           <div className="flex justify-between items-center bg-slate-900 p-4 rounded-xl border border-slate-800">
             <div>
@@ -246,9 +173,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Right Column: Deck & Saved */}
+        {/* Deck Panel & Saved Decks */}
         <section className="space-y-6">
-          {/* Deck Builder Panel */}
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
             <div className="space-y-2">
               <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Deck Name</label>
@@ -294,13 +220,12 @@ export default function App() {
             </div>
           </div>
 
-          {/* Saved Decks */}
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
             <h3 className="text-md font-bold text-slate-200 flex items-center gap-2">
               <FolderOpen className="w-4 h-4 text-orange-500" /> Saved Decks
             </h3>
             {savedDecks.length === 0 ? (
-              <p className="text-sm text-slate-500">No saved decks found in Firebase.</p>
+              <p className="text-sm text-slate-500">No saved decks stored locally.</p>
             ) : (
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {savedDecks.map((d) => (
@@ -309,9 +234,14 @@ export default function App() {
                       <h4 className="text-sm font-semibold text-slate-300">{d.name}</h4>
                       <p className="text-xs text-slate-500">{d.cards.length} Cards</p>
                     </div>
-                    <button onClick={() => loadDeck(d)} className="bg-slate-800 hover:bg-slate-700 px-3 py-1 rounded text-xs text-orange-400">
-                      Load
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => loadDeck(d)} className="bg-slate-800 hover:bg-slate-700 px-3 py-1 rounded text-xs text-orange-400">
+                        Load
+                      </button>
+                      <button onClick={() => deleteDeck(d.id)} className="bg-red-600/20 hover:bg-red-600/40 p-1.5 rounded text-red-400">
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -320,7 +250,7 @@ export default function App() {
         </section>
       </main>
 
-      {/* Sync Collection Modal */}
+      {/* Sync Modal */}
       {isSyncModalOpen && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-800 rounded-xl max-w-lg w-full p-6 space-y-4">
@@ -344,7 +274,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Hidden Render Target for Image Export */}
+      {/* Export Target */}
       <div className="absolute left-[-9999px] top-[-9999px]">
         <div ref={exportRef} className="bg-slate-950 p-8 w-[1000px] space-y-6 text-slate-100 border-4 border-orange-500/30">
           <div className="flex justify-between items-center border-b border-slate-800 pb-4">
