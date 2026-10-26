@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDeckFromLocalStorage();
 });
 
+// Trigger file input cleanly
+function triggerFileInput() {
+  const fileInput = document.getElementById('collectionFileInput');
+  if (fileInput) {
+    fileInput.click();
+  }
+}
+
 // Help Modal Toggle
 function toggleHelpModal(show) {
   const modal = document.getElementById('helpModal');
@@ -25,10 +33,15 @@ function switchTab(tabId) {
   if (selectedContent) selectedContent.classList.add('active');
 }
 
-// Ultra Robust Collection Upload Handler
+// Collection Upload Handler
 function handleCollectionUpload(event) {
   const file = event.target.files[0];
-  if (!file) return;
+  if (!file) {
+    console.warn("No file selected.");
+    return;
+  }
+
+  console.log("Reading file:", file.name, file.size, "bytes");
 
   const reader = new FileReader();
   reader.onload = function(e) {
@@ -36,10 +49,11 @@ function handleCollectionUpload(event) {
       const text = e.target.result;
       const data = JSON.parse(text);
       
+      console.log("Parsed JSON successfully:", data);
       parseCollectionJSON(data);
       
       if (ownedCardsList.length === 0) {
-        alert("Warning: No owned cards were found in this JSON file. Make sure you exported your 'me' or collection payload!");
+        alert("Warning: No owned cards were found in this JSON file. Make sure you exported your 'me' payload!");
         return;
       }
 
@@ -51,15 +65,19 @@ function handleCollectionUpload(event) {
       console.error("JSON Parsing Error:", err);
       alert('Failed to parse JSON file! Ensure it is valid JSON text. Error: ' + err.message);
     } finally {
-      // Reset input value so re-importing the same file triggers onchange reliably
       event.target.value = '';
     }
   };
   
+  reader.onerror = function(err) {
+    console.error("File reading error:", err);
+    alert("Failed to read file!");
+  };
+
   reader.readAsText(file);
 }
 
-// Universal Robust Collection Parser (Handles any nested layout)
+// Universal Collection Parser
 function parseCollectionJSON(data) {
   ownedCardsList = [];
   let totalCardsCount = 0;
@@ -67,28 +85,20 @@ function parseCollectionJSON(data) {
 
   if (!data) return;
 
-  // 1. Check for seasons format (naruto_collection_2.json)
+  // 1. Seasons format (naruto_collection_2.json)
   if (data.seasons && Array.isArray(data.seasons)) {
     data.seasons.forEach(season => {
       if (season.cards && Array.isArray(season.cards)) {
         rawItems.push(...season.cards);
       }
     });
-  } 
-  // 2. Direct cards array
-  else if (Array.isArray(data.cards)) {
+  } else if (Array.isArray(data.cards)) {
     rawItems = data.cards;
-  }
-  // 3. Direct collection array
-  else if (Array.isArray(data.collection)) {
+  } else if (Array.isArray(data.collection)) {
     rawItems = data.collection;
-  }
-  // 4. Raw array of cards
-  else if (Array.isArray(data)) {
+  } else if (Array.isArray(data)) {
     rawItems = data;
-  }
-  // 5. Fallback object search for card array inside arbitrary keys
-  else if (typeof data === 'object') {
+  } else if (typeof data === 'object') {
     for (const key in data) {
       if (Array.isArray(data[key])) {
         const sample = data[key][0];
@@ -100,7 +110,6 @@ function parseCollectionJSON(data) {
     }
   }
 
-  // Parse items into normalized array
   rawItems.forEach(card => {
     const count = card.count !== undefined ? card.count : 1;
     if (count > 0) {
@@ -122,8 +131,6 @@ function parseCollectionJSON(data) {
       totalCardsCount += count;
     }
   });
-
-  console.log(`Parsed ${ownedCardsList.length} unique cards out of ${totalCardsCount} total owned.`);
 
   document.getElementById('totalOwnedCount').textContent = totalCardsCount;
   document.getElementById('uniqueOwnedCount').textContent = ownedCardsList.length;
@@ -202,7 +209,7 @@ function createCardHTML(card, actionType = 'add') {
   return `
     <div class="ninja-card rarity-${rarity}" onclick="${clickAction}">
       <div class="card-img-wrapper">
-        <img src="${card.imageUrl}" alt="${card.id}" onerror="this.src='https://via.placeholder.com/140x190/1e293b/94a3b8?text=${card.id}'" loading="lazy" />
+        <img src="${card.imageUrl}" alt="${card.id}" onerror="this.onerror=null; this.src='./card_images/${card.id}.webp';" loading="lazy" />
         <span class="card-count-badge">${actionType === 'add' ? 'x' + card.count : '✖ Remove'}</span>
         <span class="card-rarity-tag ${rarity}">${rarity}</span>
       </div>

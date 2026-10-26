@@ -42,10 +42,11 @@
         <div class="panel-header">
           <h2>Your Collection</h2>
           <div class="controls-row">
-            <label for="collectionFileInput" class="file-upload-btn">
+            <!-- Explicit Trigger Button for File Input -->
+            <button class="action-btn primary" onclick="triggerFileInput()">
               📂 Import Collection JSON
-            </label>
-            <input type="file" id="collectionFileInput" accept=".json" onchange="handleCollectionUpload(event)" />
+            </button>
+            <input type="file" id="collectionFileInput" accept=".json" style="display: none;" onchange="handleCollectionUpload(event)" />
             
             <button class="action-btn help-btn" onclick="toggleHelpModal(true)">
               ❓ How to Get JSON?
@@ -68,7 +69,7 @@
           <div class="placeholder-msg">
             <p>No collection loaded yet.</p>
             <p style="margin-top: 8px; font-size: 0.9rem; color: var(--accent-orange);">
-              Need help exporting your cards? Click <strong>"❓ How to Get JSON?"</strong> above!
+              Click <strong>📂 Import Collection JSON</strong> to select your exported file!
             </p>
           </div>
         </div>
@@ -141,25 +142,20 @@
             <strong>Log In:</strong> Go to <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a> and sign in.
           </li>
           <li>
-            <strong>Open Developer Tools:</strong> Press <kbd>F12</kbd> (or <kbd>Ctrl + Shift + I</kbd> on Windows / <kbd>Cmd + Option + I</kbd> on Mac).
+            <strong>Open Developer Tools:</strong> Press <kbd>F12</kbd> (or <kbd>Ctrl + Shift + I</kbd>).
           </li>
           <li>
-            <strong>Open Network Tab:</strong> Click the <strong>Network</strong> tab at the top of Developer Tools.
+            <strong>Open Network Tab:</strong> Click the <strong>Network</strong> tab in DevTools.
           </li>
           <li>
-            <strong>Locate the Collection Response:</strong>
-            <ul>
-              <li>Click on the <strong>Collection</strong> tab on the website (or refresh the page).</li>
-              <li>In the Network list on the right, look for a request named <code>me</code> (or <code>collection</code>).</li>
-              <li>Right-click on <code>me</code> &rarr; select <strong>Copy</strong> &rarr; <strong>Copy response</strong>.</li>
-            </ul>
+            <strong>Locate Response:</strong> Click <strong>Collection</strong> on the site, find the <code>me</code> request, right-click &rarr; <strong>Copy response</strong>.
           </li>
           <li>
-            <strong>Save JSON File:</strong> Paste the copied text into Notepad (or VS Code) and save it as <code>naruto_collection.json</code>.
+            <strong>Save File:</strong> Paste text into Notepad and save as <code>naruto_collection.json</code>.
           </li>
           <li>
-            <strong>Instant Console Script (Alternative):</strong>
-            <p style="margin-top: 4px; font-size:0.85rem;">Or paste this in the DevTools <strong>Console</strong> tab and press Enter to auto-download:</p>
+            <strong>Console Shortcut:</strong>
+            <p style="margin-top: 4px; font-size:0.85rem;">Or paste this into the DevTools <strong>Console</strong> tab and press Enter:</p>
             <pre class="code-snippet">fetch('/api/user/me').then(r=>r.json()).then(d=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));a.download='naruto_collection.json';a.click();});</pre>
           </li>
         </ol>
