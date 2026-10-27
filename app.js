@@ -4,24 +4,33 @@ let allDatabaseCards = [];
 let activeDeck = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('master_database.json')
+  // Multi-path fallback fetch to guarantee Vercel catches master_database.json
+  fetch('./master_database.json')
     .then(res => {
-      if (!res.ok) return fetch('./master_database.json');
+      if (!res.ok) return fetch('master_database.json');
       return res;
     })
     .then(res => {
-      if (!res.ok) throw new Error("Failed to load master database");
+      if (!res.ok) return fetch('./public/master_database.json');
+      return res;
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load master database from any path");
       return res.json();
     })
     .then(data => {
       masterDatabase = data;
       flattenDatabase(data);
       renderDatabaseUI(allDatabaseCards);
+      if (ownedCardsList.length > 0) {
+        enrichCollectionWithDatabase();
+        renderCollectionUI(ownedCardsList);
+      }
     })
     .catch(err => {
       console.warn("Database fetch warning:", err);
       const grid = document.getElementById('databaseGrid');
-      if (grid) grid.innerHTML = '<div class="placeholder-msg">Could not load master_database.json. Check console.</div>';
+      if (grid) grid.innerHTML = '<div class="placeholder-msg">Could not load master_database.json. Please ensure it is in the public folder.</div>';
     });
 
   loadDeckFromLocalStorage();
@@ -33,26 +42,30 @@ function flattenDatabase(data) {
     const seasonCards = data[seasonKey];
     for (const cardId in seasonCards) {
       const card = seasonCards[cardId];
+      const id = card.id || cardId;
       allDatabaseCards.push({
-        id: card.id || cardId,
+        id: id,
         season: seasonKey,
         count: 1,
         level: 1,
         attributes: {
           rarity: (card.rarity || 'Common').toUpperCase(),
-          name: card.name || cardId,
+          name: card.name || id,
           cost: card.cost || 1,
-          power: card.power || 1
+          power: card.power || 1,
+          description: card.description || card.level1 || ''
         },
-        imageUrl: `./public/cards/${card.id || cardId}.png`
+        imageUrl: `./cards/${id}.png`
       });
     }
   }
+  // Sort database cards neatly by ID (e.g. S1_001, S1_002...)
+  allDatabaseCards.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
 }
 
-// PERFORMANCE FIX: Enforce a render cap to prevent DOM freezing on massive collections
 function renderDatabaseUI(cards) {
   const grid = document.getElementById('databaseGrid');
+  if (!grid) return;
   if (!cards.length) {
     grid.innerHTML = '<div class="placeholder-msg">No cards found in database.</div>';
     return;
@@ -60,13 +73,11 @@ function renderDatabaseUI(cards) {
   
   const displayLimit = 60;
   const cardsToRender = cards.slice(0, displayLimit);
-  
   let html = cardsToRender.map(c => createCardHTML(c, 'db')).join('');
   
   if (cards.length > displayLimit) {
-    html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing ${displayLimit} of ${cards.length} results. Use the search bar to find specific cards instantly!</div>`;
+    html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing ${displayLimit} of ${cards.length} results. Use search to find specific cards!</div>`;
   }
-  
   grid.innerHTML = html;
 }
 
@@ -152,11 +163,17 @@ function parseCollectionJSON(data) {
         count: count,
         level: card.level || 1,
         attributes: card.attributes || { rarity: 'COMMON', cost: 1, power: 1, name: rawId },
-        imageUrl: card.imageUrl || `./public/cards/${rawId}.png`
+        imageUrl: `./cards/${rawId}.png`
       });
       totalCardsCount += count;
     }
   });
+
+  // Enrich with master database info if available
+  enrichCollectionWithDatabase();
+
+  // Sort collection cards neatly by ID (S1_001, S1_002...)
+  ownedCardsList.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
 
   const totalElem = document.getElementById('totalOwnedCount');
   const uniqueElem = document.getElementById('uniqueOwnedCount');
@@ -164,8 +181,32 @@ function parseCollectionJSON(data) {
   if (uniqueElem) uniqueElem.textContent = ownedCardsList.length;
 }
 
+function enrichCollectionWithDatabase() {
+  if (!Object.keys(masterDatabase).length) return;
+  
+  ownedCardsList.forEach(owned => {
+    let foundCard = null;
+    for (const seasonKey in masterDatabase) {
+      if (masterDatabase[seasonKey][owned.id]) {
+        foundCard = masterDatabase[seasonKey][owned.id];
+        break;
+      }
+    }
+    if (foundCard) {
+      owned.attributes = {
+        rarity: (foundCard.rarity || 'COMMON').toUpperCase(),
+        name: foundCard.name || owned.id,
+        cost: foundCard.cost || 1,
+        power: foundCard.power || 1,
+        description: foundCard.description || foundCard.level1 || ''
+      };
+    }
+  });
+}
+
 function renderCollectionUI(cards) {
   const grid = document.getElementById('collectionGrid');
+  if (!grid) return;
   if (!cards.length) {
     grid.innerHTML = '<div class="placeholder-msg">No cards found matching your search.</div>';
     return;
@@ -178,7 +219,6 @@ function renderCollectionUI(cards) {
   if (cards.length > displayLimit) {
     html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing ${displayLimit} of ${cards.length} cards. Use search to view more.</div>`;
   }
-  
   grid.innerHTML = html;
 }
 
@@ -218,6 +258,7 @@ function updateDeckUI() {
   if (badge) badge.textContent = activeDeck.length;
   if (titleBadge) titleBadge.textContent = `${activeDeck.length} / 6 Cards`;
 
+  if (!grid) return;
   if (!activeDeck.length) {
     grid.innerHTML = '<div class="placeholder-msg">Your deck is empty. Add cards from collection or database!</div>';
     return;
@@ -244,7 +285,7 @@ function createCardHTML(card, actionType) {
   return `
     <div class="ninja-card rarity-${rarity}">
       <div class="card-img-wrapper">
-        <img src="${card.imageUrl}" alt="${card.id}" onerror="this.src='./public/cards/${card.id}.png';" loading="lazy" />
+        <img src="${card.imageUrl}" alt="${card.id}" onerror="this.src='./cards/${card.id}.png';" loading="lazy" />
         ${actionType === 'collection' ? `<span class="card-count-badge">x${card.count}</span>` : ''}
         <span class="card-rarity-tag ${rarity.toUpperCase()}">${attr.rarity || 'COMMON'}</span>
       </div>
