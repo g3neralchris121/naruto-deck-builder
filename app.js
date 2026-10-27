@@ -3,10 +3,6 @@ let ownedCardsList = [];
 let allDatabaseCards = [];
 let activeDeck = [];
 
-let ownedCardsList = [];
-let allDatabaseCards = [];
-let activeDeck = [];
-
 document.addEventListener('DOMContentLoaded', () => {
   // Use the global masterDatabase object loaded directly via master_database.js
   if (typeof masterDatabase !== 'undefined' && Object.keys(masterDatabase).length > 0) {
