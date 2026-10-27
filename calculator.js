@@ -1,6 +1,4 @@
-/**
- * Naruto Card Deck Optimization Engine (6-Card Deck Cap)
- */
+
 class DeckCalculator {
   static RARITY_WEIGHTS = {
     "Legendary": 120,
@@ -48,7 +46,12 @@ class DeckCalculator {
       usedIdsCount[card.id] = currentCount + 1;
     }
 
-    deck.sort((a, b) => (this.RARITY_WEIGHTS[b.attributes.rarity] || 0) - (this.RARITY_WEIGHTS[a.attributes.rarity] || 0));
+    deck.sort((a, b) => {
+      const rarityA = a.attributes?.rarity || "Common";
+      const rarityB = b.attributes?.rarity || "Common";
+      return (this.RARITY_WEIGHTS[rarityB] || 0) - (this.RARITY_WEIGHTS[rarityA] || 0);
+    });
+    
     const totalScore = Math.round(deck.reduce((sum, c) => sum + (c.dynamicScore || c.score), 0));
 
     return {

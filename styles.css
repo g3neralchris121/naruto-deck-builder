@@ -1,3 +1,4 @@
+
 :root {
   --bg-dark: #0b0f19;
   --panel-bg: #151c2c;
@@ -195,10 +196,10 @@ body {
   box-shadow: 0 8px 18px rgba(0,0,0,0.5);
 }
 
-.ninja-card.rarity-Legendary { border-color: var(--rarity-legendary); }
-.ninja-card.rarity-Epic { border-color: var(--rarity-epic); }
-.ninja-card.rarity-Rare { border-color: var(--rarity-rare); }
-.ninja-card.rarity-Common { border-color: var(--rarity-common); }
+.ninja-card.rarity-legendary { border-color: var(--rarity-legendary); }
+.ninja-card.rarity-epic { border-color: var(--rarity-epic); }
+.ninja-card.rarity-rare { border-color: var(--rarity-rare); }
+.ninja-card.rarity-common { border-color: var(--rarity-common); }
 
 .card-img-wrapper {
   position: relative;
