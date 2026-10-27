@@ -2570,5 +2570,4 @@ const masterDatabase = {
 "level2": "UNWAVERING LOYALTY..."
 }
 }
-}
 };

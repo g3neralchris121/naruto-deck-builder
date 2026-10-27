@@ -1,102 +1,65 @@
-
-class DeckCalculator {
-  static RARITY_WEIGHTS = {
-    "Legendary": 120,
-    "Epic": 80,
-    "Rare": 45,
-    "Common": 15
-  };
-
-  static calculateBestDeck(ownedCardsArray, strategy = 'balanced') {
-    if (!ownedCardsArray || ownedCardsArray.length < 6) {
-      return { error: "You need at least 6 cards in your collection to build a 6-card deck." };
-    }
-
-    const cardPool = [];
-    ownedCardsArray.forEach(card => {
-      const maxInDeck = Math.min(card.count, 2);
-      for (let i = 0; i < maxInDeck; i++) {
-        cardPool.push({ ...card, instanceId: `${card.id}_${i}` });
+window.DeckCalculator = {
+  calculateBestDeck(collection, strategy, currentActiveDeck = []) {
+    if (strategy === 'active_deck') {
+      if (!currentActiveDeck || currentActiveDeck.length === 0) {
+        return { error: "Your active deck is currently empty! Build an active deck from the Collection or Database tab first." };
       }
-    });
-
-    const scoredPool = cardPool.map(card => {
-      let score = this.calculateCardBaseScore(card, strategy);
-      return { ...card, score };
-    });
-
-    const deck = [];
-    const usedIdsCount = {};
-
-    scoredPool.sort((a, b) => b.score - a.score);
-
-    for (const card of scoredPool) {
-      if (deck.length === 6) break; // 6 Card limit
-
-      const currentCount = usedIdsCount[card.id] || 0;
-      if (currentCount >= 2) continue;
-
-      let dynamicScore = card.score;
-      deck.forEach(existing => {
-        dynamicScore += this.getPairSynergyBonus(card, existing, strategy);
-      });
-
-      card.dynamicScore = dynamicScore;
-      deck.push(card);
-      usedIdsCount[card.id] = currentCount + 1;
+      let totalScore = currentActiveDeck.reduce((acc, c) => acc + Number(c.attributes?.power || 1) * 15 + (c.level > 1 ? 30 : 10), 100);
+      return {
+        deck: [...currentActiveDeck],
+        totalScore: totalScore
+      };
     }
 
-    deck.sort((a, b) => {
-      const rarityA = a.attributes?.rarity || "Common";
-      const rarityB = b.attributes?.rarity || "Common";
-      return (this.RARITY_WEIGHTS[rarityB] || 0) - (this.RARITY_WEIGHTS[rarityA] || 0);
-    });
-    
-    const totalScore = Math.round(deck.reduce((sum, c) => sum + (c.dynamicScore || c.score), 0));
+    if (!collection || collection.length === 0) {
+      return { error: "Please import your collection JSON file first before running AI optimization." };
+    }
 
-    return {
-      deck,
-      totalScore,
-      strategyUsed: strategy
-    };
-  }
-
-  static calculateCardBaseScore(card, strategy) {
-    const attr = card.attributes || {};
-    let score = this.RARITY_WEIGHTS[attr.rarity] || 15;
+    let sortedCards = [...collection];
 
     if (strategy === 'team7') {
-      if (attr.team && attr.team.includes('Team 7')) score += 40;
-      if (attr.clan === 'Uzumaki Clan' || attr.clan === 'Uchiha Clan' || attr.clan === 'Hatake Clan') score += 20;
+      sortedCards.sort((a, b) => {
+        const nameA = (a.attributes?.name || '').toLowerCase();
+        const nameB = (b.attributes?.name || '').toLowerCase();
+        const isTeam7A = nameA.includes('naruto') || nameA.includes('sasuke') || nameA.includes('sakura') || nameA.includes('kakashi') ? 1 : 0;
+        const isTeam7B = nameB.includes('naruto') || nameB.includes('sasuke') || nameB.includes('sakura') || nameB.includes('kakashi') ? 1 : 0;
+        
+        if (isTeam7A !== isTeam7B) return isTeam7B - isTeam7A;
+        return (b.attributes?.power || 0) - (a.attributes?.power || 0);
+      });
     } else if (strategy === 'rarity') {
-      score *= 1.5;
+      const rarityOrder = { 'LEGENDARY': 4, 'EPIC': 3, 'RARE': 2, 'COMMON': 1 };
+      sortedCards.sort((a, b) => {
+        const rA = rarityOrder[(a.attributes?.rarity || '').toUpperCase()] || 0;
+        const rB = rarityOrder[(b.attributes?.rarity || '').toUpperCase()] || 0;
+        if (rA !== rB) return rB - rA;
+        return (b.attributes?.power || 0) - (a.attributes?.power || 0);
+      });
     } else if (strategy === 'jutsu') {
-      if (attr.composition === 'Jutsu') score += 50;
-      if (attr.kekke_genkai) score += 25;
+      sortedCards.sort((a, b) => {
+        const hasJutsuA = (a.attributes?.description || '').length > 5 ? 1 : 0;
+        const hasJutsuB = (b.attributes?.description || '').length > 5 ? 1 : 0;
+        if (hasJutsuA !== hasJutsuB) return hasJutsuB - hasJutsuA;
+        return (b.attributes?.power || 0) - (a.attributes?.power || 0);
+      });
     } else {
-      if (attr.team && attr.team.includes('Team 7')) score += 25;
-      if (attr.clan) score += 15;
-      if (attr.composition === 'Jutsu') score += 15;
+      sortedCards.sort((a, b) => {
+        const scoreA = (a.attributes?.power || 1) - (a.attributes?.cost || 1) * 0.5;
+        const scoreB = (b.attributes?.power || 1) - (b.attributes?.cost || 1) * 0.5;
+        return scoreB - scoreA;
+      });
     }
-    return score;
+
+    const selectedDeck = sortedCards.slice(0, 10).map(card => ({
+      ...card,
+      instanceId: `${card.id}_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`
+    }));
+
+    let totalScore = selectedDeck.reduce((acc, c) => acc + Number(c.attributes?.power || 1) * 12 + (c.level > 1 ? 25 : 10), 120);
+
+    return {
+      deck: selectedDeck,
+      totalScore: totalScore
+    };
   }
-
-  static getPairSynergyBonus(cardA, cardB, strategy) {
-    let bonus = 0;
-    const a = cardA.attributes || {};
-    const b = cardB.attributes || {};
-
-    if (a.team && b.team && a.team.includes('Team 7') && b.team.includes('Team 7')) bonus += 15;
-    if (a.clan && b.clan && a.clan === b.clan) bonus += 12;
-
-    if (a.composition === 'Jutsu' || b.composition === 'Jutsu') {
-      if (a.clan && b.clan && a.clan === b.clan) bonus += 20;
-      if (a.chakra_type && b.chakra_type) {
-        const elementsA = a.chakra_type.split(', ');
-        const elementsB = b.chakra_type.split(', ');
-        if (elementsA.some(el => elementsB.includes(el))) bonus += 10;
-      }
-    }
-    return bonus;
-  }
-}
+};
