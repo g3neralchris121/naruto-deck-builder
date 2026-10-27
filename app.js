@@ -1,20 +1,24 @@
-// Master Database Global Variable
+// Master Database Global Variable & Embedded Fallback Structure
 let masterDatabase = {};
 
-// Load master database on startup
+// Load master database on startup with fallback
 function loadMasterDatabase() {
-  fetch('/master_database.json')
+  fetch('./master_database.json')
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to load master database');
-      }
+      if (!response.ok) throw new Error('Network response was not ok');
       return response.json();
     })
     .then(data => {
       masterDatabase = data;
-      console.log("Master Database loaded successfully!", masterDatabase);
+      console.log("Master Database loaded successfully via fetch!", masterDatabase);
     })
-    .catch(error => console.error("Error loading master database:", error));
+    .catch(error => {
+      console.warn("Fetch failed, attempting absolute path...", error);
+      fetch('/master_database.json')
+        .then(res => res.json())
+        .then(data => { masterDatabase = data; })
+        .catch(err => console.error("All master database fetches failed:", err));
+    });
 }
 
 // Main Application Logic
@@ -97,7 +101,6 @@ function parseCollectionJSON(data) {
 
   if (!data) return;
 
-  // Handle narutoninjacards.com format with seasons array
   if (data.seasons && Array.isArray(data.seasons)) {
     data.seasons.forEach(season => {
       if (season.cards && Array.isArray(season.cards)) {
@@ -122,7 +125,6 @@ function parseCollectionJSON(data) {
     if (count > 0) {
       const rawId = card.id || 'S1_001';
       
-      // Map S1/S2/S3 to master_database keys
       let seasonKey = 'season_1';
       let cleanNum = rawId;
 
@@ -142,9 +144,8 @@ function parseCollectionJSON(data) {
       if (masterDatabase[seasonKey] && masterDatabase[seasonKey][cleanNum]) {
         dbCard = masterDatabase[seasonKey][cleanNum];
       } else {
-        // Search across all seasons if needed
         for (const s in masterDatabase) {
-          if (masterDatabase[s][cleanNum]) {
+          if (masterDatabase[s] && masterDatabase[s][cleanNum]) {
             dbCard = masterDatabase[s][cleanNum];
             seasonKey = s;
             break;
