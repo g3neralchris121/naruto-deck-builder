@@ -1,12 +1,10 @@
-
 let masterDatabase = {};
 let ownedCardsList = [];
 let allDatabaseCards = [];
 let activeDeck = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Try fetching from public/ first (Vercel static structure), then root
-  fetch('public/master_database.json')
+  fetch('/master_database.json')
     .then(res => {
       if (!res.ok) return fetch('master_database.json');
       return res;
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDeckFromLocalStorage();
 });
 
-// Flatten master_database.json structure into an easily searchable list
 function flattenDatabase(data) {
   allDatabaseCards = [];
   for (const seasonKey in data) {
@@ -53,13 +50,24 @@ function flattenDatabase(data) {
   }
 }
 
+// PERFORMANCE FIX: Enforce a render cap to prevent DOM freezing on massive collections
 function renderDatabaseUI(cards) {
   const grid = document.getElementById('databaseGrid');
   if (!cards.length) {
     grid.innerHTML = '<div class="placeholder-msg">No cards found in database.</div>';
     return;
   }
-  grid.innerHTML = cards.map(c => createCardHTML(c, 'db')).join('');
+  
+  const displayLimit = 60;
+  const cardsToRender = cards.slice(0, displayLimit);
+  
+  let html = cardsToRender.map(c => createCardHTML(c, 'db')).join('');
+  
+  if (cards.length > displayLimit) {
+    html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing ${displayLimit} of ${cards.length} results. Use the search bar to find specific cards instantly!</div>`;
+  }
+  
+  grid.innerHTML = html;
 }
 
 function filterDatabase() {
@@ -75,7 +83,6 @@ function filterDatabase() {
   renderDatabaseUI(filtered);
 }
 
-// Fixed Tab Switching Logic
 function switchTab(tabId) {
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
@@ -163,7 +170,16 @@ function renderCollectionUI(cards) {
     grid.innerHTML = '<div class="placeholder-msg">No cards found matching your search.</div>';
     return;
   }
-  grid.innerHTML = cards.map(c => createCardHTML(c, 'collection')).join('');
+  
+  const displayLimit = 150;
+  const cardsToRender = cards.slice(0, displayLimit);
+  let html = cardsToRender.map(c => createCardHTML(c, 'collection')).join('');
+  
+  if (cards.length > displayLimit) {
+    html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing ${displayLimit} of ${cards.length} cards. Use search to view more.</div>`;
+  }
+  
+  grid.innerHTML = html;
 }
 
 function addCardToActiveDeck(cardId, fromSource = 'collection') {
