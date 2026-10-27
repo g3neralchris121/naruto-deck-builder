@@ -6,7 +6,7 @@ let activeDeck = [];
 document.addEventListener('DOMContentLoaded', () => {
   fetch('/master_database.json')
     .then(res => {
-      if (!res.ok) return fetch('master_database.json');
+      if (!res.ok) return fetch('./master_database.json');
       return res;
     })
     .then(res => {
