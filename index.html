@@ -15,10 +15,13 @@
         <h1>Naruto Deck Builder <span>PRO</span></h1>
       </div>
       <nav class="nav-tabs">
-        <button class="tab-btn active" id="tab-col" onclick="switchTab('collectionTab')">🗃️ Collection (<span id="uniqueCount">0</span>)</button>
-        <button class="tab-btn" id="tab-deck" onclick="switchTab('deckTab')">🃏 Active Deck (<span id="deckCount">0</span>/6)</button>
-        <button class="tab-btn" id="tab-ai" onclick="switchTab('aiTab')">⚡ AI Calculator</button>
+        <button class="tab-btn active" data-tab="collectionTab" onclick="switchTab('collectionTab')">🗃️ Collection (<span id="uniqueOwnedCount">0</span>)</button>
+        <button class="tab-btn" data-tab="deckTab" onclick="switchTab('deckTab')">🃏 Active Deck (<span id="deckCountBadge">0</span>/6)</button>
+        <button class="tab-btn" data-tab="aiTab" onclick="switchTab('aiTab')">⚡ AI Calculator</button>
       </nav>
+      <div class="stats-bar">
+        Total Owned: <strong id="totalOwnedCount">0</strong>
+      </div>
     </header>
 
     <main>
@@ -27,12 +30,22 @@
         <div class="panel-header">
           <h2>Your Collection</h2>
           <div class="controls-row">
-            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">📂 Import Collection JSON</button>
-            <input type="file" id="fileInput" accept=".json" style="display:none" onchange="importCollectionJSON(event)">
-            <button class="btn btn-blue" onclick="toggleModal(true)">❓ How to Get JSON?</button>
+            <button class="action-btn primary" onclick="triggerFileInput()">📂 Import Collection JSON</button>
+            <input type="file" id="collectionFileInput" accept=".json" onchange="handleCollectionUpload(event)">
+            <button class="action-btn" style="background:#00d2ff; color:#000;" onclick="toggleHelpModal(true)">❓ How to Get JSON?</button>
           </div>
         </div>
-        <p style="color:var(--text-muted); font-size:0.85rem;">💡 Click any card below to add it to your 6-card Active Deck!</p>
+        <div class="controls-row" style="margin-bottom: 16px;">
+          <input type="text" id="searchInput" placeholder="Search by name, ID, or clan..." oninput="filterCollection()" style="flex: 1; min-width: 200px;" />
+          <select id="rarityFilter" class="styled-select" onchange="filterCollection()">
+            <option value="ALL">All Rarities</option>
+            <option value="LEGENDARY">Legendary</option>
+            <option value="EPIC">Epic</option>
+            <option value="RARE">Rare</option>
+            <option value="COMMON">Common</option>
+          </select>
+        </div>
+        <div class="tab-hint">💡 Click any card below to inspect details or add it to your 6-card Active Deck!</div>
         <div id="collectionGrid" class="card-grid">
           <div class="placeholder-msg">No collection imported yet. Click <strong>Import Collection JSON</strong> to start!</div>
         </div>
@@ -41,15 +54,15 @@
       <!-- ACTIVE DECK TAB -->
       <section id="deckTab" class="tab-content">
         <div class="panel-header">
-          <h2>Active Deck (<span id="deckBadge">0 / 6 Cards</span>)</h2>
+          <h2>Active Deck (<span id="deckTitleBadge">0 / 6 Cards</span>)</h2>
           <div class="controls-row">
-            <button class="btn btn-success" onclick="saveDeckToLocalStorage()">💾 Save Deck</button>
-            <button class="btn btn-primary" onclick="exportDeckJSON()">📄 Export JSON</button>
-            <button class="btn btn-danger" onclick="clearDeck()">🗑️ Clear Deck</button>
+            <button class="action-btn success" onclick="saveDeckToLocalStorage()">💾 Save Deck</button>
+            <button class="action-btn primary" onclick="exportDeckJSON()">📄 Export JSON</button>
+            <button class="action-btn danger" onclick="clearActiveDeck()">🗑️ Clear Deck</button>
           </div>
         </div>
-        <p style="color:var(--text-muted); font-size:0.85rem;">💡 Click any card in your deck to remove it.</p>
-        <div id="deckGrid" class="card-grid">
+        <div class="tab-hint">💡 Active decks are capped at precisely 6 cards. Click cards here to remove them.</div>
+        <div id="activeDeckGrid" class="card-grid">
           <div class="placeholder-msg">Your deck is empty. Add cards from your collection or run the AI Calculator!</div>
         </div>
       </section>
@@ -59,33 +72,50 @@
         <div class="panel-header">
           <h2>AI 6-Card Deck Calculator</h2>
           <div class="controls-row">
-            <button id="calcBtn" class="btn btn-primary" onclick="runAICalculator()" disabled>⚡ Calculate Best 6-Card Deck</button>
+            <select id="strategySelect" class="styled-select">
+              <option value="balanced">Balanced Synergy Strategy</option>
+              <option value="team7">Team 7 & Clan Focus</option>
+              <option value="rarity">Pure Rarity Power</option>
+              <option value="jutsu">Jutsu Composition Focus</option>
+            </select>
+            <button id="calcBtn" class="action-btn primary" onclick="generateOptimalDeckUI()" disabled>⚡ Calculate Best 6-Card Deck</button>
           </div>
         </div>
-        <div id="aiGrid" class="card-grid">
+        <div class="ai-summary-box">
+          <h3>Optimization Analysis</h3>
+          <p id="aiStrategyInfo" style="color:var(--text-muted); font-size:0.9rem; margin-bottom: 6px;">Select a strategy and click calculate to assemble the highest synergy 6-card deck from your imported collection.</p>
+          <div id="aiSynergyScore">Synergy Score: 0</div>
+        </div>
+        <div id="aiDeckGrid" class="card-grid">
           <div class="placeholder-msg">Import collection first to run AI deck calculation.</div>
         </div>
       </section>
     </main>
   </div>
 
-  <!-- HELP MODAL -->
+  <!-- HOW TO GET JSON HELP MODAL -->
   <div id="helpModal" class="modal-backdrop">
-    <div class="modal-box">
-      <h3>📜 How to Get Your Collection File</h3>
-      <ol>
-        <li>Log into <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a>.</li>
-        <li>Press <kbd>F12</kbd> to open Developer Tools and select the <strong>Network</strong> tab.</li>
-        <li>Click <strong>Collection</strong> on the site.</li>
-        <li>Find the <code>me</code> request in the network list, right-click it &rarr; <strong>Copy response</strong>.</li>
-        <li>Paste it into Notepad and save it as <code>collection.json</code>.</li>
-      </ol>
-      <div style="text-align:right; margin-top:16px;">
-        <button class="btn btn-primary" onclick="toggleModal(false)">Close</button>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📜 How to Get Your Collection File</h3>
+        <button class="modal-close-btn" onclick="toggleHelpModal(false)">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ol class="steps-list">
+          <li>Log into <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a>.</li>
+          <li>Press <kbd>F12</kbd> to open Developer Tools and select the <strong>Network</strong> tab.</li>
+          <li>Click <strong>Collection</strong> on the site.</li>
+          <li>Find the <code>me</code> request in the network list, right-click it &rarr; <strong>Copy response</strong>.</li>
+          <li>Paste it into a text file and save it as <code>collection.json</code>.</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button class="action-btn primary" onclick="toggleHelpModal(false)">Got it</button>
       </div>
     </div>
   </div>
 
-  <script type="module" src="/src/main.js"></script>
+  <script src="/calculator.js"></script>
+  <script src="/app.js"></script>
 </body>
 </html>

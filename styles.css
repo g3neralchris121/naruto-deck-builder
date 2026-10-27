@@ -102,27 +102,6 @@ body {
   border-radius: 4px;
 }
 
-#collectionFileInput { display: none; }
-
-.file-upload-btn {
-  background: rgba(255, 107, 0, 0.15);
-  color: var(--accent-orange);
-  border: 1px dashed var(--accent-orange);
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.file-upload-btn:hover { background: rgba(255, 107, 0, 0.3); }
-
-.help-btn {
-  background: rgba(0, 210, 255, 0.15);
-  color: var(--accent-blue);
-  border: 1px solid var(--accent-blue);
-}
-
 .styled-select, .controls-row input {
   padding: 8px 12px;
   background: rgba(0,0,0,0.4);
@@ -282,17 +261,4 @@ body {
 .modal-body { padding: 20px; overflow-y: auto; font-size: 0.95rem; line-height: 1.5; }
 .steps-list { display: flex; flex-direction: column; gap: 14px; padding-left: 20px; }
 .steps-list ul { margin-top: 6px; padding-left: 20px; color: var(--text-muted); }
-
-.code-snippet {
-  background: #000;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: var(--accent-green);
-  word-break: break-all;
-  white-space: pre-wrap;
-}
-
 .modal-footer { padding: 14px 20px; border-top: 1px solid var(--border-color); text-align: right; }

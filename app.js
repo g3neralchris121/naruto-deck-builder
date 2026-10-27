@@ -135,7 +135,7 @@ function parseCollectionJSON(data) {
         cleanNum = rawId.replace('S3_', '');
       }
 
-      // Lookup card details in master database with fallback hardcoded dictionary for instant rendering
+      // Lookup card details in master database
       let dbCard = null;
       if (masterDatabase[seasonKey] && masterDatabase[seasonKey][cleanNum]) {
         dbCard = masterDatabase[seasonKey][cleanNum];
@@ -149,40 +149,9 @@ function parseCollectionJSON(data) {
         }
       }
 
-      // Fallback name mapping if database fetch is pending
-      const fallbackNames = {
-        "S1_001": "NARUTO UZUMAKI", "S1_002": "NARUTO UZUMAKI", "S1_003": "NARUTO UZUMAKI",
-        "S1_004": "NARUTO UZUMAKI", "S1_005": "SASUKE UCHIHA", "S1_006": "SAKURA HARUNO",
-        "S1_007": "SAKURA HARUNO", "S1_008": "SAKURA HARUNO", "S1_009": "KAKASHI HATAKE",
-        "S1_010": "KAKASHI HATAKE", "S1_011": "IRUKA UMINO", "S1_012": "ZABUZA MOMOCHI",
-        "S1_013": "ZABUZA MOMOCHI", "S1_014": "HAKU", "S1_015": "KONOHAMARU SARUTOBI",
-        "S1_016": "EBISU", "S1_017": "TAZUNA", "S1_018": "INARI", "S1_019": "KAIZA",
-        "S1_020": "MIZUKI TOJI", "S1_021": "MIZUKI TOJI", "S1_022": "MADAME SHIJIMI",
-        "S1_023": "GOZU", "S1_024": "TSUNAMI", "S1_025": "WARAJI", "S1_026": "ZORI",
-        "S1_027": "INO YAMANAKA", "S1_028": "SHIKAMARU NARA", "S1_029": "CHOJI AKIMICHI",
-        "S1_030": "ASUMA SARUTOBI", "S1_031": "HINATA HYUGA", "S1_032": "HINATA HYUGA",
-        "S1_033": "KIBA INUZUKA", "S1_034": "AKAMARU", "S1_035": "SHINO ABURAME",
-        "S1_036": "KURENAI YUHI", "S1_037": "PAKKUN", "S1_038": "AYAME", "S1_039": "MOEGI",
-        "S1_040": "UDON", "S1_041": "NINJA TROOPS", "S1_042": "NARUTO UZUMAKI", "S1_043": "NARUTO UZUMAKI",
-        "S1_044": "NARUTO UZUMAKI", "S1_045": "NARUTO UZUMAKI", "S1_046": "NARUTO UZUMAKI",
-        "S1_047": "NARUTO UZUMAKI", "S1_048": "NARUTO UZUMAKI", "S1_049": "SASUKE UCHIHA",
-        "S1_050": "HIRUZEN SARUTOBI", "S1_051": "IRUKA UMINO", "S1_052": "IRUKA UMINO",
-        "S1_053": "ZABUZA MOMOCHI", "S1_054": "ZABUZA MOMOCHI", "S1_055": "KONOHAMARU",
-        "S1_056": "KONOHAMARU", "S1_057": "KONOHAMARU", "S1_058": "EBISU", "S1_059": "INARI",
-        "S1_060": "GATO", "S1_061": "NINJA HOUNDS", "S1_062": "TEUCHI", "S1_063": "NARUTO UZUMAKI",
-        "S1_064": "NARUTO UZUMAKI", "S1_065": "NARUTO UZUMAKI", "S1_066": "SASUKE UCHIHA",
-        "S1_067": "SAKURA HARUNO", "S1_068": "KAKASHI HATAKE", "S1_069": "KAKASHI HATAKE",
-        "S1_070": "KAKASHI HATAKE", "S1_071": "KAKASHI HATAKE", "S1_072": "IRUKA UMINO",
-        "S1_073": "HIRUZEN SARUTOBI", "S1_074": "ZABUZA MOMOCHI", "S1_075": "HAKU",
-        "S1_076": "GAMABUNTA", "S1_077": "NARUTO UZUMAKI", "S1_078": "NARUTO UZUMAKI",
-        "S1_079": "NARUTO UZUMAKI", "S1_080": "NARUTO UZUMAKI", "S1_081": "SASUKE UCHIHA",
-        "S1_082": "KAKASHI HATAKE", "S1_083": "ZABUZA MOMOCHI", "S1_084": "ZABUZA MOMOCHI",
-        "S1_085": "KYUBI"
-      };
-
       const attr = (card.metadata && card.metadata.attributes) ? card.metadata.attributes : (card.attributes || {});
       const rarity = dbCard ? dbCard.rarity : (attr.rarity || 'COMMON');
-      const name = dbCard ? dbCard.name : (fallbackNames[rawId] || attr.jutsu || attr.clan || attr.ninja_type || rawId);
+      const name = dbCard ? dbCard.name : (attr.jutsu || attr.clan || attr.ninja_type || rawId);
       
       let imgUrl = `./card_images/${rawId}.webp`;
       if (card.metadata && card.metadata.images && card.metadata.images.folio && card.metadata.images.folio.medium) {
@@ -300,7 +269,7 @@ function createCardHTML(card, actionType = 'add') {
         <div class="card-title" title="${name}">${card.id}: ${name}</div>
         <div class="card-details">Lvl ${card.level} | Cost: ${attr.cost} | Pwr: ${attr.power}</div>
       </div>
-      <button class="action-btn-${actionType}" onclick="event.stopPropagation(); ${actionType === 'add' ? `addCardToActiveDeck('${card.id}')` : `removeCardFromActiveDeck('${card.instanceId || card.id}')`}">
+      <button class="action-btn-${actionType}" onclick="event.stopPropagation(); ${actionType === 'add' ? `addCardToActiveDeck('${card.id}')` : `removeCardFromActiveDeck('${card.instanceId || card.id}')`}" style="width:100%; padding:6px; background:${actionType === 'add' ? 'var(--accent-orange)' : 'rgba(239,68,68,0.2)'}; border:none; color:#fff; font-weight:600; cursor:pointer;">
         ${actionType === 'add' ? '+ Add to Deck' : 'Remove'}
       </button>
     </div>
@@ -313,11 +282,11 @@ function injectCardDetailModal() {
 
   const modalHTML = `
     <div id="cardDetailModal" class="help-modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center;">
-      <div class="modal-content" style="background: #1a1a2e; border: 2px solid #f39c12; padding: 25px; border-radius: 12px; max-width: 450px; width: 90%; color: #fff; position: relative;">
+      <div class="modal-card" style="max-width: 450px; width: 90%; padding: 25px; position: relative;">
         <span onclick="closeCardModal()" style="position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; color: #aaa;">&times;</span>
-        <h2 id="modalCardTitle" style="margin-top: 0; color: #f39c12;">Card Details</h2>
+        <h2 id="modalCardTitle" style="margin-top: 0; color: var(--accent-gold); font-family: 'Cinzel', serif;">Card Details</h2>
         <div style="display: flex; gap: 15px; margin-bottom: 15px; align-items: center;">
-          <img id="modalCardImg" src="" alt="Card" style="width: 120px; border-radius: 8px; border: 1px solid #444;" />
+          <img id="modalCardImg" src="" alt="Card" style="width: 120px; border-radius: 8px; border: 1px solid var(--border-color);" />
           <div>
             <p><strong>ID:</strong> <span id="modalCardId"></span></p>
             <p><strong>Rarity:</strong> <span id="modalCardRarity"></span></p>
@@ -326,12 +295,12 @@ function injectCardDetailModal() {
           </div>
         </div>
         <div style="margin-bottom: 15px; display: flex; gap: 10px; justify-content: center;">
-          <button id="lvl1Btn" onclick="setCardLevelView(1)" style="padding: 8px 16px; background: #f39c12; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; color: #000;">Level 1</button>
+          <button id="lvl1Btn" onclick="setCardLevelView(1)" style="padding: 8px 16px; background: var(--accent-orange); border: none; border-radius: 6px; font-weight: bold; cursor: pointer; color: #000;">Level 1</button>
           <button id="lvl2Btn" onclick="setCardLevelView(2)" style="padding: 8px 16px; background: #333; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Level 2</button>
         </div>
-        <div style="background: #111; padding: 12px; border-radius: 8px; border: 1px solid #333; min-height: 70px;">
-          <strong style="color: #f39c12; display: block; margin-bottom: 5px;">Ability Description:</strong>
-          <p id="modalCardDesc" style="margin: 0; font-size: 14px; line-height: 1.4;"></p>
+        <div style="background: #111; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); min-height: 70px;">
+          <strong style="color: var(--accent-gold); display: block; margin-bottom: 5px;">Ability Description:</strong>
+          <p id="modalCardDesc" style="margin: 0; font-size: 14px; line-height: 1.4; color: var(--text-main);"></p>
         </div>
       </div>
     </div>
@@ -382,12 +351,12 @@ function updateModalLevelDisplay() {
   const btn2 = document.getElementById('lvl2Btn');
 
   if (currentModalLevel === 1) {
-    btn1.style.background = '#f39c12';
+    btn1.style.background = 'var(--accent-orange)';
     btn1.style.color = '#000';
     btn2.style.background = '#333';
     btn2.style.color = '#fff';
   } else {
-    btn2.style.background = '#f39c12';
+    btn2.style.background = 'var(--accent-orange)';
     btn2.style.color = '#000';
     btn1.style.background = '#333';
     btn1.style.color = '#fff';
