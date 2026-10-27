@@ -44,7 +44,7 @@ function flattenDatabase(data) {
           cost: card.cost || 1,
           power: card.power || 1
         },
-        imageUrl: `./cards/${card.id || cardId}.webp`
+        imageUrl: `./cards/${card.id || cardId}.png`
       });
     }
   }
@@ -152,7 +152,7 @@ function parseCollectionJSON(data) {
         count: count,
         level: card.level || 1,
         attributes: card.attributes || { rarity: 'COMMON', cost: 1, power: 1, name: rawId },
-        imageUrl: card.imageUrl || `./cards/${rawId}.webp`
+        imageUrl: card.imageUrl || `./cards/${rawId}.png`
       });
       totalCardsCount += count;
     }
@@ -244,7 +244,7 @@ function createCardHTML(card, actionType) {
   return `
     <div class="ninja-card rarity-${rarity}">
       <div class="card-img-wrapper">
-        <img src="${card.imageUrl}" alt="${card.id}" onerror="this.src='./cards/${card.id}.webp';" loading="lazy" />
+        <img src="${card.imageUrl}" alt="${card.id}" onerror="this.src='./cards/${card.id}.png';" loading="lazy" />
         ${actionType === 'collection' ? `<span class="card-count-badge">x${card.count}</span>` : ''}
         <span class="card-rarity-tag ${rarity.toUpperCase()}">${attr.rarity || 'COMMON'}</span>
       </div>
