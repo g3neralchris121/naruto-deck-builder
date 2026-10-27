@@ -3,35 +3,20 @@ let ownedCardsList = [];
 let allDatabaseCards = [];
 let activeDeck = [];
 
+let ownedCardsList = [];
+let allDatabaseCards = [];
+let activeDeck = [];
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Multi-path fallback fetch to guarantee Vercel catches master_database.json
-  fetch('./master_database.json')
-    .then(res => {
-      if (!res.ok) return fetch('master_database.json');
-      return res;
-    })
-    .then(res => {
-      if (!res.ok) return fetch('./public/master_database.json');
-      return res;
-    })
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load master database from any path");
-      return res.json();
-    })
-    .then(data => {
-      masterDatabase = data;
-      flattenDatabase(data);
-      renderDatabaseUI(allDatabaseCards);
-      if (ownedCardsList.length > 0) {
-        enrichCollectionWithDatabase();
-        renderCollectionUI(ownedCardsList);
-      }
-    })
-    .catch(err => {
-      console.warn("Database fetch warning:", err);
-      const grid = document.getElementById('databaseGrid');
-      if (grid) grid.innerHTML = '<div class="placeholder-msg">Could not load master_database.json. Please ensure it is in the public folder.</div>';
-    });
+  // Use the global masterDatabase object loaded directly via master_database.js
+  if (typeof masterDatabase !== 'undefined' && Object.keys(masterDatabase).length > 0) {
+    flattenDatabase(masterDatabase);
+    renderDatabaseUI(allDatabaseCards);
+  } else {
+    console.warn("masterDatabase global object not found.");
+    const grid = document.getElementById('databaseGrid');
+    if (grid) grid.innerHTML = '<div class="placeholder-msg">Error: masterDatabase not loaded. Check script order in index.html.</div>';
+  }
 
   loadDeckFromLocalStorage();
 });

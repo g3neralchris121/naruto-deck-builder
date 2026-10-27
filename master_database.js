@@ -654,7 +654,7 @@ const masterDatabase = {
 "rarity": "EPIC",
 "cost": 5,
 "power": 6,
-"level1": "WILL OF FIRE CHAKRA\[+1\] TO ALL ALLIES AFTER 10 SECONDS.",
+"level1": "WILL OF FIRE CHAKRA (+1) TO ALL ALLIES AFTER 10 SECONDS.",
 "level2": "WILL OF FIRE CHAKRA(+2) TO ALL ALLIES AFTER 10 SECONDS."
 },
 "074": {
