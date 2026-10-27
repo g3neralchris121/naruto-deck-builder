@@ -1,8 +1,28 @@
+// Master Database Global Variable
+let masterDatabase = {};
+
+// Load master database on startup
+function loadMasterDatabase() {
+  fetch('/master_database.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to load master database');
+      }
+      return response.json();
+    })
+    .then(data => {
+      masterDatabase = data;
+      console.log("Master Database loaded successfully into app.js!", masterDatabase);
+    })
+    .catch(error => console.error("Error loading master database:", error));
+}
+
 // Main Application Logic
 let ownedCardsList = [];
 let activeDeck = []; // Limited to 6 cards
 
 document.addEventListener('DOMContentLoaded', () => {
+  loadMasterDatabase();
   loadDeckFromLocalStorage();
 });
 

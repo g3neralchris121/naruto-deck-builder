@@ -1,0 +1,2573 @@
+{
+"season_1": {
+"001": {
+"id": "001",
+"name": "NARUTO UZUMAKI",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "THE FIRST TIME THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+1).",
+"level2": "THE FIRST TIME THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+2)."
+},
+"002": {
+"id": "002",
+"name": "NARUTO UZUMAKI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "LEARNING CHAKRA(+2) AFTER 6 SECONDS.",
+"level2": "LEARNING CHAKRA(+3) AFTER 6 SECONDS."
+},
+"003": {
+"id": "003",
+"name": "NARUTO UZUMAKI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "SHADOW CLONE JUTSU CREATE 1 CLONE ON ANOTHER LANE WITH CHAKRA(1).",
+"level2": "SHADOW CLONE JUTSU SUMMON 1 CLONE ON ANOTHER LANE WITH CHAKRA(2)."
+},
+"004": {
+"id": "004",
+"name": "NARUTO UZUMAKI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "OATH CHAKRA(+1) AFTER SUCCESSFUL ENCOUNTER.",
+"level2": "OATH CHAKRA(+2) AFTER SUCCESSFUL ENCOUNTER."
+},
+"005": {
+"id": "005",
+"name": "SASUKE UCHIHA",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "KUNAI MASTERY ON ENCOUNTER, WEAKEN(2) THE RIVAL CARD.",
+"level2": "KUNAI MASTERY ON ENCOUNTER, WEAKEN(3) THE RIVAL CARD."
+},
+"006": {
+"id": "006",
+"name": "SAKURA HARUNO",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "KUNAI THROW ON DEPLOY, WEAKEN(2) A RANDOM RIVAL IN LONG RANGE.",
+"level2": "KUNAI THROW ON DEPLOY, WEAKEN(3) A RANDOM RIVAL IN LONG RANGE."
+},
+"007": {
+"id": "007",
+"name": "SAKURA HARUNO",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "CHAKRA BALANCE WHEN LANE ALLIES SUCCEED AN ENCOUNTER, CHAKRA(+1) TO THEM AND PIN(3S) SELF.",
+"level2": "CHAKRA BALANCE WHEN LANE ALLIES SUCCEED AN ENCOUNTER, CHAKRA(+1) TO THEM AND PIN(5S) SELF."
+},
+"008": {
+"id": "008",
+"name": "SAKURA HARUNO",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "ROUNDHOUSE KICK ON ENCOUNTER, PUSH(1) AND WEAKEN(1) THE RIVAL CARD.",
+"level2": "ROUNDHOUSE KICK ON ENCOUNTER, PUSH(2) AND WEAKEN(1) THE RIVAL CARD."
+},
+"009": {
+"id": "009",
+"name": "KAKASHI HATAKE",
+"rarity": "COMMON",
+"cost": 3,
+"power": 5,
+"level1": "RUSH RUSH(5S)",
+"level2": "RUSH RUSH(6S)"
+},
+"010": {
+"id": "010",
+"name": "KAKASHI HATAKE",
+"rarity": "COMMON",
+"cost": 3,
+"power": 5,
+"level1": "TEAM LEADER ON ENCOUNTER, CHAKRA(+2) TO AN ALLY IN SHORT RANGE.",
+"level2": "TEAM LEADER ON ENCOUNTER, CHAKRA(+3) TO A LANE ALLY IN SHORT RANGE."
+},
+"011": {
+"id": "011",
+"name": "IRUKA UMINO",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "SENSEI CHAKRA(+2) TO NEXT ALLY DEPLOYED.",
+"level2": "SENSEI CHAKRA(+3) TO NEXT ALLY DEPLOYED."
+},
+"012": {
+"id": "012",
+"name": "ZABUZA MOMOCHI",
+"rarity": "COMMON",
+"cost": 4,
+"power": 5,
+"level1": "MENACING ENTRY DEPLOY TO MID RANGE, SLOW(4S) AND LANE SWITCH RIVAL WITH THE HIGHEST CHAKRA.",
+"level2": "MENACING ENTRY DEPLOY TO MID RANGE, SLOW(6S) AND SWITCH LANE RIVAL WITH THE HIGHEST CHAKRA."
+},
+"013": {
+"id": "013",
+"name": "ZABUZA MOMOCHI",
+"rarity": "COMMON",
+"cost": 5,
+"power": 5,
+"level1": "AGGRESSION ON DEPLOY, WEAKEN(3) CLOSEST RIVAL CARD ON LANE.",
+"level2": "AGGRESSION ON DEPLOY, WEAKEN(4) CLOSEST RIVAL CARD ON LANE."
+},
+"014": {
+"id": "014",
+"name": "HAKU",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "NEEDLES ON DEPLOY, PIN(6S) CLOSEST LANE RIVAL.",
+"level2": "NEEDLES ON DEPLOY, PIN(7S) CLOSEST LANE RIVAL."
+},
+"015": {
+"id": "015",
+"name": "KONOHAMARU SARUTOBI",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "SHURIKEN THROW ON DEPLOY, WEAKEN(1) A RANDOM RIVAL IN SHORT RANGE.",
+"level2": "SHURIKEN THROW ON DEPLOY, WEAKEN(2) A RANDOM RIVAL IN SHORT RANGE."
+},
+"016": {
+"id": "016",
+"name": "EBISU",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "QUICK LESSON ON DEPLOY, CHAKRA(+2) TO CLOSEST ALLY.",
+"level2": "QUICK LESSON ON DEPLOY, CHAKRA(+3) TO CLOSEST ALLY."
+},
+"017": {
+"id": "017",
+"name": "TAZUNA",
+"rarity": "COMMON",
+"cost": 3,
+"power": 1,
+"level1": "BRIDGE BUILDER ON DEPLOY, PULL 2 ALLIES IN MID RANGE BACK TO THIS CARD.",
+"level2": "BRIDGE BUILDER ON DEPLOY, PULL 3 ALLIES IN MID RANGE BACK TO THIS CARD."
+},
+"018": {
+"id": "018",
+"name": "INARI",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "RUSH RUSH(2S)",
+"level2": "RUSH RUSH(3S)"
+},
+"019": {
+"id": "019",
+"name": "KAIZA",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "MARTYR CHAKRA(+1) TO ALL ALLIES WHEN WITHDRAWING.",
+"level2": "MARTYR CHAKRA(+2) TO LANE ALLIES WHEN WITHDRAWING."
+},
+"020": {
+"id": "020",
+"name": "MIZUKI TOJI",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "HIDDEN INTENT ON DEPLOY, WEAKEN(2) A RANDOM LANE ALLY AND CHAKRA(+3) FOR THIS CARD.",
+"level2": "HIDDEN INTENT ON DEPLOY, WEAKEN(2) A RANDOM LANE ALLY AND CHAKRA(+4) FOR THIS CARD."
+},
+"021": {
+"id": "021",
+"name": "MIZUKI TOJI",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "PUSHOVER ON WITHDRAW, CHAKRA(+1) FOR 3 RANDOM ALLIES.",
+"level2": "PUSHOVER ON WITHDRAW, CHAKRA(+2) FOR 3 RANDOM ALLIES."
+},
+"022": {
+"id": "022",
+"name": "MADAME SHIJIMI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "CAT RESCUE ON DEPLOY, CHAKRA(+1) AND SLOW(3S) TO THREE LANE ALLIES IN SHORT RANGE.",
+"level2": "CAT RESCUE ON DEPLOY, CHAKRA(+2) AND SLOW(3S) TO THREE LANE ALLIES IN SHORT RANGE."
+},
+"023": {
+"id": "023",
+"name": "GOZU",
+"rarity": "COMMON",
+"cost": 2,
+"power": 3,
+"level1": "AMBUSH ON ENCOUNTER, WEAKEN(1) RIVAL CARD AND TELEPORT BEHIND IT.",
+"level2": "AMBUSH ON ENCOUNTER, WEAKEN(2) RIVAL CARD AND TELEPORT BEHIND IT."
+},
+"024": {
+"id": "024",
+"name": "TSUNAMI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "HOSPITALITY ON DEPLOY, CHAKRA(+1) FOR 2 LANE ALLIES.",
+"level2": "HOSPITALITY ON DEPLOY, CHAKRA(+1) FOR 3 LANE ALLIES."
+},
+"025": {
+"id": "025",
+"name": "WARAJI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "RUSH RUSH(3S)",
+"level2": "RUSH RUSH(4S)"
+},
+"026": {
+"id": "026",
+"name": "ZORI",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "RUSH RUSH(3S)",
+"level2": "RUSH RUSH(4S)"
+},
+"027": {
+"id": "027",
+"name": "INO YAMANAKA",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "CHARM ON DEPLOY, CHAKRA(+1) TO CLOSEST ALLY IN SHORT RANGE AND PUSH THEM TO MID RANGE.",
+"level2": "CHARM ON DEPLOY, CHAKRA(+2) TO CLOSEST ALLY IN SHORT RANGE AND PUSH THEM TO MID RANGE."
+},
+"028": {
+"id": "028",
+"name": "SHIKAMARU NARA",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "SHADOW PARALYSIS JUTSU ON DEPLOY, PIN(10S) SELF AND CLOSEST RIVAL CARD.",
+"level2": "SHADOW PARALYSIS JUTSU ON DEPLOY, PIN(12S) SELF AND CLOSEST RIVAL CARD."
+},
+"029": {
+"id": "029",
+"name": "CHOJI AKIMICHI",
+"rarity": "COMMON",
+"cost": 1,
+"power": 2,
+"level1": "STRENGTH ON ENCOUNTER, PUSH(1) THE RIVAL CARD.",
+"level2": "STRENGTH ON ENCOUNTER, PUSH(2) THE RIVAL CARD."
+},
+"030": {
+"id": "030",
+"name": "ASUMA SARUTOBI",
+"rarity": "COMMON",
+"cost": 4,
+"power": 5,
+"level1": "MELEE PROWESS ON ENCOUNTER, CHAKRA(+3) IF RIVAL CARD HAS A HIGHER CHAKRA NUMBER.",
+"level2": "MELEE PROWESS ON ENCOUNTER, CHAKRA(+4) IF RIVAL CARD HAS A HIGHER CHAKRA NUMBER."
+},
+"031": {
+"id": "031",
+"name": "HINATA HYUGA",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "SHY ON DEPLOY, PUSH(2) CLOSEST RIVAL CARD IN SHORT RANGE.",
+"level2": "SHY ON DEPLOY, PUSH(3) CLOSEST RIVAL CARD IN SHORT RANGE."
+},
+"032": {
+"id": "032",
+"name": "HINATA HYUGA",
+"rarity": "COMMON",
+"cost": 1,
+"power": 2,
+"level1": "GENTLE FIST ON ENCOUNTER, PUSH(1) RIVAL CARDS WITH 3 OR LESS CHAKRA.",
+"level2": "GENTLE FIST ON ENCOUNTER, PUSH(2) RIVAL CARDS WITH 3 OR LESS CHAKRA."
+},
+"033": {
+"id": "033",
+"name": "KIBA INUZUKA",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "BEST FRIEND SUMMON A RANDOM AKAMARU FROM YOUR DECK AND GIVE IT CHAKRA(+1). IF AKAMARU IS NOT FOUND, THIS CARD GAINS CHAKRA(+1) INSTEAD.",
+"level2": "BEST FRIEND SUMMON A RANDOM AKAMARU FROM YOUR DECK AND GIVE IT CHAKRA(+2). IF AKAMARU IS NOT FOUND, THIS CARD GAINS CHAKRA(+2) INSTEAD."
+},
+"034": {
+"id": "034",
+"name": "AKAMARU",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "RUSH RUSH(6S)",
+"level2": "RUSH RUSH(7S)"
+},
+"035": {
+"id": "035",
+"name": "SHINO ABURAME",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "CHAKRA INSECTS ON ENCOUNTER, CHAKRA(+2) TO THIS CARD AND WEAKEN(1) RIVAL CARD.",
+"level2": "CHAKRA INSECTS ON ENCOUNTER, CHAKRA(+2) TO THIS CARD AND WEAKEN(2) RIVAL CARD."
+},
+"036": {
+"id": "036",
+"name": "KURENAI YUHI",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "FEINT ON ENCOUNTER, PUSH(2) AND PIN(2S) RIVAL CARD.",
+"level2": "FEINT ON ENCOUNTER, PUSH(2) AND PIN(4S) RIVAL CARD."
+},
+"037": {
+"id": "037",
+"name": "PAKKUN",
+"rarity": "COMMON",
+"cost": 3,
+"power": 1,
+"level1": "SHARP NOSE IGNORE ALL RIVAL SKILLS AND ENCOUNTERS UNTIL REACHING MID RANGE. ALLIES GAIN RUSH(+2S) WHEN DEPLOYED ON THIS LANE WHILE THIS CARD IS ACTIVE.",
+"level2": "SHARP NOSE IGNORE ALL RIVAL SKILLS AND ENCOUNTERS UNTIL REACHING MID RANGE. ALLIES GAIN RUSH(3S) WHEN DEPLOYED ON THIS LANE WHILE THIS CARD IS ACTIVE."
+},
+"038": {
+"id": "038",
+"name": "AYAME",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "FRESH MEAL ON DEPLOY, CHAKRA(+2) TO 2 LANE ALLIES IN MID RANGE.",
+"level2": "FRESH MEAL ON DEPLOY, CHAKRA(+2) TO 3 LANE ALLIES IN MID RANGE."
+},
+"039": {
+"id": "039",
+"name": "MOEGI KAZAMATSURI",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "RUSH RUSH(2S)",
+"level2": "RUSH RUSH(3S)"
+},
+"040": {
+"id": "040",
+"name": "UDON ISE",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "RUSH RUSH(2S)",
+"level2": "RUSH RUSH(3S)"
+},
+"041": {
+"id": "041",
+"name": "NINJA TROOPS",
+"rarity": "COMMON",
+"cost": 4,
+"power": 4,
+"level1": "VANGUARD RUSH(2S). ON WITHDRAW, CHAKRA(+3) TO MOST RECENTLY DEPLOYED ALLY.",
+"level2": "VANGUARD RUSH(3S). ON WITHDRAW, CHAKRA(+3) TO MOST RECENTLY DEPLOYED ALLY."
+},
+"042": {
+"id": "042",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 2,
+"power": 1,
+"level1": "DEFENSELESS ON WITHDRAW, WEAKEN(3) RIVAL CARD.",
+"level2": "DEFENSELESS ON WITHDRAW, WEAKEN(4) RIVAL CARD."
+},
+"043": {
+"id": "043",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 3,
+"power": 1,
+"level1": "PRANKSTER ON DEPLOY, SLOW(10S) ALL CARDS ON LANE.",
+"level2": "PRANKSTER ON DEPLOY, SLOW(12S) ALL CARDS ON LANE."
+},
+"044": {
+"id": "044",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 1,
+"power": 1,
+"level1": "SEXY JUTSU ON DEPLOY, PIN(4S) ONE RIVAL CARD IN MID RANGE.",
+"level2": "SEXY JUTSU ON DEPLOY, PIN(5S) ONE LANE RIVAL IN MID RANGE."
+},
+"045": {
+"id": "045",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 2,
+"power": 1,
+"level1": "LONELINESS ON DEPLOY, CHAKRA(+3) AND SLOW(6S) IF NO LANE ALLIES PRESENT.",
+"level2": "LONELINESS ON DEPLOY, CHAKRA(+4) AND SLOW(6S) IF NO LANE ALLIES PRESENT."
+},
+"046": {
+"id": "046",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 3,
+"power": 2,
+"level1": "GRADUATION GAIN CHAKRA(+1) FOR EACH LANE ALLY IN SHORT RANGE.",
+"level2": "GRADUATION GAIN CHAKRA(+2) FOR EACH LANE ALLY IN SHORT RANGE."
+},
+"047": {
+"id": "047",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 1,
+"power": 2,
+"level1": "TRANSFORMATION JUTSU ON DEPLOY, DISGUISE AS ANOTHER CARD UP TO 3 COST FROM YOUR DECK. REVERTS TO ORIGINAL ON ENCOUNTER OR WHEN WEAKENED.",
+"level2": "TRANSFORMATION JUTSU ON DEPLOY, DISGUISE AS ANOTHER CARD UP TO 4 COST FROM YOUR DECK. REVERTS TO ORIGINAL ON ENCOUNTER OR WHEN WEAKENED."
+},
+"048": {
+"id": "048",
+"name": "NARUTO UZUMAKI",
+"rarity": "RARE",
+"cost": 2,
+"power": 2,
+"level1": "CUNNING ON ENCOUNTER, PIN(4S) RIVAL CARD AND TELEPORT BEHIND IT.",
+"level2": "CUNNING ON ENCOUNTER, PIN(6S) RIVAL CARD AND TELEPORT BEHIND IT."
+},
+"049": {
+"id": "049",
+"name": "SASUKE UCHIHA",
+"rarity": "RARE",
+"cost": 2,
+"power": 2,
+"level1": "PROJECTION NEXT ALLY DEPLOYS 2 CELLS FORWARD.",
+"level2": "PROJECTION NEXT ALLY DEPLOYS 3 CELLS FORWARD."
+},
+"050": {
+"id": "050",
+"name": "HIRUZEN SARUTOBI",
+"rarity": "RARE",
+"cost": 5,
+"power": 6,
+"level1": "TELESCOPE TECHNIQUE WHEN ALLIES GAIN RUSH, APPLY CHAKRA(+1) AND RUSH(+1S) TO THEM.",
+"level2": "TELESCOPE TECHNIQUE WHEN ALLIES GAIN RUSH, APPLY CHAKRA(+1) AND RUSH(+2S) TO THEM."
+},
+"051": {
+"id": "051",
+"name": "IRUKA UMINO",
+"rarity": "RARE",
+"cost": 1,
+"power": 1,
+"level1": "GOOFBALL RANDOMLY LANE SWITCH EVERY 6 SECONDS.",
+"level2": "GOOFBALL RANDOMLY LANE SWITCH EVERY 4 SECONDS."
+},
+"052": {
+"id": "052",
+"name": "IRUKA UMINO",
+"rarity": "RARE",
+"cost": 3,
+"power": 3,
+"level1": "SACRIFICE DEPLOY TO MID RANGE AND CHAKRA(+1) TO CLOSEST ALLY.",
+"level2": "SACRIFICE DEPLOY TO MID RANGE AND CHAKRA(+2) TO THE CLOSEST ALLY."
+},
+"053": {
+"id": "053",
+"name": "ZABUZA MOMOCHI",
+"rarity": "RARE",
+"cost": 4,
+"power": 5,
+"level1": "HIDDEN IN THE MIST ON DEPLOY, PIN(6S) AND WEAKEN(1) ALL RIVALS IN SHORT RANGE.",
+"level2": "HIDDEN IN THE MIST ON DEPLOY, PIN(6S) AND WEAKEN(2) ALL RIVALS IN SHORT RANGE."
+},
+"054": {
+"id": "054",
+"name": "ZABUZA MOMOCHI",
+"rarity": "RARE",
+"cost": 4,
+"power": 5,
+"level1": "BROKEN GAIN CHAKRA(+3) THE FIRST TIME A LANE ALLY WITHDRAWS.",
+"level2": "BROKEN GAIN CHAKRA(+4) THE FIRST TIME A LANE ALLY WITHDRAWS."
+},
+"055": {
+"id": "055",
+"name": "KONOHAMARU SARUTOBI",
+"rarity": "RARE",
+"cost": 1,
+"power": 1,
+"level1": "IMPERFECT SEXY JUTSU ON DEPLOY, 50% CHANCE TO PIN(6S) ONE RIVAL CARD IN MID RANGE.",
+"level2": "IMPERFECT SEXY JUTSU ON DEPLOY, 50% CHANCE TO PIN(8S) ONE LANE RIVAL IN MID RANGE."
+},
+"056": {
+"id": "056",
+"name": "KONOHAMARU SARUTOBI",
+"rarity": "RARE",
+"cost": 4,
+"power": 1,
+"level1": "LEGACY ON DEPLOY, 50% CHANCE TO SUMMON A RANDOM HIRUZEN FROM YOUR DECK, OTHERWISE CHAKRA(+2).",
+"level2": "LEGACY ON DEPLOY, 50% CHANCE TO SUMMON A RANDOM HIRUZEN FROM YOUR DECK, OTHERWISE CHAKRA(+3)."
+},
+"057": {
+"id": "057",
+"name": "KONOHAMARU SARUTOBI",
+"rarity": "RARE",
+"cost": 1,
+"power": 1,
+"level1": "SEXY JUTSU ON DEPLOY, PIN(4S) ONE RIVAL CARD IN MID RANGE.",
+"level2": "SEXY JUTSU ON DEPLOY, PIN(5S) ONE LANE RIVAL IN MID RANGE."
+},
+"058": {
+"id": "058",
+"name": "EBISU",
+"rarity": "RARE",
+"cost": 5,
+"power": 3,
+"level1": "DIFFICULT LESSONS ALL ALLIES DEPLOYED GAIN CHAKRA(+2) BUT WEAKEN(1) THIS CARD EACH TIME.",
+"level2": "DIFFICULT LESSONS NEXT ALLIES DEPLOYED GAIN CHAKRA(+3) BUT WEAKEN(1) THIS CARD EACH TIME."
+},
+"059": {
+"id": "059",
+"name": "INARI",
+"rarity": "RARE",
+"cost": 2,
+"power": 1,
+"level1": "TAKE ACTION ON DEPLOY, WEAKEN(1) AND SLOW(6S) THE CLOSEST RIVAL CARD IN LONG RANGE.",
+"level2": "TAKE ACTION ON DEPLOY, WEAKEN(1) AND SLOW(8S) THE CLOSEST LANE RIVAL IN LONG RANGE."
+},
+"060": {
+"id": "060",
+"name": "GATO",
+"rarity": "RARE",
+"cost": 3,
+"power": 1,
+"level1": "CRIME LORD ON DEPLOY, FOCUS(6S). IF FOCUS SUCCEEDS, SUMMON A RANDOM CARD FROM UP TO 3 COST FROM YOUR DECK.",
+"level2": "CRIME LORD ON DEPLOY, FOCUS(4S). IF FOCUS SUCCEEDS, SUMMON A RANDOM CARD FROM UP TO 3 COST FROM YOUR DECK."
+},
+"061": {
+"id": "061",
+"name": "NINJA HOUNDS",
+"rarity": "RARE",
+"cost": 2,
+"power": 2,
+"level1": "FANGED PURSUIT ON DEPLOY, PIN(6S) SELF AND HIGHEST CHAKRA LANE RIVAL.",
+"level2": "FANGED PURSUIT ON DEPLOY, PIN(8S) SELF AND HIGHEST CHAKRA LANE RIVAL."
+},
+"062": {
+"id": "062",
+"name": "TEUCHI",
+"rarity": "RARE",
+"cost": 3,
+"power": 1,
+"level1": "WAY OF RAMEN CHAKRA(+1) TO LANE ALLIES AFTER 8 SECONDS.",
+"level2": "WAY OF RAMEN CHAKRA(+2) TO LANE ALLIES AFTER 8 SECONDS."
+},
+"063": {
+"id": "063",
+"name": "NARUTO UZUMAKI",
+"rarity": "EPIC",
+"cost": 3,
+"power": 1,
+"level1": "DETERMINATION WHEN ALLIED IRUKA IS ABOUT TO WITHDRAW, PULL IT BACK TO THE START OF THE LANE AND CREATE 3 CLONES WITH CHAKRA(1) DISTRIBUTED ON ALL LANES.",
+"level2": "DETERMINATION WHEN ALLIED IRUKA IS ABOUT TO WITHDRAW, PULL IT BACK TO THE START OF THE LANE AND SUMMON 5 CLONES WITH CHAKRA(1) DISTRIBUTED ON ALL LANES."
+},
+"064": {
+"id": "064",
+"name": "NARUTO UZUMAKI",
+"rarity": "EPIC",
+"cost": 3,
+"power": 2,
+"level1": "SHOWMANSHIP CHAKRA(+5) AFTER 10S.",
+"level2": "SHOWMANSHIP CHAKRA(+6) AFTER 10S."
+},
+"065": {
+"id": "065",
+"name": "NARUTO UZUMAKI",
+"rarity": "EPIC",
+"cost": 2,
+"power": 1,
+"level1": "MASS SEXY JUTSU ON ENCOUNTER, PIN(6S) RIVAL CARD, TELEPORT BEHIND IT AND GAIN RUSH(2S).",
+"level2": "MASS SEXY JUTSU ON ENCOUNTER, PIN(8S) RIVAL CARD, TELEPORT BEHIND IT AND GAIN RUSH(4S)."
+},
+"066": {
+"id": "066",
+"name": "SASUKE UCHIHA",
+"rarity": "EPIC",
+"cost": 3,
+"power": 3,
+"level1": "PREDICTION CANNOT BE WEAKENED DURING ENCOUNTERS WITH RIVAL CARDS OF 2 OR LESS CHAKRA.",
+"level2": "PREDICTION CANNOT BE WEAKENED DURING ENCOUNTERS WITH RIVAL CARDS OF 3 OR LESS CHAKRA."
+},
+"067": {
+"id": "067",
+"name": "SAKURA HARUNO",
+"rarity": "EPIC",
+"cost": 3,
+"power": 2,
+"level1": "INNER FIRE CHAKRA(+3) THE FIRST TIME A LANE RIVAL IS DEPLOYED, THEN CHAKRA(+1) EVERY TIME A LANE RIVAL IS DEPLOYED.",
+"level2": "INNER FIRE CHAKRA(+3) THE FIRST TIME A LANE RIVAL IS DEPLOYED, THEN CHAKRA(+2) EVERY TIME A LANE RIVAL IS DEPLOYED."
+},
+"068": {
+"id": "068",
+"name": "KAKASHI HATAKE",
+"rarity": "EPIC",
+"cost": 3,
+"power": 5,
+"level1": "THOUSAND YEARS OF DEATH JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY, WEAKEN(1) AND PUSH(3) IT.",
+"level2": "THOUSAND YEARS OF DEATH JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY, WEAKEN(1) AND PUSH(4) IT."
+},
+"069": {
+"id": "069",
+"name": "KAKASHI HATAKE",
+"rarity": "EPIC",
+"cost": 5,
+"power": 5,
+"level1": "GIANT VORTEX JUTSU ON DEPLOY, PUSH(3) AND WEAKEN(2) ALL LANE RIVALS.",
+"level2": "GIANT VORTEX JUTSU ON DEPLOY, PUSH(3) AND WEAKEN(3) ALL LANE RIVALS."
+},
+"070": {
+"id": "070",
+"name": "KAKASHI HATAKE",
+"rarity": "EPIC",
+"cost": 4,
+"power": 5,
+"level1": "RAIKIRI JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY AND WEAKEN(3) IT. IGNORES GUARD.",
+"level2": "RAIKIRI JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY AND WEAKEN(4) IT. IGNORES GUARD."
+},
+"071": {
+"id": "071",
+"name": "KAKASHI HATAKE",
+"rarity": "EPIC",
+"cost": 3,
+"power": 5,
+"level1": "CLONE BLUFF SPEND REMAINING ENERGY TO SUMMON UP TO 5 CLONES WITH CHAKRA(2) DISGUISED AS THE ORIGINAL.",
+"level2": "CLONE BLUFF SPEND REMAINING ENERGY TO SUMMON UP TO 6 CLONES WITH CHAKRA(2) DISGUISED AS THE ORIGINAL."
+},
+"072": {
+"id": "072",
+"name": "IRUKA UMINO",
+"rarity": "EPIC",
+"cost": 4,
+"power": 3,
+"level1": "SCOLDING WHILE THIS CARD IS ACTIVE, CHAKRA(+1) AND PIN(2S) TO ALLIES WITH 2 CHAKRA WHEN DEPLOYING THEM.",
+"level2": "SCOLDING WHILE THIS CARD IS ACTIVE, CHAKRA(+2) AND PIN(2S) TO ALLIES WITH 2 CHAKRA WHEN DEPLOYING THEM."
+},
+"073": {
+"id": "073",
+"name": "HIRUZEN SARUTOBI",
+"rarity": "EPIC",
+"cost": 5,
+"power": 6,
+"level1": "WILL OF FIRE CHAKRA\[+1\] TO ALL ALLIES AFTER 10 SECONDS.",
+"level2": "WILL OF FIRE CHAKRA(+2) TO ALL ALLIES AFTER 10 SECONDS."
+},
+"074": {
+"id": "074",
+"name": "ZABUZA MOMOCHI",
+"rarity": "EPIC",
+"cost": 3,
+"power": 5,
+"level1": "WATER DRAGON JUTSU ON DEPLOY, WEAKEN(1) AND PUSH(1) ALL LANE RIVALS IN SHORT AND MID RANGE.",
+"level2": "WATER DRAGON JUTSU ON DEPLOY, WEAKEN(1) AND PUSH(3) ALL LANE RIVALS IN SHORT AND MID RANGE."
+},
+"075": {
+"id": "075",
+"name": "HAKU",
+"rarity": "EPIC",
+"cost": 3,
+"power": 3,
+"level1": "CRYSTAL ICE MIRRORS ON ENCOUNTER, PIN(2S) AND WEAKEN(1) LANE RIVALS NEARBY, THEN LANE SWITCH. WHEN GAINING CHAKRA, RE-ENABLE THIS SKILL.",
+"level2": "CRYSTAL ICE MIRRORS ON ENCOUNTER, PIN(4S) AND WEAKEN(1) LANE RIVALS NEARBY, THEN LANE SWITCH. WHEN GAINING CHAKRA, RE-ENABLE THIS SKILL."
+},
+"076": {
+"id": "076",
+"name": "GAMABUNTA",
+"rarity": "EPIC",
+"cost": 5,
+"power": 6,
+"level1": "TOAD TEAMWORK CHAKRA(+1) WHENEVER ALLIES PUSH RIVALS.",
+"level2": "TOAD TEAMWORK CHAKRA(+2) WHENEVER ALLIES PUSH RIVALS."
+},
+"077": {
+"id": "077",
+"name": "NARUTO UZUMAKI",
+"rarity": "LEGENDARY",
+"cost": 5,
+"power": 2,
+"level1": "MULTI SHADOW CLONE CREATE 2 CLONES WITH CHAKRA(2) AND RUSH(4S) ON THE OTHER LANES, THEN 2 NEW CLONES AFTER 10S. CHAKRA(+1) WHENEVER THESE CLONES WITHDRAW.",
+"level2": "MULTI SHADOW CLONE SUMMON 2 CLONES WITH CHAKRA(2) AND RUSH(6S) ON THE OTHER LANES, THEN 2 NEW CLONES AFTER 10S. CHAKRA(+1) WHENEVER THESE CLONES WITHDRAW."
+},
+"078": {
+"id": "078",
+"name": "NARUTO UZUMAKI",
+"rarity": "LEGENDARY",
+"cost": 4,
+"power": 3,
+"level1": "KYUBI RAGE WHENEVER ALLIES WITHDRAW, CHAKRA(+1) AND RUSH(+1S).",
+"level2": "KYUBI RAGE WHENEVER ALLIES WITHDRAW, CHAKRA(+2) AND RUSH(+1S)."
+},
+"079": {
+"id": "079",
+"name": "NARUTO UZUMAKI",
+"rarity": "LEGENDARY",
+"cost": 4,
+"power": 3,
+"level1": "FURIOUS PUNCH DEPLOY TO MID RANGE, WEAKEN(2) AND PUSH(1) ALL LANE RIVALS.",
+"level2": "FURIOUS PUNCH DEPLOY TO MID RANGE, WEAKEN(2) AND PUSH(3) ALL LANE RIVALS."
+},
+"080": {
+"id": "080",
+"name": "NARUTO UZUMAKI",
+"rarity": "LEGENDARY",
+"cost": 4,
+"power": 2,
+"level1": "RESOLVE CHAKRA(+2) EVERY 8S.",
+"level2": "RESOLVE CHAKRA(+2) EVERY 6S."
+},
+"081": {
+"id": "081",
+"name": "SASUKE UCHIHA",
+"rarity": "LEGENDARY",
+"cost": 3,
+"power": 3,
+"level1": "FIREBALL JUTSU ON DEPLOY, WEAKEN(2) ALL RIVALS IN MID RANGE.",
+"level2": "FIREBALL JUTSU ON DEPLOY, WEAKEN(3) ALL RIVALS IN MID RANGE."
+},
+"082": {
+"id": "082",
+"name": "KAKASHI HATAKE",
+"rarity": "LEGENDARY",
+"cost": 7,
+"power": 5,
+"level1": "BATTLE PLAN WHILE ACTIVE, CHAKRA(+1) WHENEVER ALLIES WEAKEN RIVALS. ALLIES GAIN CHAKRA(+1) FOR EACH CARD AFFECTED THE FIRST TIME THEY WEAKEN RIVALS.",
+"level2": "BATTLE PLAN WHILE ACTIVE, CHAKRA(+2) WHENEVER ALLIES WEAKEN RIVALS. ALLIES GAIN CHAKRA(+1) FOR EACH CARD AFFECTED THE FIRST TIME THEY WEAKEN RIVALS."
+},
+"083": {
+"id": "083",
+"name": "ZABUZA MOMOCHI",
+"rarity": "LEGENDARY",
+"cost": 5,
+"power": 3,
+"level1": "DEMON ON DEPLOY, WEAKEN(1) ALL CARDS. IF THEY HAVE 3 OR LESS CHAKRA, WEAKEN(3) INSTEAD.",
+"level2": "DEMON ON DEPLOY, WEAKEN(1) ALL CARDS. IF THEY HAVE 4 OR LESS CHAKRA, WEAKEN(4) INSTEAD."
+},
+"084": {
+"id": "084",
+"name": "ZABUZA MOMOCHI",
+"rarity": "LEGENDARY",
+"cost": 7,
+"power": 5,
+"level1": "RECKLESS CHARGE ON EACH ENCOUNTER, WEAKEN(2) RIVAL CARDS WITH 4 OR LESS CHAKRA AND PUSH THEM ON ANOTHER LANE. PERMANENT RUSH.",
+"level2": "RECKLESS CHARGE ON EACH ENCOUNTER, WEAKEN(3) RIVAL CARDS WITH 4 OR LESS CHAKRA AND LANE SWITCH THEM. PERMANENT RUSH."
+},
+"085": {
+"id": "085",
+"name": "KYUBI",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 7,
+"level1": "NATURAL DISASTER DEPLOY TO MID RANGE, WEAKEN(2) ALL CARDS AND PUSH(1) ALL RIVAL CARDS. WHILE ACTIVE, WEAKEN(1) NEWLY DEPLOYED CARDS. PERMANENTLY SLOW.",
+"level2": "NATURAL DISASTER DEPLOY TO MID RANGE, WEAKEN(3) ALL CARDS AND PUSH(1) ALL RIVAL CARDS. WHILE ACTIVE, WEAKEN(1) NEWLY DEPLOYED CARDS. PERMANENTLY SLOW."
+}
+},
+"season_2": {
+"100": {
+"id": "100",
+"name": "Kyubi",
+"rarity": "LEGENDARY",
+"cost": 5,
+"power": 8,
+"level1": "LINKED FATE CHAKRA(+7) TO NEXT ALLY DEPLOYED. CARDS ARE LINKED, WHEN ONE WITHDRAWS SO DOES THE OTHER.",
+"level2": "LINKED FATE CHAKRA(+8) TO NEXT ALLY DEPLOYED. CARDS ARE LINKED, WHEN ONE WITHDRAWS SO DOES THE OTHER."
+},
+"001": {
+"id": "001",
+"name": "Naruto Uzumaki",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "CHAKRA TRAINING ON DEPLOY, 50% CHANCE TO GAIN CHAKRA(+3).",
+"level2": "CHAKRA TRAINING ON DEPLOY, 50% CHANCE TO GAIN CHAKRA(+4)."
+},
+"002": {
+"id": "002",
+"name": "Naruto Uzumaki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "CHALLENGER ON DEPLOY, PIN(1S) AND CHAKRA(+2) FOR EACH LANE RIVAL WITH HIGHER CHAKRA.",
+"level2": "CHALLENGER ON DEPLOY, PIN(2S) AND CHAKRA(+2) PER LANE RIVAL WITH HIGHER CHAKRA."
+},
+"003": {
+"id": "003",
+"name": "Sasuke Uchiha",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "LION'S BARRAGE JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY AND WEAKEN(2) IT.",
+"level2": "LION'S BARRAGE JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY AND WEAKEN(3) IT."
+},
+"004": {
+"id": "004",
+"name": "Sakura Haruno",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "RUSH RUSH(2S)",
+"level2": "RUSH RUSH(3S)"
+},
+"005": {
+"id": "005",
+"name": "Rock Lee",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "PROTECTOR RUSH(+3S) WHENEVER A RIVAL IS DEPLOYED ON THIS LANE.",
+"level2": "PROTECTOR RUSH(+4S) WHENEVER A RIVAL IS DEPLOYED ON THIS LANE."
+},
+"006": {
+"id": "006",
+"name": "Rock Lee",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "LOVE BOMB CHAKRA(+1) TO NEXT ALLY DEPLOYED. WHILE THIS CARD IS ACTIVE, LANE SWITCH THAT ALLY EVERY 8 SECONDS.",
+"level2": "LOVE BOMB CHAKRA(+2) TO NEXT ALLY DEPLOYED. WHILE THIS CARD IS ACTIVE, LANE SWITCH THAT ALLY EVERY 8 SECONDS."
+},
+"007": {
+"id": "007",
+"name": "Neji Hyuga",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "GENTLE FIST ON ENCOUNTER, WEAKEN(2) AND PUSH(1).",
+"level2": "GENTLE FIST ON ENCOUNTER, WEAKEN(2) AND PUSH(2)."
+},
+"008": {
+"id": "008",
+"name": "Tenten",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "RISING TWIN DRAGONS ON DEPLOY, WEAKEN(1) AND SLOW(6S) ALL RIVALS IN LONG RANGE.",
+"level2": "RISING TWIN DRAGONS ON DEPLOY, WEAKEN(1) AND SLOW(8S) ALL RIVALS IN LONG RANGE."
+},
+"009": {
+"id": "009",
+"name": "Gai Maito",
+"rarity": "COMMON",
+"cost": 4,
+"power": 5,
+"level1": "POWER OF YOUTH WHILE THIS CARD IS ACTIVE, CHAKRA(+2) TO ROCK LEE CARDS WHEN DEPLOYING THEM.",
+"level2": "POWER OF YOUTH WHILE THIS CARD IS ACTIVE, CHAKRA(+3) TO ROCK LEE CARDS WHEN DEPLOYING THEM."
+},
+"010": {
+"id": "010",
+"name": "Gaara",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "DANGEROUS DEPLOY TO MID RANGE, CHAKRA(+3) IF THERE IS A RIVAL CARD IN MID RANGE.",
+"level2": "DANGEROUS DEPLOY TO MID RANGE, CHAKRA(+4) IF THERE IS A RIVAL CARD IN MID RANGE."
+},
+"011": {
+"id": "011",
+"name": "Kankuro",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "BRAZEN CHAKRA(+3) TO NEXT ALLIED GAARA DEPLOYED.",
+"level2": "BRAZEN CHAKRA(+4) TO NEXT ALLIED GAARA DEPLOYED."
+},
+"012": {
+"id": "012",
+"name": "Temari",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "PRUDENT GUARD(1) AND SLOW(6S) TO NEXT ALLIED GAARA DEPLOYED.",
+"level2": "PRUDENT GUARD(1) AND SLOW(10S) TO NEXT ALLIED GAARA DEPLOYED."
+},
+"013": {
+"id": "013",
+"name": "Baki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "RESILIENT RUSH(3S) AND GUARD(1).",
+"level2": "RESILIENT RUSH(4S) AND GUARD(1)."
+},
+"014": {
+"id": "014",
+"name": "Ino Yamanaka",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "RUSH RUSH(2S)",
+"level2": "RUSH RUSH(3S)"
+},
+"015": {
+"id": "015",
+"name": "Kabuto Yakushi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "EXPLANATION ON DEPLOY, ALL ALLIES IN SHORT RANGE RANDOMLY GAIN CHAKRA(+1) OR PIN(4S).",
+"level2": "EXPLANATION ON DEPLOY, ALL ALLIES IN SHORT RANGE RANDOMLY GAIN CHAKRA(+2) OR PIN(4S)."
+},
+"016": {
+"id": "016",
+"name": "Student Trio",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "TEAM KONOHAMARU ON WITHDRAW, REDEPLOY AS KONOHAMARU, MOEGI AND UDON WITH RUSH(3S) AND CHAKRA(1) ON EACH LANE.",
+"level2": "TEAM KONOHAMARU ON WITHDRAW, REDEPLOY AS KONOHAMARU, MOEGI AND UDON WITH RUSH(4S) AND CHAKRA(1) ON EACH LANE."
+},
+"017": {
+"id": "017",
+"name": "Ibiki Morino",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "STRICT RULES ON DEPLOY, PUSH(2) OR PIN(4S) ALL LANE RIVALS.",
+"level2": "STRICT RULES ON DEPLOY, PUSH(3) OR PIN(5S) ALL LANE RIVALS."
+},
+"018": {
+"id": "018",
+"name": "Choza Akimichi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 5,
+"level1": "OLD FRIENDS WHILE THIS CARD IS ACTIVE, CHAKRA(+1) TO ALLIED SHIKAKU AND INOICHI CARDS.",
+"level2": "OLD FRIENDS WHILE THIS CARD IS ACTIVE, CHAKRA(+2) TO ALLIED SHIKAKU AND INOICHI CARDS."
+},
+"019": {
+"id": "019",
+"name": "Inoichi Yamanaka",
+"rarity": "COMMON",
+"cost": 3,
+"power": 5,
+"level1": "OLD FRIENDS WHILE THIS CARD IS ACTIVE, CHAKRA(+1) TO ALLIED CHOZA AND SHIKAKU CARDS.",
+"level2": "OLD FRIENDS WHILE THIS CARD IS ACTIVE, CHAKRA(+2) TO ALLIED CHOZA AND SHIKAKU CARDS."
+},
+"020": {
+"id": "020",
+"name": "Shikaku Nara",
+"rarity": "COMMON",
+"cost": 3,
+"power": 5,
+"level1": "OLD FRIENDS WHILE THIS CARD IS ACTIVE, CHAKRA(+1) TO ALLIED INOICHI AND CHOZA CARDS.",
+"level2": "OLD FRIENDS WHILE THIS CARD IS ACTIVE, CHAKRA(+2) TO ALLIED INOICHI AND CHOZA CARDS."
+},
+"021": {
+"id": "021",
+"name": "Hanabi Hyuga",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "PRODIGY RUSH(2S). ON ENCOUNTER, PUSH(2).",
+"level2": "PRODIGY RUSH(3S). ON ENCOUNTER, PUSH(3)."
+},
+"022": {
+"id": "022",
+"name": "Hiashi Hyuga",
+"rarity": "COMMON",
+"cost": 6,
+"power": 5,
+"level1": "HYUGA LEADER WHILE THIS CARD IS ACTIVE, ALLIED HYUGA CARDS GAIN CHAKRA(+2) AND PUSH(+1).",
+"level2": "HYUGA LEADER WHILE THIS CARD IS ACTIVE, ALLIED HYUGA CARDS GAIN CHAKRA(+3) AND PUSH(+1)."
+},
+"023": {
+"id": "023",
+"name": "Hizashi Hyuga",
+"rarity": "COMMON",
+"cost": 4,
+"power": 5,
+"level1": "BROTHER'S SACRIFICE RUSH(2S). WHEN ALLIED HIASHI IS ABOUT TO WITHDRAW, PULL IT BACK TO THE START OF THE LANE AND WITHDRAW IN ITS PLACE.",
+"level2": "BROTHER'S SACRIFICE RUSH(3S). WHEN ALLIED HIASHI IS ABOUT TO WITHDRAW, PULL IT BACK TO THE START OF THE LANE AND WITHDRAW IN ITS PLACE."
+},
+"024": {
+"id": "024",
+"name": "Zaku Abumi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "SLICING SOUND WAVE ON DEPLOY, PUSH(2) AND LANE SWITCH TWO RIVAL CARDS IN MID RANGE.",
+"level2": "SLICING SOUND WAVE ON DEPLOY, PUSH(2) AND LANE SWITCH THREE RIVAL CARDS IN MID RANGE."
+},
+"025": {
+"id": "025",
+"name": "Dosu Kinuta",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "RESONATING ECHO DRILL ON ENCOUNTER, WEAKEN(2) THE RIVAL CARD. IF RIVAL DOES NOT WITHDRAW, PIN(4S) IT THEN LANE SWITCH.",
+"level2": "RESONATING ECHO DRILL ON ENCOUNTER, WEAKEN(2) THE RIVAL CARD. IF RIVAL DOES NOT WITHDRAW, PIN(5S) IT THEN LANE SWITCH."
+},
+"026": {
+"id": "026",
+"name": "Kin Tsuchi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "BELL NEEDLES ON DEPLOY, WEAKEN(1) AND PIN(2S) CLOSEST RIVAL CARD.",
+"level2": "BELL NEEDLES ON DEPLOY, WEAKEN(2) AND PIN(2S) CLOSEST RIVAL CARD."
+},
+"027": {
+"id": "027",
+"name": "Izumo Kamizuki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "SABOTAGE ON DEPLOY, PIN(2S) TWO RANDOM LANE ALLIES.",
+"level2": "SABOTAGE ON DEPLOY, PIN(2S) THREE RANDOM LANE ALLIES."
+},
+"028": {
+"id": "028",
+"name": "Kotetsu Hagane",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "MISDIRECTION ON DEPLOY, SLOW(4S) AND LANE SWITCH TWO RANDOM ALLIES.",
+"level2": "MISDIRECTION ON DEPLOY, SLOW(4S) AND LANE SWITCH THREE RANDOM ALLIES."
+},
+"029": {
+"id": "029",
+"name": "Oboro",
+"rarity": "COMMON",
+"cost": 4,
+"power": 2,
+"level1": "FOG CLONE ON DEPLOY, CREATE 2 CLONES WITH CHAKRA(1). WHEN CLONES WITHDRAW, 50% CHANCE TO CREATE ANOTHER CLONE ON THE SAME LANE.",
+"level2": "FOG CLONE ON DEPLOY, SUMMON 2 CLONES WITH CHAKRA(2). WHEN CLONES WITHDRAW, 50% CHANCE TO CREATE ANOTHER CLONE ON THE SAME LANE."
+},
+"030": {
+"id": "030",
+"name": "Yoroi Akado",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "CHAKRA ABSORBTION ON ENCOUNTER, CHAKRA(+1) TO THIS CARD AND WEAKEN(1) RIVAL CARD. ALSO DISABLES ANY ACTIVE SKILL.",
+"level2": "CHAKRA ABSORBTION ON ENCOUNTER, CHAKRA(+2) TO THIS CARD AND WEAKEN(1) RIVAL CARD. ALSO DISABLES ANY ACTIVE SKILL."
+},
+"031": {
+"id": "031",
+"name": "Ningame",
+"rarity": "COMMON",
+"cost": 4,
+"power": 2,
+"level1": "TEMPERANCE WHENEVER LANE ALLIES GAIN RUSH, IT CONVERTS TO CHAKRA(+1) INSTEAD.",
+"level2": "TEMPERANCE WHENEVER LANE ALLIES GAIN RUSH, IT CONVERTS TO CHAKRA(+2) INSTEAD."
+},
+"032": {
+"id": "032",
+"name": "Gama",
+"rarity": "COMMON",
+"cost": 5,
+"power": 3,
+"level1": "TOAD SCROLL ON DEPLOY, SUMMON A RANDOM TOAD FROM YOUR DECK AND GIVE IT CHAKRA(+1).",
+"level2": "TOAD SCROLL ON DEPLOY, SUMMON A RANDOM TOAD FROM YOUR DECK AND GIVE IT CHAKRA(+2)."
+},
+"033": {
+"id": "033",
+"name": "Gamakichi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 1,
+"level1": "LOUDMOUTH ALLIED TOADS APPLY PUSH(1) ON ENCOUNTER WHILE THIS CARD IS ACTIVE. CHAKRA(+1) WHENEVER A TOAD PUSHES A RIVAL.",
+"level2": "LOUDMOUTH ALLIED TOADS APPLY PUSH(2) ON ENCOUNTER WHILE THIS CARD IS ACTIVE. CHAKRA(+1) WHENEVER A TOAD PUSHES A RIVAL."
+},
+"034": {
+"id": "034",
+"name": "Giant Snake",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "SLITHER DEPLOY TO MID RANGE AND LANE SWITCH ANY TWO OTHER CARDS PRESENT IN MID RANGE.",
+"level2": "SLITHER DEPLOY TO MID RANGE AND LANE SWITCH ANY 3 OTHER CARDS PRESENT IN MID RANGE."
+},
+"035": {
+"id": "035",
+"name": "Raido Namiashi",
+"rarity": "COMMON",
+"cost": 4,
+"power": 4,
+"level1": "BODYGUARD RUSH(2S). WHEN ALLIED HIRUZEN IS ABOUT TO WITHDRAW, PULL IT BACK TO THE START OF THE LANE AND WITHDRAW IN ITS PLACE.",
+"level2": "BODYGUARD RUSH(3S). WHEN ALLIED HIRUZEN IS ABOUT TO WITHDRAW, PULL IT BACK TO THE START OF THE LANE AND WITHDRAW IN ITS PLACE."
+},
+"036": {
+"id": "036",
+"name": "Homura Mitokado",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "REASSURANCE NEXT ALLY DEPLOYED GAINS GUARD(1) AND CHAKRA(+1).",
+"level2": "REASSURANCE NEXT ALLY DEPLOYED GAINS GUARD(1) AND CHAKRA(+2)."
+},
+"037": {
+"id": "037",
+"name": "Koharu Utatane",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "SECURITY AFTER 10 SECONDS, DEPLOY ANBU BLACK OPS.",
+"level2": "SECURITY AFTER 8 SECONDS, DEPLOY ANBU BLACK OPS."
+},
+"038": {
+"id": "038",
+"name": "Genma Shiranui",
+"rarity": "COMMON",
+"cost": 5,
+"power": 4,
+"level1": "PROCTOR ON DEPLOY, FOCUS(6S). IF FOCUS SUCCEEDS, SUMMON A RANDOM CARD UP TO 4 ENERGY COST FROM YOUR DECK. IF IT HAS 3 OR LESS CHAKRA, GRANT IT CHAKRA(+2).",
+"level2": "PROCTOR ON DEPLOY, FOCUS(4S). IF FOCUS SUCCEEDS, SUMMON A RANDOM CARD UP TO 4 COST FROM YOUR DECK. IF IT HAS 3 OR LESS CHAKRA, GRANT IT CHAKRA(+2)."
+},
+"039": {
+"id": "039",
+"name": "Genma Shiranui",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "ALERT ON DEPLOY, WEAKEN(3) ONE LANE RIVAL IN MID RANGE.",
+"level2": "ALERT ON DEPLOY, WEAKEN(3) TWO LANE RIVALS IN MID RANGE."
+},
+"040": {
+"id": "040",
+"name": "Yashamaru",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "RELUCTANT DUTY ON WITHDRAW, WEAKEN(3) ALL NEARBY CARDS.",
+"level2": "RELUCTANT DUTY ON WITHDRAW, WEAKEN(4) ALL NEARBY CARDS."
+},
+"041": {
+"id": "041",
+"name": "Karura",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "MOTHER'S LOVE ON DEPLOY, CHAKRA(+2) AND SLOW(3S) TO ALLIED GAARA CARDS.",
+"level2": "MOTHER'S LOVE ON DEPLOY, CHAKRA(+2) AND SLOW(5S) TO ALLIED GAARA CARDS."
+},
+"042": {
+"id": "042",
+"name": "Yugao Uzuki",
+"rarity": "COMMON",
+"cost": 4,
+"power": 4,
+"level1": "VENGEFUL OATH RUSH(3S). GUARD(1). ON ENCOUNTER, WEAKEN(2).",
+"level2": "VENGEFUL OATH RUSH(4S). GUARD(1). ON ENCOUNTER, WEAKEN(2)."
+},
+"043": {
+"id": "043",
+"name": "Hana Inuzuka",
+"rarity": "COMMON",
+"cost": 2,
+"power": 3,
+"level1": "RUSH RUSH(4S)",
+"level2": "RUSH RUSH(5S)"
+},
+"044": {
+"id": "044",
+"name": "Tsume Inuzuka",
+"rarity": "COMMON",
+"cost": 4,
+"power": 4,
+"level1": "LEAD THE CHARGE RUSH(4S). NEXT ALLY DEPLOYED GAINS RUSH(+3S) AND CHAKRA(+1).",
+"level2": "LEAD THE CHARGE RUSH(4S). NEXT ALLY DEPLOYED GAINS RUSH(+3S) AND CHAKRA(+2)."
+},
+"045": {
+"id": "045",
+"name": "Shibi Aburame",
+"rarity": "COMMON",
+"cost": 5,
+"power": 5,
+"level1": "TIMELY AID RUSH(5S). CHAKRA(+1) TO ALLIES WHEN REACHING THEM.",
+"level2": "TIMELY AID RUSH(6S). CHAKRA(+1) TO ALLIES WHEN REACHING THEM."
+},
+"046": {
+"id": "046",
+"name": "Jirobo",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "SOUTH NEXT OROCHIMARU DEPLOYED GAINS CHAKRA(+3).",
+"level2": "SOUTH NEXT OROCHIMARU DEPLOYED GAINS CHAKRA(+4)."
+},
+"047": {
+"id": "047",
+"name": "Kidomaru",
+"rarity": "COMMON",
+"cost": 2,
+"power": 3,
+"level1": "EAST NEXT OROCHIMARU DEPLOYED GAINS RUSH(+4S).",
+"level2": "EAST NEXT OROCHIMARU DEPLOYED GAINS RUSH(+5S)."
+},
+"048": {
+"id": "048",
+"name": "Sakon",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "WEST NEXT OROCHIMARU DEPLOYED WILL WEAKEN(3) CLOSEST RIVAL CARD.",
+"level2": "WEST NEXT OROCHIMARU DEPLOYED WILL WEAKEN(4) CLOSEST RIVAL CARD."
+},
+"049": {
+"id": "049",
+"name": "Tayuya",
+"rarity": "COMMON",
+"cost": 2,
+"power": 3,
+"level1": "NORTH NEXT OROCHIMARU DEPLOYED GAINS GUARD(1).",
+"level2": "NORTH NEXT OROCHIMARU DEPLOYED GAINS GUARD(2)."
+},
+"050": {
+"id": "050",
+"name": "Anbu",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "BLACK OPS ON DEPLOY, RANDOMLY GAINS CHAKRA(+2) OR RUSH(4S).",
+"level2": "BLACK OPS ON DEPLOY, RANDOMLY GAINS CHAKRA(+3) OR RUSH(5S)."
+},
+"051": {
+"id": "051",
+"name": "Naruto Uzumaki",
+"rarity": "RARE",
+"cost": 3,
+"power": 3,
+"level1": "BREAKER OF DESTINY GUARD(2). WHEN GUARD ACTIVATES, RUSH(+2S). WHEN RUSH ENDS, LANE SWITCH.",
+"level2": "BREAKER OF DESTINY GUARD(3). WHEN GUARD ACTIVATES, RUSH(2S). WHEN RUSH ENDS, LANE SWITCH."
+},
+"052": {
+"id": "052",
+"name": "Sakura Haruno",
+"rarity": "RARE",
+"cost": 2,
+"power": 2,
+"level1": "STEADFAST ON ENCOUNTER, WEAKEN(1) THE RIVAL CARD AND GUARD(1).",
+"level2": "STEADFAST ON ENCOUNTER, WEAKEN(1) THE RIVAL CARD AND GUARD(2)."
+},
+"053": {
+"id": "053",
+"name": "Rock Lee",
+"rarity": "RARE",
+"cost": 3,
+"power": 2,
+"level1": "LEAF WHIRLWIND ON ENCOUNTER, PUSH(1) AND WEAKEN(2) THE RIVAL CARD.",
+"level2": "LEAF WHIRLWIND ON ENCOUNTER, PUSH(2) AND WEAKEN(2) THE RIVAL CARD."
+},
+"054": {
+"id": "054",
+"name": "Neji Hyuga",
+"rarity": "RARE",
+"cost": 4,
+"power": 3,
+"level1": "BYAKUGAN ON DEPLOY, REDUCE THE CLOSEST RIVAL CARD'S CHAKRA TO HALF AND GAIN RUSH(2S).",
+"level2": "BYAKUGAN ON DEPLOY, REDUCE THE CLOSEST RIVAL CARD'S CHAKRA TO HALF AND GAIN RUSH(4S)."
+},
+"055": {
+"id": "055",
+"name": "Neji Hyuga",
+"rarity": "RARE",
+"cost": 2,
+"power": 3,
+"level1": "BURDEN OF DESTINY WHENEVER THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+1). CANNOT HAVE MORE THAN 10 TOTAL CHAKRA.",
+"level2": "BURDEN OF DESTINY WHENEVER THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+2). CANNOT HAVE MORE THAN 10 TOTAL CHAKRA."
+},
+"056": {
+"id": "056",
+"name": "Gai Maito",
+"rarity": "RARE",
+"cost": 4,
+"power": 5,
+"level1": "REPRIMAND DEPLOY TO MID RANGE, CHAKRA(+2) AND PIN(2S) CLOSEST LANE ALLY.",
+"level2": "REPRIMAND DEPLOY TO MID RANGE, CHAKRA(+2) AND PIN(6S) CLOSEST LANE ALLY."
+},
+"057": {
+"id": "057",
+"name": "Choji Akimichi",
+"rarity": "RARE",
+"cost": 3,
+"power": 2,
+"level1": "HUMAN BOULDER RUSH(3S). ON EACH ENCOUNTER, PUSH(1) AND WEAKEN(1) IF RUSH IS ACTIVE.",
+"level2": "HUMAN BOULDER RUSH(4S). ON EACH ENCOUNTER, PUSH(1) AND WEAKEN(1) IF RUSH IS ACTIVE."
+},
+"058": {
+"id": "058",
+"name": "Ino Yamanaka",
+"rarity": "RARE",
+"cost": 4,
+"power": 2,
+"level1": "MIND TRANSFER ON DEPLOY, FOCUS(8S) AND TAKE CONTROL OF THE LANE RIVAL IN MID RANGE WITH THE HIGHEST CHAKRA. AFTER FOCUS ENDS, RETURN CONTROL OF THE CARD TO YOUR RIVAL.",
+"level2": "MIND TRANSFER ON DEPLOY, FOCUS(12S) AND TAKE CONTROL OF THE LANE RIVAL IN MID RANGE WITH THE HIGHEST CHAKRA. AFTER FOCUS ENDS, RETURN CONTROL OF THE CARD TO YOUR RIVAL."
+},
+"059": {
+"id": "059",
+"name": "Hinata Hyuga",
+"rarity": "RARE",
+"cost": 2,
+"power": 2,
+"level1": "DEFLECT ON ENCOUNTER, PUSH(1) AND LANE SWITCH RIVAL CARD.",
+"level2": "DEFLECT ON ENCOUNTER, PUSH(2) AND LANE SWITCH RIVAL CARD."
+},
+"060": {
+"id": "060",
+"name": "Gaara",
+"rarity": "RARE",
+"cost": 3,
+"power": 3,
+"level1": "SAND SHIELD GUARD(2). WHEN GUARD ACTIVATES, CHAKRA(+1).",
+"level2": "SAND SHIELD GUARD(3). WHEN GUARD ACTIVATES, CHAKRA(+1)."
+},
+"061": {
+"id": "061",
+"name": "Temari",
+"rarity": "RARE",
+"cost": 3,
+"power": 2,
+"level1": "GIANT FOLDING FAN GUARD(2). ON DEPLOY AND WHEN GUARD ACTIVATES, PUSH(2) ALL LANE RIVALS.",
+"level2": "GIANT FOLDING FAN GUARD(3). ON DEPLOY AND WHEN GUARD ACTIVATES, PUSH(3) ALL LANE RIVALS."
+},
+"062": {
+"id": "062",
+"name": "Anko Mitarashi",
+"rarity": "RARE",
+"cost": 3,
+"power": 4,
+"level1": "STRIKING SHADOW SNAKES ON DEPLOY, WEAKEN(2) AND PIN(4S) ONE LANE RIVAL CARD IN MID RANGE.",
+"level2": "STRIKING SHADOW SNAKES ON DEPLOY, WEAKEN(2) AND PIN(4S) TWO LANE RIVAL CARDS IN MID RANGE."
+},
+"063": {
+"id": "063",
+"name": "Choza Akimichi",
+"rarity": "RARE",
+"cost": 5,
+"power": 5,
+"level1": "BODY EXPANSION ON ENCOUNTER, PUSH(3) AND WEAKEN(2).",
+"level2": "BODY EXPANSION ON ENCOUNTER, PUSH(3) AND WEAKEN(3)."
+},
+"064": {
+"id": "064",
+"name": "Inoichi Yamanaka",
+"rarity": "RARE",
+"cost": 6,
+"power": 5,
+"level1": "MIND DESTRUCTION ON DEPLOY, FOCUS(10S) AND TAKE CONTROL OF THE CLOSEST LANE RIVAL IN MID RANGE, SLOW(10S) IT AND PERMANENTLY DISABLE ANY ACTIVE SKILL. AFTER FOCUS ENDS, RETURN CONTROL OF THE CARD TO YOUR RIVAL.",
+"level2": "MIND DESTRUCTION ON DEPLOY, FOCUS(14S) AND TAKE CONTROL OF THE CLOSEST LANE RIVAL IN MID RANGE, SLOW(10S) IT AND PERMANENTLY DISABLE ANY ACTIVE SKILL. AFTER FOCUS ENDS, RETURN CONTROL OF THE CARD TO YOUR RIVAL."
+},
+"065": {
+"id": "065",
+"name": "Shikaku Nara",
+"rarity": "RARE",
+"cost": 4,
+"power": 5,
+"level1": "SHADOW PARALYSIS ON DEPLOY, PIN(10S) SELF AND TWO LANE RIVALS IN LONG RANGE.",
+"level2": "SHADOW PARALYSIS ON DEPLOY, PIN(12S) SELF AND TWO LANE RIVALS IN LONG RANGE."
+},
+"066": {
+"id": "066",
+"name": "Jiraiya",
+"rarity": "RARE",
+"cost": 4,
+"power": 6,
+"level1": "PERVY SAGE RANDOMLY LANE SWITCH EVERY 10 SECONDS.",
+"level2": "PERVY SAGE RANDOMLY LANE SWITCH EVERY 8 SECONDS."
+},
+"067": {
+"id": "067",
+"name": "Orochimaru",
+"rarity": "RARE",
+"cost": 5,
+"power": 6,
+"level1": "MACHINATIONS ON DEPLOY AND ON WITHDRAW, WEAKEN(1) UP TO ANY 4 CARDS.",
+"level2": "MACHINATIONS ON DEPLOY AND ON WITHDRAW, WEAKEN(1) UP TO ANY 6 CARDS."
+},
+"068": {
+"id": "068",
+"name": "Hashirama Senju",
+"rarity": "RARE",
+"cost": 4,
+"power": 5,
+"level1": "EDO REGENERATION WHEN BELOW BASE CHAKRA, CHAKRA(+1) EVERY 4S UNTIL BACK TO BASE CHAKRA.",
+"level2": "EDO REGENERATION WHEN BELOW BASE CHAKRA, CHAKRA(+1) EVERY 3S UNTIL BACK TO BASE CHAKRA."
+},
+"069": {
+"id": "069",
+"name": "Tobirama Senju",
+"rarity": "RARE",
+"cost": 4,
+"power": 5,
+"level1": "EDO REGENERATION WHEN BELOW BASE CHAKRA, CHAKRA(+1) EVERY 4S UNTIL BACK TO BASE CHAKRA.",
+"level2": "EDO REGENERATION WHEN BELOW BASE CHAKRA, CHAKRA(+1) EVERY 3S UNTIL BACK TO BASE CHAKRA."
+},
+"070": {
+"id": "070",
+"name": "Hiruzen Sarutobi",
+"rarity": "RARE",
+"cost": 6,
+"power": 6,
+"level1": "THE THIRD ON ENCOUNTER, CHAKRA(+2). ON WITHDRAW, CHAKRA(+2) TO ALL ALLIES.",
+"level2": "THE THIRD ON ENCOUNTER, CHAKRA(+3). ON WITHDRAW, CHAKRA(+2) TO ALL ALLIES."
+},
+"071": {
+"id": "071",
+"name": "Hayate Gekko",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "CRESCENT MOON DANCE ON ENCOUNTER, WEAKEN(1) THREE TIMES. IF RIVAL DOES NOT WITHDRAW, ALSO PUSH(2).",
+"level2": "CRESCENT MOON DANCE ON ENCOUNTER, WEAKEN(1) THREE TIMES. IF RIVAL DOES NOT WITHDRAW, ALSO PUSH(3)."
+},
+"072": {
+"id": "072",
+"name": "Ibiki Morino",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "INTERROGATION ON DEPLOY, WEAKEN(1) AND SLOW(4S) ALL CARDS.",
+"level2": "INTERROGATION ON DEPLOY, WEAKEN(1) AND SLOW(6S) ALL CARDS."
+},
+"073": {
+"id": "073",
+"name": "Gamahiro",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "HEFT ON DEPLOY, GAIN CHAKRA(+2) FOR EACH ALLIED TOAD.",
+"level2": "HEFT ON DEPLOY, GAIN CHAKRA(+3) FOR EACH ALLIED TOAD."
+},
+"074": {
+"id": "074",
+"name": "Sasuke Uchiha",
+"rarity": "EPIC",
+"cost": 4,
+"power": 3,
+"level1": "CHIDORI ON ENCOUNTER, JUMP THROUGH NEARBY RIVALS, WEAKEN(2) EACH OF THEM. IGNORES GUARD.",
+"level2": "CHIDORI ON ENCOUNTER, JUMP THROUGH NEARBY RIVALS, WEAKEN(3) EACH OF THEM. IGNORES GUARD."
+},
+"075": {
+"id": "075",
+"name": "Rock Lee",
+"rarity": "EPIC",
+"cost": 4,
+"power": 2,
+"level1": "WEIGHTLESS RUSH(3S). ON EACH ENCOUNTER, IF RIVAL CARD HAS HIGHER CHAKRA, PUSH(1) AND WEAKEN(2), THEN LANE SWITCH.",
+"level2": "WEIGHTLESS RUSH(3S). ON EACH ENCOUNTER, IF RIVAL CARD HAS HIGHER CHAKRA, PUSH(2) AND WEAKEN(2), THEN LANE SWITCH."
+},
+"076": {
+"id": "076",
+"name": "Neji Hyuga",
+"rarity": "EPIC",
+"cost": 4,
+"power": 3,
+"level1": "ROTATION ON ENCOUNTER, PUSH(2) AND WEAKEN(3) ALL NEARBY RIVAL CARDS.",
+"level2": "ROTATION ON ENCOUNTER, PUSH(4) AND WEAKEN(3) ALL NEARBY RIVAL CARDS."
+},
+"077": {
+"id": "077",
+"name": "Kiba Inuzuka",
+"rarity": "EPIC",
+"cost": 3,
+"power": 2,
+"level1": "MAN BEAST CLONE NEXT AKAMARU DEPLOYED BECOMES A FULL COPY OF THIS CARD WITH RUSH(4S).",
+"level2": "MAN BEAST CLONE NEXT AKAMARU DEPLOYED BECOMES A FULL COPY OF THIS CARD WITH RUSH(5S)."
+},
+"078": {
+"id": "078",
+"name": "Shikamaru Nara",
+"rarity": "EPIC",
+"cost": 6,
+"power": 2,
+"level1": "SHOGI MASTER ON DEPLOY, PIN(10S) SELF AND GAIN CHAKRA(+3). WHILE THIS CARD IS ACTIVE, WHENEVER YOU PIN OTHER ALLIED CARDS OR THEY FOCUS, THEY GAIN CHAKRA(+3).",
+"level2": "SHOGI MASTER ON DEPLOY, PIN(12S) SELF AND GAIN CHAKRA(+4). WHILE THIS CARD IS ACTIVE, WHENEVER YOU PIN OTHER ALLIED CARDS OR THEY FOCUS, THEY GAIN CHAKRA(+3)."
+},
+"079": {
+"id": "079",
+"name": "Asuma Sarutobi",
+"rarity": "EPIC",
+"cost": 4,
+"power": 5,
+"level1": "CHAKRA BLADES ON EACH ENCOUNTER, WEAKEN(1). WHEN THIS CARD CAUSES A RIVAL TO WITHDRAW, RUSH(+1S).",
+"level2": "CHAKRA BLADES ON EACH ENCOUNTER, WEAKEN(2). WHEN THIS CARD CAUSES A RIVAL TO WITHDRAW, RUSH(+1S)."
+},
+"080": {
+"id": "080",
+"name": "Gaara",
+"rarity": "EPIC",
+"cost": 3,
+"power": 1,
+"level1": "UNSTABLE ON DEPLOY, WEAKEN(2) AND SLOW(6S) ALL CARDS ON LANE.",
+"level2": "UNSTABLE ON DEPLOY, WEAKEN(2) AND SLOW(8S) ALL CARDS ON LANE."
+},
+"081": {
+"id": "081",
+"name": "Gaara",
+"rarity": "EPIC",
+"cost": 5,
+"power": 3,
+"level1": "BLOODLUST CHAKRA(+1) WHENEVER ALLIED CARDS WEAKEN ANY NUMBER OF CARDS.",
+"level2": "BLOODLUST CHAKRA(+2) WHENEVER ALLIED CARDS WEAKEN ANY NUMBER OF CARDS."
+},
+"082": {
+"id": "082",
+"name": "Kankuro",
+"rarity": "EPIC",
+"cost": 3,
+"power": 2,
+"level1": "PUPPET ASSAULT WEAKEN(3) AND SLOW(4S) THE FIRST RIVAL CARD THAT COMES NEARBY. IF RIVAL DOES NOT WITHDRAW, LANE SWITCH IT. WHEN GAINING CHAKRA, RE-ENABLE THIS SKILL.",
+"level2": "PUPPET ASSAULT WEAKEN(3) AND SLOW(8S) THE FIRST RIVAL CARD THAT COMES NEARBY. IF RIVAL DOES NOT WITHDRAW, LANE SWITCH IT. WHEN GAINING CHAKRA, RE-ENABLE THIS SKILL."
+},
+"083": {
+"id": "083",
+"name": "Jiraiya",
+"rarity": "EPIC",
+"cost": 5,
+"power": 6,
+"level1": "TOAD SAGE CHAKRA(+3) TO ALLIED TOADS WHILE THIS CARD IS ACTIVE.",
+"level2": "TOAD SAGE CHAKRA(+4) TO ALLIED TOADS WHILE THIS CARD IS ACTIVE."
+},
+"084": {
+"id": "084",
+"name": "Orochimaru",
+"rarity": "EPIC",
+"cost": 4,
+"power": 6,
+"level1": "TREACHERY IGNORE ALL RIVAL SKILLS AND ENCOUNTERS. WHEN IN MID RANGE, CHAKRA(+2) AND BECOME VULNERABLE.",
+"level2": "TREACHERY IGNORE ALL RIVAL SKILLS AND ENCOUNTERS. WHEN IN MID RANGE, CHAKRA(+3) AND BECOME VULNERABLE."
+},
+"085": {
+"id": "085",
+"name": "Orochimaru",
+"rarity": "EPIC",
+"cost": 6,
+"power": 6,
+"level1": "KUSANAGI ON EACH ENCOUNTER, WEAKEN(2). WHENEVER A RIVAL CARD LANE SWITCH, SWITCH TO THE SAME LANE AND GAIN GUARD(1).",
+"level2": "KUSANAGI ON EACH ENCOUNTER, WEAKEN(3). WHENEVER A RIVAL CARD LANE SWITCH, SWITCH TO THE SAME LANE AND GAIN GUARD(1)."
+},
+"086": {
+"id": "086",
+"name": "Orochimaru",
+"rarity": "EPIC",
+"cost": 6,
+"power": 6,
+"level1": "EDO TENSEI ON DEPLOY, WEAKEN(2) TWO ALLIES WITH LOWEST CHAKRA. FOR EACH WITHDRAWAL, SUMMON EDO HASHIRAMA AND TOBIRAMA FROM YOUR DECK, GRANTING THEM RUSH(3S).",
+"level2": "EDO TENSEI ON DEPLOY, WEAKEN(2) TWO ALLIES WITH LOWEST CHAKRA. FOR EACH WITHDRAWAL, SUMMON EDO HASHIRAMA AND TOBIRAMA FROM YOUR DECK, GRANTING THEM RUSH(5S)."
+},
+"087": {
+"id": "087",
+"name": "Hashirama Senju",
+"rarity": "EPIC",
+"cost": 5,
+"power": 5,
+"level1": "DEEP FOREST EMERGENCE ON DEPLOY, PIN(12S) ALL RIVAL CARDS.",
+"level2": "DEEP FOREST EMERGENCE ON DEPLOY, PIN(14S) ALL RIVAL CARDS."
+},
+"088": {
+"id": "088",
+"name": "Tobirama Senju",
+"rarity": "EPIC",
+"cost": 6,
+"power": 5,
+"level1": "WATER SHOCK WAVE ON DEPLOY, WEAKEN(2) AND SLOW(4S) ALL RIVAL CARDS.",
+"level2": "WATER SHOCK WAVE ON DEPLOY, WEAKEN(2) AND SLOW(8S) ALL RIVAL CARDS."
+},
+"089": {
+"id": "089",
+"name": "Hiruzen Sarutobi",
+"rarity": "EPIC",
+"cost": 6,
+"power": 6,
+"level1": "FIRE DRAGON BOMBS ON DEPLOY, WEAKEN(3) AND BURN(4) CLOSEST RIVAL CARD.",
+"level2": "FIRE DRAGON BOMBS ON DEPLOY, WEAKEN(3) AND BURN(5) CLOSEST RIVAL CARD."
+},
+"090": {
+"id": "090",
+"name": "Enma",
+"rarity": "EPIC",
+"cost": 3,
+"power": 4,
+"level1": "MONKEY KING CHAKRA(+1) TO ALLIES WHEN THEY LANE SWITCH.",
+"level2": "MONKEY KING CHAKRA(+2) TO ALLIES WHEN THEY LANE SWITCH."
+},
+"091": {
+"id": "091",
+"name": "Naruto Uzumaki",
+"rarity": "LEGENDARY",
+"cost": 4,
+"power": 3,
+"level1": "WILL TO PROTECT THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, GAIN CHAKRA(+4) AND RUSH(3S). ON WITHDRAW, PERMANENTLY INCREASE BASE CHAKRA BY 2.",
+"level2": "WILL TO PROTECT THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, GAIN CHAKRA(+5) AND RUSH(3S). ON WITHDRAW, PERMANENTLY INCREASE BASE CHAKRA BY 2."
+},
+"092": {
+"id": "092",
+"name": "Sasuke Uchiha",
+"rarity": "LEGENDARY",
+"cost": 4,
+"power": 3,
+"level1": "CURSE MARK ON DEPLOY, CHAKRA(+3). AFTER EACH ENCOUNTER, CHAKRA(+2).",
+"level2": "CURSE MARK ON DEPLOY, CHAKRA(+4). AFTER EACH ENCOUNTER, CHAKRA(+2)."
+},
+"093": {
+"id": "093",
+"name": "Sakura Haruno",
+"rarity": "LEGENDARY",
+"cost": 3,
+"power": 2,
+"level1": "UNYIELDING PERMANENT GUARD. EVERY TIME GUARD ACTIVATES, CHAKRA(+1) AND LANE SWITCH.",
+"level2": "UNYIELDING PERMANENT GUARD. EVERY TIME GUARD ACTIVATES, CHAKRA(+2) AND LANE SWITCH."
+},
+"094": {
+"id": "094",
+"name": "Rock Lee",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 3,
+"level1": "FIFTH GATE ON DEPLOY, FOCUS(5S). IF FOCUS SUCCEEDS, GAIN CHAKRA(+6) AND ENABLE THE REST OF THIS SKILL. JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY. ON EACH ENCOUNTER, WEAKEN(2) RIVAL CARD AND WEAKEN(1) SELF.",
+"level2": "FIFTH GATE ON DEPLOY, FOCUS(3S). IF FOCUS SUCCEEDS, GAIN CHAKRA(+6) AND ENABLE THE REST OF THIS SKILL. JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY. ON EACH ENCOUNTER, WEAKEN(2) RIVAL CARD AND WEAKEN(1) SELF."
+},
+"095": {
+"id": "095",
+"name": "Neji Hyuga",
+"rarity": "LEGENDARY",
+"cost": 3,
+"power": 3,
+"level1": "SIXTY-FOUR PALMS ON EACH ENCOUNTER PUSH(1) AND WEAKEN(1). WHEN THIS CARD CAUSES A RIVAL TO WITHDRAW, IT ALSO PERMANENTLY REDUCES ITS BASE CHAKRA BY 2.",
+"level2": "SIXTY-FOUR PALMS ON EACH ENCOUNTER PUSH(1) AND WEAKEN(2). WHEN THIS CARD CAUSES A RIVAL TO WITHDRAW, IT ALSO PERMANENTLY REDUCES ITS BASE CHAKRA BY 2."
+},
+"096": {
+"id": "096",
+"name": "Gaara",
+"rarity": "LEGENDARY",
+"cost": 5,
+"power": 3,
+"level1": "SAND RELEASE GUARD(1). WHENEVER A RIVAL CARD COMES NEARBY, PIN(8S) AND GAIN CHAKRA(+2). IF THE RIVAL IS ALREADY PINNED, WEAKEN(3) AND GAIN GUARD(1) INSTEAD.",
+"level2": "SAND RELEASE GUARD(2). WHENEVER A RIVAL CARD COMES NEARBY, PIN(8S) IT AND GAIN CHAKRA(+2). IF THE RIVAL IS ALREADY PINNED, WEAKEN(3) AND GAIN GUARD(1) INSTEAD."
+},
+"097": {
+"id": "097",
+"name": "Hiruzen Sarutobi",
+"rarity": "LEGENDARY",
+"cost": 5,
+"power": 6,
+"level1": "ELEMENTAL MASTER ON DEPLOY, WEAKEN(1) AND SLOW(8S) ALL LANE RIVALS. THE FIRST TIME THIS CARD GAINS CHAKRA, WEAKEN(2) AND BURN(3) ALL LANE RIVALS.",
+"level2": "ELEMENTAL MASTER ON DEPLOY, WEAKEN(1) AND SLOW(12S) ALL LANE RIVALS. THE FIRST TIME THIS CARD GAINS CHAKRA, WEAKEN(2) AND BURN(4) ALL LANE RIVALS."
+},
+"098": {
+"id": "098",
+"name": "Hiruzen Sarutobi",
+"rarity": "LEGENDARY",
+"cost": 7,
+"power": 6,
+"level1": "REAPER DEATH SEAL ON DEPLOY, FOCUS(4S). IF FOCUS SUCCEEDS, ENABLE THE REST OF THIS SKILL. WHEN A RIVAL CARD COMES NEARBY WITH EQUAL OR HIGHER CHAKRA, REMOVE UP TO 12 CHAKRA FROM IT AND DISABLE ANY ACTIVE SKILL. IF THE TARGET WITHDRAWS, SEAL(15S). ON WITHDRAW, SEAL(15S) SELF. INSTANTLY WITHDRAW AFTER SEALING 3 CARDS.",
+"level2": "REAPER DEATH SEAL ON DEPLOY, FOCUS(4S). IF FOCUS SUCCEEDS, ENABLE THE REST OF THIS SKILL. WHEN A RIVAL CARD COMES NEARBY WITH EQUAL OR HIGHER CHAKRA, REMOVE UP TO 15 CHAKRA FROM IT AND DISABLE ANY ACTIVE SKILL. IF THE TARGET WITHDRAWS, SEAL(15S). ON WITHDRAW, SEAL(15S) SELF. INSTANTLY WITHDRAW AFTER SEALING 3 CARDS."
+},
+"099": {
+"id": "099",
+"name": "Ichibi",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 8,
+"level1": "AIR BULLETS ON DEPLOY, WEAKEN(2) ALL LANE RIVALS IN LONG RANGE. EVERY 10 SECONDS, FOCUS(2S). IF FOCUS SUCCEEDS, WEAKEN(2) ALL LANE RIVALS IN LONG RANGE.",
+"level2": "AIR BULLETS ON DEPLOY, WEAKEN(3) ALL LANE RIVALS IN LONG RANGE. EVERY 10 SECONDS, FOCUS(2S). IF FOCUS SUCCEEDS, WEAKEN(3) ALL LANE RIVALS IN LONG RANGE."
+}
+},
+"season_3": {
+"001": {
+"id": "001",
+"name": "Naruto Uzumaki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "SHARED DREAM WHENEVER ANOTHER CARD WITH SHARED DREAM WITHDRAWS, THIS CARD GAINS CHAKRA(+1).",
+"level2": "SHARED DREAM WHENEVER ANOTHER CARD WITH SHARED DREAM WITHDRAWS, THIS CARD GAINS CHAKRA(+2)."
+},
+"002": {
+"id": "002",
+"name": "Sasuke Uchiha",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "FIREBALL TRAINING RUSH(1S). ON DEPLOY, CHAKRA(+1) FOR EACH RIVAL CARD AFFECTED BY BURN.",
+"level2": "FIREBALL TRAINING RUSH(2S). ON DEPLOY, CHAKRA(+1) FOR EACH RIVAL CARD AFFECTED BY BURN."
+},
+"003": {
+"id": "003",
+"name": "Choji Akimichi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "PARTIAL ARM EXPANSION WHEN A RIVAL CARD COMES NEARBY, WEAKEN(1) AND PUSH(2) IT.",
+"level2": "PARTIAL ARM EXPANSION WHEN A RIVAL CARD COMES NEARBY, WEAKEN(1) AND PUSH(4) IT."
+},
+"004": {
+"id": "004",
+"name": "Kankuro",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "PUPPET SWITCH ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD, WEAKEN(2) AND PIN(5S) IT.",
+"level2": "PUPPET SWITCH ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD, WEAKEN(2) AND PIN(8S) IT."
+},
+"005": {
+"id": "005",
+"name": "Kankuro",
+"rarity": "COMMON",
+"cost": 4,
+"power": 2,
+"level1": "IRON MAIDEN WHEN RIVAL CARD COMES NEARBY, PULL IT TO THIS CARD AND DISABLE ITS SKILL, THEN WEAKEN(2) IT.",
+"level2": "IRON MAIDEN WHEN RIVAL CARD COMES NEARBY, PULL IT TO THIS CARD AND DISABLE ITS SKILL, THEN WEAKEN(3) IT."
+},
+"006": {
+"id": "006",
+"name": "Neji Hyuga",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "NARROW DEFENSE GUARD(2). WHEN GUARD ACTIVATES, 50% CHANCE TO PIN(6S) SELF.",
+"level2": "NARROW DEFENSE GUARD(3). WHEN GUARD ACTIVATES, 50% CHANCE TO PIN(6S) SELF."
+},
+"007": {
+"id": "007",
+"name": "Shikamaru Nara",
+"rarity": "COMMON",
+"cost": 1,
+"power": 1,
+"level1": "SLACKER RUSH(2S)",
+"level2": "SLACKER RUSH(3S)"
+},
+"008": {
+"id": "008",
+"name": "Jiraiya",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "RUSH RUSH(4S)",
+"level2": "RUSH RUSH(5S)"
+},
+"009": {
+"id": "009",
+"name": "Jiraiya",
+"rarity": "COMMON",
+"cost": 5,
+"power": 6,
+"level1": "TOAD MOUTH TRAP ON DEPLOY, PIN(6S) ALL CARDS ON LANE.",
+"level2": "TOAD MOUTH TRAP ON DEPLOY, PIN(10S) ALL CARDS ON LANE."
+},
+"010": {
+"id": "010",
+"name": "Jiraiya",
+"rarity": "COMMON",
+"cost": 6,
+"power": 6,
+"level1": "ADVANCED TRAINING WHENEVER YOU DEPLOY A LANE ALLY WITH 3 OR LESS CHAKRA, GRANT THEM FOCUS(8S). IF THAT FOCUS SUCCEEDS, THE ALLIED CARD GAINS CHAKRA(+3).",
+"level2": "ADVANCED TRAINING WHENEVER YOU DEPLOY A LANE ALLY WITH 3 OR LESS CHAKRA, GRANT THEM FOCUS(8S). IF THAT FOCUS SUCCEEDS, THE ALLIED CARD GAINS CHAKRA(+4)."
+},
+"011": {
+"id": "011",
+"name": "Orochimaru",
+"rarity": "COMMON",
+"cost": 1,
+"power": 2,
+"level1": "GUARDED GUARD(1)",
+"level2": "GUARDED GUARD(2)"
+},
+"012": {
+"id": "012",
+"name": "Orochimaru",
+"rarity": "COMMON",
+"cost": 4,
+"power": 6,
+"level1": "ELUSIVE RUSH(3S). WHEN A RIVAL CARD COMES NEARBY, WEAKEN(1) IT AND LANE SWITCH.",
+"level2": "ELUSIVE RUSH(5S). WHEN A RIVAL CARD COMES NEARBY, WEAKEN(1) IT AND LANE SWITCH."
+},
+"013": {
+"id": "013",
+"name": "Tsunade",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "RUSH RUSH(3S)",
+"level2": "RUSH RUSH(4S)"
+},
+"014": {
+"id": "014",
+"name": "Tsunade",
+"rarity": "COMMON",
+"cost": 4,
+"power": 6,
+"level1": "POWER FLICK GUARD(1). WHEN A RIVAL CARD COMES NEARBY, JUMP TO IT AND PUSH(2) IT.",
+"level2": "POWER FLICK GUARD(1). WHEN A RIVAL CARD COMES NEARBY, JUMP TO IT AND PUSH(4) IT."
+},
+"015": {
+"id": "015",
+"name": "Tsunade",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "SEASONED RUSH(3S). ON ENCOUNTER, PUSH(1).",
+"level2": "SEASONED RUSH(4S). ON ENCOUNTER, PUSH(1)."
+},
+"016": {
+"id": "016",
+"name": "Manda",
+"rarity": "COMMON",
+"cost": 5,
+"power": 7,
+"level1": "COLLOSAL SERPENT RUSH(4S) AND GUARD(1). WHEN GUARD ACTIVATES, LANE SWITCH.",
+"level2": "COLLOSAL SERPENT RUSH(4S) AND GUARD(2). WHEN GUARD ACTIVATES, LANE SWITCH."
+},
+"017": {
+"id": "017",
+"name": "Katsuyu",
+"rarity": "COMMON",
+"cost": 5,
+"power": 6,
+"level1": "ACID SHOT ON DEPLOY, WEAKEN(2) AND SLOW(6S) ALL RIVALS IN MID RANGE.",
+"level2": "ACID SHOT ON DEPLOY, WEAKEN(3) AND SLOW(6S) ALL RIVALS IN MID RANGE."
+},
+"018": {
+"id": "018",
+"name": "Hiruzen Sarutobi",
+"rarity": "COMMON",
+"cost": 7,
+"power": 5,
+"level1": "BELL TEST SLOW(6S) NEXT THREE ALLIES DEPLOYED, GRANTING THEM CHAKRA(+1) EVERY 3 SECONDS WHILE AFFECTED BY THIS SLOW.",
+"level2": "BELL TEST SLOW(9S) NEXT THREE ALLIES DEPLOYED, GRANTING THEM CHAKRA(+1) EVERY 3 SECONDS WHILE AFFECTED BY THIS SLOW."
+},
+"019": {
+"id": "019",
+"name": "Itachi Uchiha",
+"rarity": "COMMON",
+"cost": 4,
+"power": 5,
+"level1": "BIG BROTHER NEXT SASUKE DEPLOYED GAINS CHAKRA(+2) AND RUSH(4S) WHEN DEPLOYED ON THE SAME LANE, OR GUARD(2) AND SLOW(10S) WHEN DEPLOYED ON ANOTHER LANE.",
+"level2": "BIG BROTHER NEXT SASUKE DEPLOYED GAINS CHAKRA(+2) AND RUSH(5S) WHEN DEPLOYED ON THE SAME LANE, OR GUARD(2) AND SLOW(12S) WHEN DEPLOYED ON ANOTHER LANE."
+},
+"020": {
+"id": "020",
+"name": "Jirobo",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "CURSED SEAL RELEASE GUARD(1). ON ENCOUNTER, PUSH(1).",
+"level2": "CURSED SEAL RELEASE GUARD(2). ON ENCOUNTER, PUSH(1)."
+},
+"021": {
+"id": "021",
+"name": "Kidomaru",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "CURSED SEAL RELEASE GUARD(1) AND RUSH(2S).",
+"level2": "CURSED SEAL RELEASE GUARD(1) AND RUSH(4S)."
+},
+"022": {
+"id": "022",
+"name": "Kidomaru",
+"rarity": "COMMON",
+"cost": 4,
+"power": 3,
+"level1": "RAIN OF SPIDERS ON DEPLOY, RANDOMLY PIN(4S) OR SLOW(6S) ALL RIVAL CARDS.",
+"level2": "RAIN OF SPIDERS ON DEPLOY, RANDOMLY PIN(6S) OR SLOW(8S) ALL RIVAL CARDS."
+},
+"023": {
+"id": "023",
+"name": "Kimimaro",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "BONE CONTROL RUSH(2S). ON ENCOUNTER, WEAKEN(3).",
+"level2": "BONE CONTROL RUSH(4S). ON ENCOUNTER, WEAKEN(3)."
+},
+"024": {
+"id": "024",
+"name": "Sakon & Ukon",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "CURSED SEAL RELEASE GUARD(1). ON ENCOUNTER, WEAKEN(1).",
+"level2": "CURSED SEAL RELEASE GUARD(1). ON ENCOUNTER, WEAKEN(2)."
+},
+"025": {
+"id": "025",
+"name": "Tayuya",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "CURSED SEAL RELEASE GUARD(1) AND RUSH(2S).",
+"level2": "CURSED SEAL RELEASE GUARD(1) AND RUSH(4S)."
+},
+"026": {
+"id": "026",
+"name": "Kimimaro",
+"rarity": "COMMON",
+"cost": 4,
+"power": 4,
+"level1": "CURSED SEAL RELEASE GUARD(1). WHEN A RIVAL CARD COMES NEARBY, PIN(2S) SELF AND CHAKRA(+1). ON ENCOUNTER, WEAKEN(1).",
+"level2": "CURSED SEAL RELEASE GUARD(2). WHEN A RIVAL CARD COMES NEARBY, PIN(2S) SELF AND CHAKRA(+1). ON ENCOUNTER, WEAKEN(1)."
+},
+"027": {
+"id": "027",
+"name": "Shizune",
+"rarity": "COMMON",
+"cost": 5,
+"power": 5,
+"level1": "DEVOTED PIG ON DEPLOY, SUMMON TONTON WITH CHAKRA(1) AND RUSH(5S) ON THE SAME LANE AS ALLIED TSUNADE. WHEN REACHING AN ALLIED TSUNADE CARD, GRANT IT CHAKRA(+3) AND THEN WITHDRAW.",
+"level2": "DEVOTED PIG ON DEPLOY, SUMMON TONTON WITH CHAKRA(1) AND RUSH(5S) ON THE SAME LANE AS ALLIED TSUNADE. WHEN REACHING AN ALLIED TSUNADE CARD, GRANT IT CHAKRA(+4) AND THEN WITHDRAW."
+},
+"028": {
+"id": "028",
+"name": "Tsume Inuzuka",
+"rarity": "COMMON",
+"cost": 5,
+"power": 4,
+"level1": "HOUNDMASTER ON DEPLOY, SUMMON KUROMARU WITH CHAKRA(3) ON ANOTHER LANE. THE NEXT NINJA HOUND DEPLOYED GAINS CHAKRA(+2).",
+"level2": "HOUNDMASTER ON DEPLOY, SUMMON KUROMARU WITH CHAKRA(3) ON ANOTHER LANE. THE NEXT NINJA HOUND DEPLOYED GAINS CHAKRA(+3)."
+},
+"029": {
+"id": "029",
+"name": "Akahoshi",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "DECEITFUL TRAINING WHENEVER ALLIED CARDS FOCUS, GRANT THEM FOCUS(+4S). WEAKEN(1) ALLIED CARDS EVERY 4 SECONDS DURING FOCUS.",
+"level2": "DECEITFUL TRAINING WHENEVER ALLIED CARDS FOCUS, GRANT THEM FOCUS(+6S). WEAKEN(1) ALLIED CARDS EVERY 4 SECONDS DURING FOCUS."
+},
+"030": {
+"id": "030",
+"name": "Amachi",
+"rarity": "COMMON",
+"cost": 2,
+"power": 3,
+"level1": "WATER CANNONBALL RUSH(2S). ON DEPLOY, WEAKEN(1) CLOSEST RIVAL CARD IN MID RANGE.",
+"level2": "WATER CANNONBALL RUSH(3S). ON DEPLOY, WEAKEN(2) CLOSEST RIVAL CARD IN MID RANGE."
+},
+"031": {
+"id": "031",
+"name": "Aoi Rokusho",
+"rarity": "COMMON",
+"cost": 2,
+"power": 4,
+"level1": "NEEDLE SHOWER ON ENCOUNTER, WEAKEN(1) AND SLOW(3S) ALL NEARBY LANE RIVALS.",
+"level2": "NEEDLE SHOWER ON ENCOUNTER, WEAKEN(1) AND SLOW(5S) ALL NEARBY LANE RIVALS."
+},
+"032": {
+"id": "032",
+"name": "Dan Kato",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "SHARED DREAM WHENEVER ANOTHER CARD WITH SHARED DREAM WITHDRAWS, THIS CARD GAINS CHAKRA(+1).",
+"level2": "SHARED DREAM WHENEVER ANOTHER CARD WITH SHARED DREAM WITHDRAWS, THIS CARD GAINS CHAKRA(+2)."
+},
+"033": {
+"id": "033",
+"name": "Fugaku Uchiha",
+"rarity": "COMMON",
+"cost": 5,
+"power": 5,
+"level1": "UCHIHA LEADER WHEN DEPLOYING UCHIHA ALLIES, THEY GAIN GUARD(+1) AND SLOW(6S) IF THEY HAVE 3 CHAKRA OR LESS, OTHERWISE THEY GAIN CHAKRA(+2) AND PIN(4S).",
+"level2": "UCHIHA LEADER WHEN DEPLOYING UCHIHA ALLIES, THEY GAIN GUARD(+2) AND SLOW(6S) IF THEY HAVE 3 CHAKRA OR LESS, OTHERWISE THEY GAIN CHAKRA(+3) AND PIN(4S)."
+},
+"034": {
+"id": "034",
+"name": "Fūjin",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "LEGENDARY STRENGTH GUARD(1). ON ENCOUNTER, WEAKEN(1) AND PUSH(3).",
+"level2": "LEGENDARY STRENGTH GUARD(2). ON ENCOUNTER, WEAKEN(1) AND PUSH(3)."
+},
+"035": {
+"id": "035",
+"name": "Gamatatsu",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "FOOD MOTIVATED ON DEPLOY, FOCUS(12S). EVERY 4 SECONDS DURING FOCUS, SPEND 1 ENERGY IF AVAILABLE TO GRANT OTHER ALLIED TOADS CHAKRA(+2).",
+"level2": "FOOD MOTIVATED ON DEPLOY, FOCUS(16S). EVERY 4 SECONDS DURING FOCUS, SPEND 1 ENERGY IF AVAILABLE TO GRANT OTHER ALLIED TOADS CHAKRA(+2)."
+},
+"036": {
+"id": "036",
+"name": "Hanzaki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "ROBBERY SCHEME RUSH(2S). ON DEPLOY, WEAKEN(1) ALL LANE ALLIES, GAINING CHAKRA(+2) FOR EACH ALLY AFFECTED.",
+"level2": "ROBBERY SCHEME RUSH(3S). ON DEPLOY, WEAKEN(1) ALL LANE ALLIES, GAINING CHAKRA(+2) FOR EACH ALLY AFFECTED."
+},
+"037": {
+"id": "037",
+"name": "Hanzaki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "ZANBATO LUNGE GUARD(1). WHEN A RIVAL CARD COMES NEARBY, JUMP TO IT THEN WEAKEN(1) OR PUSH(1) IT.",
+"level2": "ZANBATO LUNGE GUARD(2). WHEN A RIVAL CARD COMES NEARBY, JUMP TO IT THEN WEAKEN(1) OR PUSH(1) IT."
+},
+"038": {
+"id": "038",
+"name": "Idate Morino",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "RACER RUSH(4S). ON ENCOUNTER, LANE SWITCH.",
+"level2": "RACER RUSH(5S). ON ENCOUNTER, LANE SWITCH."
+},
+"039": {
+"id": "039",
+"name": "Jirocho Wasabi",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "HONEST BELIEF NEXT ALLY DEPLOYED ON ANOTHER LANE GAINS RUSH(3S) AND GUARD(1).",
+"level2": "HONEST BELIEF NEXT ALLY DEPLOYED ON ANOTHER LANE GAINS RUSH(4S) AND GUARD(1)."
+},
+"040": {
+"id": "040",
+"name": "Arashi",
+"rarity": "COMMON",
+"cost": 5,
+"power": 4,
+"level1": "BINDING MANDALA ON DEPLOY, PUSH(2) AND PIN(8S) LANE RIVAL WITH HIGHEST CHAKRA. WHILE AFFECTED BY THIS PIN, WEAKEN(1) THE RIVAL CARD EVERY 4S.",
+"level2": "BINDING MANDALA ON DEPLOY, PUSH(4) AND PIN(8S) LANE RIVAL WITH HIGHEST CHAKRA. WHILE AFFECTED BY THIS PIN, WEAKEN(1) THE RIVAL CARD EVERY 4S."
+},
+"041": {
+"id": "041",
+"name": "Kagerō",
+"rarity": "COMMON",
+"cost": 6,
+"power": 4,
+"level1": "KAGERO NINJA ART ON DEPLOY, WEAKEN(3) TWO LANE RIVALS IN MID RANGE, THEN LANE SWITCH SELF AND TWO LANE ALLIES IN SHORT RANGE.",
+"level2": "KAGERO NINJA ART ON DEPLOY, WEAKEN(4) TWO LANE RIVALS IN MID RANGE, THEN LANE SWITCH SELF AND TWO LANE ALLIES IN SHORT RANGE."
+},
+"042": {
+"id": "042",
+"name": "Kyuroku Wagarashi",
+"rarity": "COMMON",
+"cost": 2,
+"power": 1,
+"level1": "DISHONORABLE NEXT LANE ALLY DEPLOYED GAINS RUSH(4S). ON WITHDRAW, LANE SWITCH AND SLOW(3S) ALL LANE ALLIES.",
+"level2": "DISHONORABLE NEXT LANE ALLY DEPLOYED GAINS RUSH(5S). ON WITHDRAW, LANE SWITCH AND SLOW(3S) ALL LANE ALLIES."
+},
+"043": {
+"id": "043",
+"name": "Mikoto Uchiha",
+"rarity": "COMMON",
+"cost": 3,
+"power": 4,
+"level1": "SOOTHING NEXT SASUKE DEPLOYED GAINS CHAKRA(+1). THE FIRST TIME AN ALLIED SASUKE CARD GOES BELOW BASE CHAKRA, HEAL(1) IT.",
+"level2": "SOOTHING NEXT SASUKE DEPLOYED GAINS CHAKRA(+1). THE FIRST TIME AN ALLIED SASUKE CARD GOES BELOW BASE CHAKRA, HEAL(2) IT."
+},
+"044": {
+"id": "044",
+"name": "Mizuki",
+"rarity": "COMMON",
+"cost": 4,
+"power": 3,
+"level1": "ANIMAL CURSED SEAL ON ENCOUNTER, WEAKEN(4). AFTER 20 SECONDS, SET SELF TO CHAKRA(1) AND DISABLE THIS SKILL.",
+"level2": "ANIMAL CURSED SEAL ON ENCOUNTER, WEAKEN(5). AFTER 20 SECONDS, SET SELF TO CHAKRA(1) AND DISABLE THIS SKILL."
+},
+"045": {
+"id": "045",
+"name": "Nawaki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 2,
+"level1": "SHARED DREAM WHENEVER ANOTHER CARD WITH SHARED DREAM WITHDRAWS, THIS CARD GAINS CHAKRA(+1).",
+"level2": "SHARED DREAM WHENEVER ANOTHER CARD WITH SHARED DREAM WITHDRAWS, THIS CARD GAINS CHAKRA(+2)."
+},
+"046": {
+"id": "046",
+"name": "Raiga Kurosuki",
+"rarity": "COMMON",
+"cost": 3,
+"power": 5,
+"level1": "THUNDERSWORDS WHEN A RIVAL CARD COMES NEARBY, WEAKEN(1) AND LANE SWITCH IT.",
+"level2": "THUNDERSWORDS WHEN A RIVAL CARD COMES NEARBY, WEAKEN(2) AND LANE SWITCH IT."
+},
+"047": {
+"id": "047",
+"name": "Raijin",
+"rarity": "COMMON",
+"cost": 3,
+"power": 3,
+"level1": "LEGENDARY STRENGTH GUARD(1). ON ENCOUNTER, WEAKEN(1) AND PUSH(3).",
+"level2": "LEGENDARY STRENGTH GUARD(2). ON ENCOUNTER, WEAKEN(1) AND PUSH(3)."
+},
+"048": {
+"id": "048",
+"name": "Sumaru",
+"rarity": "COMMON",
+"cost": 2,
+"power": 2,
+"level1": "LOCAL GUIDANCE ON DEPLOY, TWO ALLIES IN SHORT RANGE GAIN RUSH(3S).",
+"level2": "LOCAL GUIDANCE ON DEPLOY, THREE ALLIES IN SHORT RANGE GAIN RUSH(3S)."
+},
+"049": {
+"id": "049",
+"name": "Yoshino Nara",
+"rarity": "COMMON",
+"cost": 2,
+"power": 3,
+"level1": "STRICT NEXT SHIKAMARU DEPLOYED GAINS CHAKRA(+1) AND SLOW(8S).",
+"level2": "STRICT NEXT SHIKAMARU DEPLOYED GAINS CHAKRA(+1) AND SLOW(12S)."
+},
+"050": {
+"id": "050",
+"name": "Uchiha Trio",
+"rarity": "COMMON",
+"cost": 4,
+"power": 4,
+"level1": "SUSPICION RUSH(4S). WHEN IN MID RANGE, CHAKRA(+2).",
+"level2": "SUSPICION RUSH(6S). WHEN IN MID RANGE, CHAKRA(+2)."
+},
+"051": {
+"id": "051",
+"name": "Naruto Uzumaki",
+"rarity": "RARE",
+"cost": 5,
+"power": 4,
+"level1": "DEMON FOX CLOAK RUSH(3S). ON DEPLOY, CHAKRA(+2). THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, HEAL(2).",
+"level2": "DEMON FOX CLOAK RUSH(5S). ON DEPLOY, CHAKRA(+2). THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, HEAL(2)."
+},
+"052": {
+"id": "052",
+"name": "Sasuke Uchiha",
+"rarity": "RARE",
+"cost": 3,
+"power": 3,
+"level1": "CURSED SEAL RELEASE THE FIRST TIME THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+2).",
+"level2": "CURSED SEAL RELEASE THE FIRST TIME THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+4)."
+},
+"053": {
+"id": "053",
+"name": "Kankuro",
+"rarity": "RARE",
+"cost": 3,
+"power": 2,
+"level1": "OUTMANEUVER WHENEVER ALLIES TELEPORT BEHIND RIVALS, GAIN CHAKRA(+1).",
+"level2": "OUTMANEUVER WHENEVER ALLIES TELEPORT BEHIND RIVALS, GAIN CHAKRA(+2)."
+},
+"054": {
+"id": "054",
+"name": "Shikamaru Nara",
+"rarity": "RARE",
+"cost": 4,
+"power": 3,
+"level1": "SHADOW STRANGLE WHEN A RIVAL CARD COMES NEARBY, PIN(9S) IT AND THIS CARD. RIVAL CARD LOSES 1 CHAKRA EVERY 3 SECONDS WHILE AFFECTED BY THIS PIN.",
+"level2": "SHADOW STRANGLE WHEN A RIVAL CARD COMES NEARBY, PIN(12S) IT AND THIS CARD. RIVAL CARD LOSES 1 CHAKRA EVERY 3 SECONDS WHILE AFFECTED BY THIS PIN."
+},
+"055": {
+"id": "055",
+"name": "Akamaru",
+"rarity": "RARE",
+"cost": 3,
+"power": 1,
+"level1": "MARKING ON DEPLOY, SLOW(8S) ALL LANE RIVALS. WHILE THIS SLOW IS ACTIVE, WEAKEN(+1) TO ALLIED WEAKEN SKILLS APPLIED TO AFFECTED RIVALS.",
+"level2": "MARKING ON DEPLOY, SLOW(12S) ALL LANE RIVALS. WHILE THIS SLOW IS ACTIVE, WEAKEN(+1) TO ALLIED WEAKEN SKILLS APPLIED TO AFFECTED RIVALS."
+},
+"056": {
+"id": "056",
+"name": "Itachi Uchiha",
+"rarity": "RARE",
+"cost": 5,
+"power": 6,
+"level1": "POISE GAIN CHAKRA(+1) AND PIN(2S) SELF WHENEVER ANY CARD GAINS FOCUS.",
+"level2": "POISE GAIN CHAKRA(+2) AND PIN(4S) SELF WHENEVER ANY CARD GAINS FOCUS."
+},
+"057": {
+"id": "057",
+"name": "Jiraiya",
+"rarity": "RARE",
+"cost": 3,
+"power": 4,
+"level1": "SEASONED RUSH(3S). ON ENCOUNTER, LANE SWITCH.",
+"level2": "SEASONED RUSH(4S). ON ENCOUNTER, LANE SWITCH."
+},
+"058": {
+"id": "058",
+"name": "Jiraiya",
+"rarity": "RARE",
+"cost": 5,
+"power": 6,
+"level1": "NEEDLE JIZO GUARD(2). WHEN GUARD ACTIVATES, WEAKEN(2) THE RIVAL THAT TRIGGERED IT. IGNORES GUARD.",
+"level2": "NEEDLE JIZO GUARD(3). WHEN GUARD ACTIVATES, WEAKEN(2) THE RIVAL THAT TRIGGERED IT. IGNORES GUARD."
+},
+"059": {
+"id": "059",
+"name": "Orochimaru",
+"rarity": "RARE",
+"cost": 3,
+"power": 4,
+"level1": "SEASONED RUSH(3S). ON ENCOUNTER, WEAKEN(1).",
+"level2": "SEASONED RUSH(4S). ON ENCOUNTER, WEAKEN(1)."
+},
+"060": {
+"id": "060",
+"name": "Tsunade",
+"rarity": "RARE",
+"cost": 6,
+"power": 6,
+"level1": "THE FIFTH ON DEPLOY, CHAKRA(+1) TO ALL ALLIES. WHILE THIS CARD IS ACTIVE, WHENEVER AN ALLY IS WEAKENED, HEAL(2) IT.",
+"level2": "THE FIFTH ON DEPLOY, CHAKRA(+2) TO ALL ALLIES. WHILE THIS CARD IS ACTIVE, WHENEVER AN ALLY IS WEAKENED, HEAL(2) IT."
+},
+"061": {
+"id": "061",
+"name": "Tsunade",
+"rarity": "RARE",
+"cost": 3,
+"power": 6,
+"level1": "LEGENDARY SITTING DUCK ON DEPLOY, 10% CHANCE TO GAIN CHAKRA(+6). OTHERWISE, GAIN RUSH(3S).",
+"level2": "LEGENDARY SITTING DUCK ON DEPLOY, 10% CHANCE TO GAIN CHAKRA(+7). OTHERWISE, GAIN RUSH(4S)."
+},
+"062": {
+"id": "062",
+"name": "Tsunade",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "DESPERATE HEALING ON DEPLOY, HEAL(2) CLOSEST LANE ALLY. THE FIRST TIME A LANE ALLY LOSES CHAKRA FROM ANY SOURCE, HEAL(2) IT.",
+"level2": "DESPERATE HEALING ON DEPLOY, HEAL(3) CLOSEST LANE ALLY. THE FIRST TIME A LANE ALLY LOSES CHAKRA FROM ANY SOURCE, HEAL(3) IT."
+},
+"063": {
+"id": "063",
+"name": "Gamabunta",
+"rarity": "RARE",
+"cost": 5,
+"power": 6,
+"level1": "TOAD KENJUTSU WHEN A RIVAL CARD COMES NEARBY, JUMP TO IT AND WEAKEN(2). GAIN RUSH(+3S) THE FIRST TIME WHEN GAINING CHAKRA.",
+"level2": "TOAD KENJUTSU WHEN A RIVAL CARD COMES NEARBY, JUMP TO IT AND WEAKEN(3). GAIN RUSH(+4S) THE FIRST TIME WHEN GAINING CHAKRA."
+},
+"064": {
+"id": "064",
+"name": "Kabuto Yakuchi",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "CHAKRA SCALPEL RUSH(2S). ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD AND PERMANENTLY PIN IT.",
+"level2": "CHAKRA SCALPEL RUSH(3S). ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD AND PERMANENTLY PIN IT."
+},
+"065": {
+"id": "065",
+"name": "Kisame Hoshigaki",
+"rarity": "RARE",
+"cost": 6,
+"power": 6,
+"level1": "SAMEHADA GUARD GUARD(3). WHEN GUARD ACTIVATES, WEAKEN(1) THE RIVAL THAT TRIGGERED GUARD AND GAIN CHAKRA(+1).",
+"level2": "SAMEHADA GUARD GUARD(4). WHEN GUARD ACTIVATES, WEAKEN(1) THE RIVAL THAT TRIGGERED GUARD AND GAIN CHAKRA(+1)."
+},
+"066": {
+"id": "066",
+"name": "Jirobo",
+"rarity": "RARE",
+"cost": 5,
+"power": 4,
+"level1": "CHAKRA DRAIN ON EACH ENCOUNTER, CHAKRA(+1) TO THIS CARD AND WEAKEN(1) RIVAL CARD.",
+"level2": "CHAKRA DRAIN ON EACH ENCOUNTER, CHAKRA(+1) TO THIS CARD AND WEAKEN(2) RIVAL CARD."
+},
+"067": {
+"id": "067",
+"name": "Sakon & Ukon",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "CURSED FUSION ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD THEN PIN(6S) IT AND SELF. RIVAL LOSES 1 CHAKRA EVERY 2 SECONDS WHILE AFFECTED BY THIS PIN.",
+"level2": "CURSED FUSION ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD THEN PIN(8S) IT AND SELF. RIVAL LOSES 1 CHAKRA EVERY 2 SECONDS WHILE AFFECTED BY THIS PIN."
+},
+"068": {
+"id": "068",
+"name": "Kurenai Yuhi",
+"rarity": "RARE",
+"cost": 3,
+"power": 4,
+"level1": "GENJUTSU FEINT ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD, WEAKEN(2) AND SLOW(4S).",
+"level2": "GENJUTSU FEINT ON ENCOUNTER, TELEPORT BEHIND RIVAL CARD, WEAKEN(2) AND SLOW(8S)."
+},
+"069": {
+"id": "069",
+"name": "Shizune",
+"rarity": "RARE",
+"cost": 5,
+"power": 5,
+"level1": "POISON MIST ON DEPLOY, SLOW(8S) ALL CARDS IN MID RANGE AND DISABLE THEIR SKILLS. THEY LOSE 2 CHAKRA EVERY 4 SECONDS WHILE AFFECTED BY THIS SLOW.",
+"level2": "POISON MIST ON DEPLOY, SLOW(12S) ALL CARDS IN MID RANGE AND DISABLE THEIR SKILLS. THEY LOSE 2 CHAKRA EVERY 4 SECONDS WHILE AFFECTED BY THIS SLOW."
+},
+"070": {
+"id": "070",
+"name": "Akahoshi",
+"rarity": "RARE",
+"cost": 4,
+"power": 3,
+"level1": "UNSCRUPULOUS GUARD(1). WHEN GUARD ACTIVATES, WEAKEN(1) THE RIVAL THAT ACTIVATED IT. THE FIRST TIME THIS CARD LOSES CHAKRA, WEAKEN(2) A RANDOM ALLY AND GAIN CHAKRA(+2) AND GUARD(+1).",
+"level2": "UNSCRUPULOUS GUARD(1). WHEN GUARD ACTIVATES, WEAKEN(1) THE RIVAL THAT ACTIVATED IT. THE FIRST TIME THIS CARD LOSES CHAKRA, WEAKEN(2) A RANDOM ALLY AND GAIN CHAKRA(+3) AND GUARD(+1)."
+},
+"071": {
+"id": "071",
+"name": "Amachi",
+"rarity": "RARE",
+"cost": 4,
+"power": 3,
+"level1": "SEA MONSTER ON DEPLOY, PIN(6S) SELF. WHILE AFFECTED BY PIN, EVERY 3 SECONDS PIN(3S) OR SLOW(6S) ALL LANE RIVALS.",
+"level2": "SEA MONSTER ON DEPLOY, PIN(9S) SELF. WHILE AFFECTED BY PIN, EVERY 3 SECONDS PIN(3S) OR SLOW(6S) ALL LANE RIVALS."
+},
+"072": {
+"id": "072",
+"name": "Aoi Rokusho",
+"rarity": "RARE",
+"cost": 4,
+"power": 4,
+"level1": "RAIJIN SWORD GUARD(2). ON ENCOUNTER, WEAKEN(1) AND PIN(2S) RIVAL CARD. IGNORES GUARD.",
+"level2": "RAIJIN SWORD GUARD(2). ON ENCOUNTER, WEAKEN(2) AND PIN(4S) RIVAL CARD. IGNORES GUARD."
+},
+"073": {
+"id": "073",
+"name": "Sumaru",
+"rarity": "RARE",
+"cost": 4,
+"power": 2,
+"level1": "STAR CHAKRA ON DEPLOY, CHAKRA(+1) AND LANE SWITCH IF LANE ALLIES ARE PRESENT. ON ENCOUNTER, WEAKEN(2) RIVAL CARD.",
+"level2": "STAR CHAKRA ON DEPLOY, CHAKRA(+1) AND LANE SWITCH IF LANE ALLIES ARE PRESENT. ON ENCOUNTER, WEAKEN(3) RIVAL CARD."
+},
+"074": {
+"id": "074",
+"name": "Naruto Uzumaki",
+"rarity": "EPIC",
+"cost": 4,
+"power": 3,
+"level1": "RASENGAN ON ENCOUNTER, WEAKEN(2) AND PUSH(4). REMOVES ALL GUARD FROM RIVAL CARD.",
+"level2": "RASENGAN ON ENCOUNTER, WEAKEN(3) AND PUSH(5). REMOVES ALL GUARD FROM RIVAL CARD."
+},
+"075": {
+"id": "075",
+"name": "Naruto Uzumaki",
+"rarity": "EPIC",
+"cost": 4,
+"power": 4,
+"level1": "ONE-TAIL FORM ON EACH ENCOUNTER, WEAKEN(1). THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, HEAL(3) SELF.",
+"level2": "ONE-TAIL FORM ON EACH ENCOUNTER, WEAKEN(1). THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, HEAL(4) SELF."
+},
+"076": {
+"id": "076",
+"name": "Sasuke Uchiha",
+"rarity": "EPIC",
+"cost": 4,
+"power": 3,
+"level1": "EVOLVED PREDICTION GUARD(3). WHEN GUARD ACTIVATES, CHAKRA(+1). CANNOT BE WEAKENED DURING ENCOUNTERS WITH RIVAL CARDS OF 3 OR LESS CHAKRA.",
+"level2": "EVOLVED PREDICTION GUARD(3). WHEN GUARD ACTIVATES, CHAKRA(+2). CANNOT BE WEAKENED DURING ENCOUNTERS WITH RIVAL CARDS OF 3 OR LESS CHAKRA."
+},
+"077": {
+"id": "077",
+"name": "Sasuke Uchiha",
+"rarity": "EPIC",
+"cost": 3,
+"power": 4,
+"level1": "WINGED DEFENSE GUARD(2). ON ENCOUNTER, WEAKEN(2). WHEN GUARD ACTIVATES, GAIN RUSH(2S) AND RE-ENABLE THIS SKILL.",
+"level2": "WINGED DEFENSE GUARD(2). ON ENCOUNTER, WEAKEN(2). WHEN GUARD ACTIVATES, GAIN RUSH(4S) AND RE-ENABLE THIS SKILL."
+},
+"078": {
+"id": "078",
+"name": "Gaara",
+"rarity": "EPIC",
+"cost": 5,
+"power": 3,
+"level1": "SHUKAKU'S SHIELD GUARD(3). WHILE THIS CARD IS ACTIVE, LANE ALLIES BEHIND IT IGNORE RIVAL SKILL EFFECTS BUT CONSUME THIS CARD'S GUARD.",
+"level2": "SHUKAKU'S SHIELD GUARD(4). WHILE THIS CARD IS ACTIVE, LANE ALLIES BEHIND IT IGNORE RIVAL SKILL EFFECTS BUT CONSUME THIS CARD'S GUARD."
+},
+"079": {
+"id": "079",
+"name": "Kiba Inuzuka",
+"rarity": "EPIC",
+"cost": 3,
+"power": 3,
+"level1": "TRANSFORMATION COMBO ON DEPLOY, WITHDRAW ALLIED AKAMARU AND KIBA AND TRANSFER THEIR CHAKRA TO THIS CARD, GAINING ADDITIONAL CHAKRA(+1) FOR EACH WITHDRAWAL. ON EACH ENCOUNTER, WEAKEN(1).",
+"level2": "TRANSFORMATION COMBO ON DEPLOY, WITHDRAW ALLIED AKAMARU AND KIBA AND TRANSFER THEIR CHAKRA TO THIS CARD, GAINING ADDITIONAL CHAKRA(+2) FOR EACH WITHDRAWAL. ON EACH ENCOUNTER, WEAKEN(1)."
+},
+"080": {
+"id": "080",
+"name": "Rock Lee",
+"rarity": "EPIC",
+"cost": 4,
+"power": 3,
+"level1": "LOOPY FIST EVERY 12S, FOCUS(4S) SELF. IF FOCUS SUCCEEDS, RANDOMLY GAIN RUSH(3S), GUARD(1) OR CHAKRA(+1). ON EACH ENCOUNTER, WEAKEN(1).",
+"level2": "LOOPY FIST EVERY 10S, FOCUS(4S) SELF. IF FOCUS SUCCEEDS, RANDOMLY GAIN RUSH(3S), GUARD(1) OR CHAKRA(+1). ON EACH ENCOUNTER, WEAKEN(1)."
+},
+"081": {
+"id": "081",
+"name": "Temari",
+"rarity": "EPIC",
+"cost": 5,
+"power": 2,
+"level1": "QUICK BEHEADING DANCE ON DEPLOY, FOCUS(9S). EVERY 3 SECONDS DURING FOCUS, WEAKEN(1) AND PUSH(2) ALL RIVALS IN MID AND LONG RANGE.",
+"level2": "QUICK BEHEADING DANCE ON DEPLOY, FOCUS(9S). EVERY 3 SECONDS DURING FOCUS, WEAKEN(1) AND PUSH(4) ALL RIVALS IN MID AND LONG RANGE."
+},
+"082": {
+"id": "082",
+"name": "Itachi Uchiha",
+"rarity": "EPIC",
+"cost": 5,
+"power": 6,
+"level1": "TSUKUYOMI ARMY WHILE THIS CARD IS ACTIVE, WHENEVER YOU PIN RIVAL CARDS, SUMMON A CLONE OF THIS CARD ON THAT SAME LANE WITH RUSH(4S) AND LOSE 1 CHAKRA. CLONES CANNOT SCORE BASE HITS OR GAIN CHAKRA.",
+"level2": "TSUKUYOMI ARMY WHILE THIS CARD IS ACTIVE, WHENEVER YOU PIN RIVAL CARDS, SUMMON A CLONE OF THIS CARD ON THAT SAME LANE WITH RUSH(6S) AND LOSE 1 CHAKRA. CLONES CANNOT SCORE BASE HITS OR GAIN CHAKRA."
+},
+"083": {
+"id": "083",
+"name": "Itachi Uchiha",
+"rarity": "EPIC",
+"cost": 7,
+"power": 6,
+"level1": "AMATERASU ESCAPE WHENEVER A RIVAL CARD COMES NEARBY BURN(10) IT, THEN LANE SWITCH AND LOSE 1 CHAKRA. THIS BURN EFFECT CAN SPREAD TO OTHER CARDS WHEN THEY TOUCH AND IGNORES GUARD.",
+"level2": "AMATERASU ESCAPE WHENEVER A RIVAL CARD COMES NEARBY BURN(15) IT, THEN LANE SWITCH AND LOSE 1 CHAKRA. THIS BURN EFFECT CAN SPREAD TO OTHER CARDS WHEN THEY TOUCH AND IGNORES GUARD."
+},
+"084": {
+"id": "084",
+"name": "Jiraiya",
+"rarity": "EPIC",
+"cost": 6,
+"power": 6,
+"level1": "TOAD OIL FLAMETHROWER ON DEPLOY BURN(3) ALL RIVAL CARDS THEN FOCUS(8S). DURING FOCUS, GAIN CHAKRA(+1) WHENEVER ALLIES APPLY BURN. IF FOCUS SUCCEEDS, BURN(4) ALL RIVAL CARDS.",
+"level2": "TOAD OIL FLAMETHROWER ON DEPLOY BURN(3) ALL RIVAL CARDS THEN FOCUS(8S). DURING FOCUS, GAIN CHAKRA(+1) WHENEVER ALLIES APPLY BURN. IF FOCUS SUCCEEDS, BURN(5) ALL RIVAL CARDS."
+},
+"085": {
+"id": "085",
+"name": "Gamabunta",
+"rarity": "EPIC",
+"cost": 5,
+"power": 6,
+"level1": "TOAD OIL COMBO ON DEPLOY, BURN(3) ALL LANE RIVALS. IF ANY RIVALS ARE ALREADY AFFECTED BY BURN, INSTANTLY TRIGGER THE REMAINING BURN AMOUNT.",
+"level2": "TOAD OIL COMBO ON DEPLOY, BURN(4) ALL LANE RIVALS. IF ANY RIVALS ARE ALREADY AFFECTED BY BURN, INSTANTLY TRIGGER THE REMAINING BURN AMOUNT."
+},
+"086": {
+"id": "086",
+"name": "Kidomaru",
+"rarity": "EPIC",
+"cost": 4,
+"power": 4,
+"level1": "SPIDER BOW ON DEPLOY, FOCUS(12S). EVERY 4 SECONDS DURING FOCUS, WEAKEN(1) AND PIN(4S) HIGHEST CHAKRA RIVAL IN LONG RANGE.",
+"level2": "SPIDER BOW ON DEPLOY, FOCUS(16S). EVERY 4 SECONDS DURING FOCUS, WEAKEN(1) AND PIN(4S) HIGHEST CHAKRA RIVAL IN LONG RANGE."
+},
+"087": {
+"id": "087",
+"name": "Tayuya",
+"rarity": "EPIC",
+"cost": 4,
+"power": 4,
+"level1": "DEMONIC FLUTE ON DEPLOY, CHAKRA(+1). WHILE THIS CARD IS ACTIVE, SLOWS APPLIED BY ALLIES DO NOT EXPIRE.",
+"level2": "DEMONIC FLUTE ON DEPLOY, CHAKRA(+2). WHILE THIS CARD IS ACTIVE, SLOWS APPLIED BY ALLIES DO NOT EXPIRE."
+},
+"088": {
+"id": "088",
+"name": "Kimimaro",
+"rarity": "EPIC",
+"cost": 5,
+"power": 3,
+"level1": "LIVING WEAPON GUARD(3). ON EACH ENCOUNTER, WEAKEN(2). LANE SWITCH WHEN CAUSING A RIVAL TO WITHDRAW.",
+"level2": "LIVING WEAPON GUARD(5). ON EACH ENCOUNTER, WEAKEN(2). LANE SWITCH WHEN CAUSING A RIVAL TO WITHDRAW."
+},
+"089": {
+"id": "089",
+"name": "Akahoshi",
+"rarity": "EPIC",
+"cost": 4,
+"power": 4,
+"level1": "STAR DRAGON ON DEPLOY, PUSH(2), WEAKEN(1) AND PIN(4S) ALL LANE RIVALS.",
+"level2": "STAR DRAGON ON DEPLOY, PUSH(2), WEAKEN(1) AND PIN(8S) ALL LANE RIVALS."
+},
+"090": {
+"id": "090",
+"name": "Raiga Kurosuki",
+"rarity": "EPIC",
+"cost": 3,
+"power": 5,
+"level1": "THUNDER DRAGON TORNADO ON DEPLOY, FOCUS(8S). IF FOCUS SUCCEEDS, WEAKEN(3) AND PUSH(2) ALL LANE RIVALS IN SHORT AND MID RANGE.",
+"level2": "THUNDER DRAGON TORNADO ON DEPLOY, FOCUS(6S). IF FOCUS SUCCEEDS, WEAKEN(3) AND PUSH(2) ALL LANE RIVALS IN SHORT AND MID RANGE."
+},
+"091": {
+"id": "091",
+"name": "Sasuke Uchiha",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 4,
+"level1": "BLACK CHIDORI RUSH(4S). JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY, GAIN CHAKRA(+2) AND WEAKEN(3) IT. WEAKEN(2) ALL OTHER NEARBY CARDS. IGNORES GUARD.",
+"level2": "BLACK CHIDORI RUSH(5S). JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY, GAIN CHAKRA(+2) AND WEAKEN(4) IT. WEAKEN(2) ALL OTHER NEARBY CARDS. IGNORES GUARD."
+},
+"092": {
+"id": "092",
+"name": "Naruto Uzumaki",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 4,
+"level1": "DEMON FOX RASENGAN RUSH(4S). JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY, WEAKEN(3) AND PUSH(2) IT. WEAKEN(2) ALL OTHER NEARBY CARDS. IGNORES GUARD.",
+"level2": "DEMON FOX RASENGAN RUSH(5S). JUMP TO THE FIRST RIVAL CARD THAT COMES NEARBY, WEAKEN(4) AND PUSH(2) IT. WEAKEN(2) ALL OTHER NEARBY CARDS. IGNORES GUARD."
+},
+"093": {
+"id": "093",
+"name": "Choji Akimichi",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 3,
+"level1": "BUTTERFLY RAGE GUARD(3). WHEN GUARD ACTIVATES, CHAKRA(+2). IF THE RIVAL CARD THAT TRIGGERED GUARD IS NEARBY, JUMP TO IT. WHILE GUARD IS AVAILABLE, WEAKEN(2) AND PUSH(2) ON EACH ENCOUNTER.",
+"level2": "BUTTERFLY RAGE GUARD(3). WHEN GUARD ACTIVATES, CHAKRA(+3). IF THE RIVAL CARD THAT TRIGGERED GUARD IS NEARBY, JUMP TO IT. WHILE GUARD IS AVAILABLE, WEAKEN(2) AND PUSH(2) ON EACH ENCOUNTER."
+},
+"094": {
+"id": "094",
+"name": "Gaara",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 3,
+"level1": "SAND TSUNAMI ON DEPLOY, FOCUS(6S). EVERY 2 SECONDS DURING FOCUS, WEAKEN(1) AND PUSH(1) ALL RIVAL CARDS. IF THEY HAVE 2 OR LESS CHAKRA, WEAKEN(2) INSTEAD. WHEN THIS CARD CAUSES ANOTHER TO WITHDRAW, SEAL(5S) IT.",
+"level2": "SAND TSUNAMI ON DEPLOY, FOCUS(8S). EVERY 2 SECONDS DURING FOCUS, WEAKEN(1) AND PUSH(1) ALL RIVAL CARDS. IF THEY HAVE 3 OR LESS CHAKRA, WEAKEN(3) INSTEAD. WHEN THIS CARD CAUSES ANOTHER TO WITHDRAW, SEAL(5S) IT."
+},
+"095": {
+"id": "095",
+"name": "Itachi Uchiha",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 6,
+"level1": "TSUKUYOMI ON DEPLOY, PIN(12S) CLOSEST RIVAL CARD, THEN LOSE 1 CHAKRA. IF RIVAL CARD IS ABOVE 1 CHAKRA, IT LOSES 1 CHAKRA EACH SECOND. WHENEVER ALLIES PIN RIVAL CARDS, RETRIGGER THIS SKILL FOR EACH AFFECTED RIVAL.",
+"level2": "TSUKUYOMI ON DEPLOY, PIN(16S) CLOSEST RIVAL CARD, THEN LOSE 1 CHAKRA. IF RIVAL CARD IS ABOVE 1 CHAKRA, IT LOSES 1 CHAKRA EACH SECOND. WHENEVER ALLIES PIN RIVAL CARDS, RETRIGGER THIS SKILL FOR EACH AFFECTED RIVAL."
+},
+"096": {
+"id": "096",
+"name": "Itachi Uchiha",
+"rarity": "LEGENDARY",
+"cost": 7,
+"power": 6,
+"level1": "CARNAGE WHENEVER ANY CARD IS DEPLOYED ON THE SAME LANE, WEAKEN(1) AND PIN(10S). IF IT HAS 3 OR LESS CHAKRA, WEAKEN(3) INSTEAD. LANE SWITCH AFTERWARDS.",
+"level2": "CARNAGE WHENEVER ANY CARD IS DEPLOYED ON THE SAME LANE, WEAKEN(2) AND PIN(10S). IF IT HAS 4 OR LESS CHAKRA, WEAKEN(4) INSTEAD. LANE SWITCH AFTERWARDS."
+},
+"097": {
+"id": "097",
+"name": "Tsunade",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 6,
+"level1": "MITOTIC REGENERATION THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, HEAL(2) EVERY SECOND AND IGNORE RIVAL SKILLS FOR 10 SECONDS. ON WITHDRAW, PERMANENTLY DECREASE BASE CHAKRA BY 1.",
+"level2": "MITOTIC REGENERATION THE FIRST TIME THIS CARD GOES BELOW BASE CHAKRA, HEAL(2) EVERY SECOND AND IGNORE RIVAL SKILLS FOR 12 SECONDS. ON WITHDRAW, PERMANENTLY DECREASE BASE CHAKRA BY 1."
+},
+"098": {
+"id": "098",
+"name": "Sakon & Ukon",
+"rarity": "LEGENDARY",
+"cost": 5,
+"power": 4,
+"level1": "SYNCHRONIZED DEFENSE DEPLOYS AS SAKON AND UKON ON SEPARATE LANES WITH GUARD(2). WHENEVER ALLIED GUARD ACTIVATES, BOTH CARDS GAIN CHAKRA(+1).",
+"level2": "SYNCHRONIZED DEFENSE DEPLOYS AS SAKON AND UKON ON SEPARATE LANES WITH GUARD(4). WHENEVER ALLIED GUARD ACTIVATES, BOTH CARDS GAIN CHAKRA(+1)."
+},
+"099": {
+"id": "099",
+"name": "Tayuya",
+"rarity": "LEGENDARY",
+"cost": 6,
+"power": 4,
+"level1": "DOKI SUMMONING...",
+"level2": "DOKI SUMMONING..."
+},
+"100": {
+"id": "100",
+"name": "Kimimaro",
+"rarity": "LEGENDARY",
+"cost": 9,
+"power": 5,
+"level1": "UNWAVERING LOYALTY...",
+"level2": "UNWAVERING LOYALTY..."
+}
+}
+}
