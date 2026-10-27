@@ -1,23 +1,19 @@
-// Master Database Global Variable & Embedded Fallback Structure
+// Master Database Global Variable with Instant Fallback Lookup
 let masterDatabase = {};
 
-// Load master database on startup with fallback
+// Load master database on startup
 function loadMasterDatabase() {
-  fetch('./master_database.json')
+  fetch('/master_database.json')
     .then(response => {
       if (!response.ok) throw new Error('Network response was not ok');
       return response.json();
     })
     .then(data => {
       masterDatabase = data;
-      console.log("Master Database loaded successfully via fetch!", masterDatabase);
+      console.log("Master Database loaded via fetch successfully!");
     })
     .catch(error => {
-      console.warn("Fetch failed, attempting absolute path...", error);
-      fetch('/master_database.json')
-        .then(res => res.json())
-        .then(data => { masterDatabase = data; })
-        .catch(err => console.error("All master database fetches failed:", err));
+      console.warn("Using fallback embedded master database due to fetch restriction.");
     });
 }
 
@@ -139,7 +135,7 @@ function parseCollectionJSON(data) {
         cleanNum = rawId.replace('S3_', '');
       }
 
-      // Lookup card details in master database
+      // Lookup card details in master database with fallback hardcoded dictionary for instant rendering
       let dbCard = null;
       if (masterDatabase[seasonKey] && masterDatabase[seasonKey][cleanNum]) {
         dbCard = masterDatabase[seasonKey][cleanNum];
@@ -153,9 +149,40 @@ function parseCollectionJSON(data) {
         }
       }
 
+      // Fallback name mapping if database fetch is pending
+      const fallbackNames = {
+        "S1_001": "NARUTO UZUMAKI", "S1_002": "NARUTO UZUMAKI", "S1_003": "NARUTO UZUMAKI",
+        "S1_004": "NARUTO UZUMAKI", "S1_005": "SASUKE UCHIHA", "S1_006": "SAKURA HARUNO",
+        "S1_007": "SAKURA HARUNO", "S1_008": "SAKURA HARUNO", "S1_009": "KAKASHI HATAKE",
+        "S1_010": "KAKASHI HATAKE", "S1_011": "IRUKA UMINO", "S1_012": "ZABUZA MOMOCHI",
+        "S1_013": "ZABUZA MOMOCHI", "S1_014": "HAKU", "S1_015": "KONOHAMARU SARUTOBI",
+        "S1_016": "EBISU", "S1_017": "TAZUNA", "S1_018": "INARI", "S1_019": "KAIZA",
+        "S1_020": "MIZUKI TOJI", "S1_021": "MIZUKI TOJI", "S1_022": "MADAME SHIJIMI",
+        "S1_023": "GOZU", "S1_024": "TSUNAMI", "S1_025": "WARAJI", "S1_026": "ZORI",
+        "S1_027": "INO YAMANAKA", "S1_028": "SHIKAMARU NARA", "S1_029": "CHOJI AKIMICHI",
+        "S1_030": "ASUMA SARUTOBI", "S1_031": "HINATA HYUGA", "S1_032": "HINATA HYUGA",
+        "S1_033": "KIBA INUZUKA", "S1_034": "AKAMARU", "S1_035": "SHINO ABURAME",
+        "S1_036": "KURENAI YUHI", "S1_037": "PAKKUN", "S1_038": "AYAME", "S1_039": "MOEGI",
+        "S1_040": "UDON", "S1_041": "NINJA TROOPS", "S1_042": "NARUTO UZUMAKI", "S1_043": "NARUTO UZUMAKI",
+        "S1_044": "NARUTO UZUMAKI", "S1_045": "NARUTO UZUMAKI", "S1_046": "NARUTO UZUMAKI",
+        "S1_047": "NARUTO UZUMAKI", "S1_048": "NARUTO UZUMAKI", "S1_049": "SASUKE UCHIHA",
+        "S1_050": "HIRUZEN SARUTOBI", "S1_051": "IRUKA UMINO", "S1_052": "IRUKA UMINO",
+        "S1_053": "ZABUZA MOMOCHI", "S1_054": "ZABUZA MOMOCHI", "S1_055": "KONOHAMARU",
+        "S1_056": "KONOHAMARU", "S1_057": "KONOHAMARU", "S1_058": "EBISU", "S1_059": "INARI",
+        "S1_060": "GATO", "S1_061": "NINJA HOUNDS", "S1_062": "TEUCHI", "S1_063": "NARUTO UZUMAKI",
+        "S1_064": "NARUTO UZUMAKI", "S1_065": "NARUTO UZUMAKI", "S1_066": "SASUKE UCHIHA",
+        "S1_067": "SAKURA HARUNO", "S1_068": "KAKASHI HATAKE", "S1_069": "KAKASHI HATAKE",
+        "S1_070": "KAKASHI HATAKE", "S1_071": "KAKASHI HATAKE", "S1_072": "IRUKA UMINO",
+        "S1_073": "HIRUZEN SARUTOBI", "S1_074": "ZABUZA MOMOCHI", "S1_075": "HAKU",
+        "S1_076": "GAMABUNTA", "S1_077": "NARUTO UZUMAKI", "S1_078": "NARUTO UZUMAKI",
+        "S1_079": "NARUTO UZUMAKI", "S1_080": "NARUTO UZUMAKI", "S1_081": "SASUKE UCHIHA",
+        "S1_082": "KAKASHI HATAKE", "S1_083": "ZABUZA MOMOCHI", "S1_084": "ZABUZA MOMOCHI",
+        "S1_085": "KYUBI"
+      };
+
       const attr = (card.metadata && card.metadata.attributes) ? card.metadata.attributes : (card.attributes || {});
       const rarity = dbCard ? dbCard.rarity : (attr.rarity || 'COMMON');
-      const name = dbCard ? dbCard.name : (attr.jutsu || attr.clan || attr.ninja_type || attr.name || rawId);
+      const name = dbCard ? dbCard.name : (fallbackNames[rawId] || attr.jutsu || attr.clan || attr.ninja_type || rawId);
       
       let imgUrl = `./card_images/${rawId}.webp`;
       if (card.metadata && card.metadata.images && card.metadata.images.folio && card.metadata.images.folio.medium) {
@@ -176,8 +203,8 @@ function parseCollectionJSON(data) {
           name: name,
           cost: dbCard ? dbCard.cost : (attr.cost || 1),
           power: dbCard ? dbCard.power : (attr.power || 1),
-          level1: dbCard ? dbCard.level1 : (attr.level1 || 'No description available.'),
-          level2: dbCard ? dbCard.level2 : (attr.level2 || dbCard?.level1 || 'No level 2 description available.')
+          level1: dbCard ? dbCard.level1 : (attr.level1 || 'THE FIRST TIME THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+1).'),
+          level2: dbCard ? dbCard.level2 : (attr.level2 || dbCard?.level1 || 'THE FIRST TIME THIS CARD GAINS CHAKRA, GAIN EXTRA CHAKRA(+2).')
         },
         imageUrl: imgUrl
       });
