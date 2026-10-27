@@ -2,7 +2,7 @@ window.NarutoApp = window.NarutoApp || {
   ownedCardsList: [],
   allDatabaseCards: [],
   activeDeck: [],
-  calculatedAiDeck: [], // Stores temporary preview calculated deck
+  calculatedAiDeck: [],
   dbShowAll: false
 };
 
@@ -11,7 +11,7 @@ const appState = window.NarutoApp;
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof masterDatabase !== 'undefined' && Object.keys(masterDatabase).length > 0) {
     flattenDatabase(masterDatabase);
-    renderDatabaseUI(appState.allDatabaseCards);
+    filterDatabase(); // Initial render with filters applied
   } else {
     console.warn("masterDatabase global object not found.");
     const grid = document.getElementById('databaseGrid');
@@ -67,7 +67,7 @@ function renderDatabaseUI(cards) {
   if (!grid) return;
 
   if (!cards.length) {
-    grid.innerHTML = '<div class="placeholder-msg">No cards found in database.</div>';
+    grid.innerHTML = '<div class="placeholder-msg">No cards found matching your database filters.</div>';
     return;
   }
   
@@ -76,7 +76,7 @@ function renderDatabaseUI(cards) {
   let html = cardsToRender.map(c => createCardHTML(c, 'db')).join('');
   
   if (!appState.dbShowAll && cards.length > displayLimit) {
-    html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing top ${displayLimit} of ${cards.length} cards. Click <strong>"📖 Show All Cards"</strong> above or use search to view more.</div>`;
+    html += `<div class="placeholder-msg" style="grid-column: 1 / -1; padding: 20px;">Showing top ${displayLimit} of ${cards.length} cards matching filters. Click <strong>"📖 Show All Cards"</strong> above to view all.</div>`;
   }
 
   if (btn) {
@@ -93,15 +93,63 @@ function toggleDatabaseLimit() {
 
 function filterDatabase() {
   const query = document.getElementById('dbSearchInput').value.toLowerCase();
+  const sortBy = document.getElementById('dbSortByFilter').value;
+  const skillType = document.getElementById('dbSkillTypeFilter').value.toLowerCase();
+  const cost = document.getElementById('dbCostFilter').value;
+  const power = document.getElementById('dbPowerFilter').value;
+  const rarity = document.getElementById('dbRarityFilter').value;
   const season = document.getElementById('seasonSelect').value;
 
-  const filtered = appState.allDatabaseCards.filter(c => {
+  let filtered = appState.allDatabaseCards.filter(c => {
+    const attr = c.attributes || {};
+    const nameStr = (attr.name || c.id).toLowerCase();
+    const descStr = (attr.description || '').toLowerCase();
+
     const matchesSeason = season === 'all' || c.season === season;
-    const matchesSearch = c.id.toLowerCase().includes(query) || c.attributes.name.toLowerCase().includes(query);
-    return matchesSeason && matchesSearch;
+    const matchesSearch = c.id.toLowerCase().includes(query) || nameStr.includes(query) || descStr.includes(query);
+    const matchesSkill = skillType === 'all' || descStr.includes(skillType);
+
+    let matchesCost = true;
+    if (cost !== 'ALL') {
+      const cardCost = Number(attr.cost || 0);
+      matchesCost = cost === '6' ? cardCost >= 6 : cardCost === Number(cost);
+    }
+
+    let matchesPower = true;
+    if (power !== 'ALL') {
+      const cardPwr = Number(attr.power || 0);
+      matchesPower = power === '5' ? cardPwr >= 5 : cardPwr === Number(power);
+    }
+
+    const matchesRarity = rarity === 'ALL' || (attr.rarity || '').toUpperCase() === rarity.toUpperCase();
+
+    return matchesSeason && matchesSearch && matchesSkill && matchesCost && matchesPower && matchesRarity;
   });
 
+  if (sortBy === 'RARITY') {
+    const order = { 'LEGENDARY': 4, 'EPIC': 3, 'RARE': 2, 'COMMON': 1 };
+    filtered.sort((a, b) => (order[(b.attributes.rarity || '').toUpperCase()] || 0) - (order[(a.attributes.rarity || '').toUpperCase()] || 0));
+  } else if (sortBy === 'COST') {
+    filtered.sort((a, b) => (a.attributes.cost || 0) - (b.attributes.cost || 0));
+  } else if (sortBy === 'POWER') {
+    filtered.sort((a, b) => (b.attributes.power || 0) - (a.attributes.power || 0));
+  } else {
+    filtered.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+  }
+
   renderDatabaseUI(filtered);
+}
+
+function resetDatabaseFilters() {
+  document.getElementById('dbSearchInput').value = '';
+  document.getElementById('dbSortByFilter').value = 'ID';
+  document.getElementById('dbSkillTypeFilter').value = 'ALL';
+  document.getElementById('dbCostFilter').value = 'ALL';
+  document.getElementById('dbPowerFilter').value = 'ALL';
+  document.getElementById('dbRarityFilter').value = 'ALL';
+  document.getElementById('seasonSelect').value = 'all';
+  
+  filterDatabase();
 }
 
 function switchTab(tabId) {
@@ -339,9 +387,7 @@ function addCardToActiveDeck(cardId, fromSource = 'collection') {
   updateDeckUI();
   
   renderCollectionUI(appState.ownedCardsList);
-  if (typeof allDatabaseCards !== 'undefined') {
-    renderDatabaseUI(appState.allDatabaseCards);
-  }
+  filterDatabase();
 }
 
 function removeCardFromActiveDeck(instanceId) {
@@ -349,9 +395,7 @@ function removeCardFromActiveDeck(instanceId) {
   updateDeckUI();
   
   renderCollectionUI(appState.ownedCardsList);
-  if (typeof allDatabaseCards !== 'undefined') {
-    renderDatabaseUI(appState.allDatabaseCards);
-  }
+  filterDatabase();
 }
 
 function clearActiveDeck() {
@@ -359,9 +403,7 @@ function clearActiveDeck() {
     appState.activeDeck = [];
     updateDeckUI();
     renderCollectionUI(appState.ownedCardsList);
-    if (typeof allDatabaseCards !== 'undefined') {
-      renderDatabaseUI(appState.allDatabaseCards);
-    }
+    filterDatabase();
   }
 }
 
@@ -422,7 +464,6 @@ function renderChakraChart() {
   chartContainer.innerHTML = chartHtml;
 }
 
-// Separate chart renderer for AI preview tab
 function renderAiChakraChart(deckCards) {
   const chartContainer = document.getElementById('gameStyleChakraChart');
   const countLabel = document.getElementById('deckCardCountLabel');
@@ -548,7 +589,6 @@ function createCardHTML(card, actionType) {
   `;
 }
 
-// 1. CALCULATE STRATEGY (Preview without leaving tab)
 function calculateOptimalDeckUI() {
   const strategy = document.getElementById('strategySelect').value;
 
@@ -567,7 +607,6 @@ function calculateOptimalDeckUI() {
     return;
   }
 
-  // Save to temporary preview container
   appState.calculatedAiDeck = result.deck;
 
   const grid = document.getElementById('aiDeckGrid');
@@ -580,12 +619,10 @@ function calculateOptimalDeckUI() {
   document.getElementById('aiSynergyScore').textContent = `Synergy Score: ${result.totalScore}`;
   document.getElementById('aiStrategyInfo').textContent = `Successfully calculated ${appState.calculatedAiDeck.length} cards using strategy: ${strategy.toUpperCase()}`;
 
-  // Enable the "Load to Active Deck" button
   const loadBtn = document.getElementById('loadAiDeckBtn');
   if (loadBtn) loadBtn.disabled = false;
 }
 
-// 2. LOAD CALCULATED DECK TO ACTIVE TAB
 function loadCalculatedDeckToActive() {
   if (!appState.calculatedAiDeck || appState.calculatedAiDeck.length === 0) {
     alert("Please calculate a strategy first!");
@@ -595,6 +632,7 @@ function loadCalculatedDeckToActive() {
   appState.activeDeck = [...appState.calculatedAiDeck];
   updateDeckUI();
   renderCollectionUI(appState.ownedCardsList);
+  filterDatabase();
 
   alert(`Successfully loaded ${appState.activeDeck.length} cards into your Active Deck!`);
   switchTab('deckTab');
