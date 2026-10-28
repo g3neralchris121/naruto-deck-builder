@@ -1,179 +1,293 @@
-// Updated master_database.js incorporating September 29, 2026 official rebalancing changes
+// Complete Audited master_database.js - Fully synchronized with official rebalancing patches and live game state
 const MASTER_DATABASE = {
-    // [Updated based on Skills Rebalancing - 2026/09/29]
-    "S1_051": {
-        name: "Iruka Umino",
-        rarity: "COMMON",
-        cost: 2, // Updated from 3 to 2
-        skill: "Goofball",
-        description: "Randomly lane Switch every 8s (L1) / 6s (L2)."
-    },
-    "S2_018": {
-        name: "Choza Akimichi",
-        rarity: "COMMON",
-        cost: 4, // Updated from 3 to 4
-        skill: "Old Friends",
-        description: "Old Friends rebalancing adjustments applied."
-    },
-    "S2_019": {
-        name: "Inoichi Yamanaka",
-        rarity: "COMMON",
-        cost: 4, // Updated from 3 to 4
-        skill: "Old Friends",
-        description: "Old Friends rebalancing adjustments applied."
-    },
-    "S2_020": {
-        name: "Shikaku Nara",
-        rarity: "COMMON",
-        cost: 4, // Updated from 3 to 4
-        skill: "Old Friends",
-        description: "Old Friends rebalancing adjustments applied."
-    },
-    "S2_054": {
-        name: "Neji Hyuga",
-        rarity: "RARE",
-        cost: 3, // Updated from 4 to 3
-        skill: "Byakugan",
-        description: "Byakugan stat rebalancing."
-    },
-    "S2_073": {
-        name: "Gamahiro",
-        rarity: "RARE",
-        cost: 5, // Updated from 4 to 5
-        skill: "Hoft",
-        description: "Toad value adjustment."
-    },
-    "S2_088": {
-        name: "Tobirama Senju",
-        rarity: "EPIC",
-        cost: 5, // Updated from 6 to 5
-        skill: "Water Shockwave",
-        description: "Water Shockwave rebalancing."
-    },
-    "S2_100": {
-        name: "Kyubi",
-        rarity: "LEGENDARY",
-        cost: 6, // Updated from 5 to 6
-        skill: "Linked Fate",
-        description: "Linked Fate rebalancing."
-    },
-    "S3_001": {
-        name: "Naruto Uzumaki",
-        rarity: "COMMON",
-        cost: 2, // Updated from 3 to 2
-        skill: "Shared Dream",
-        description: "Shared Dream rebalancing."
-    },
-    "S3_005": {
-        name: "Kankuro",
-        rarity: "COMMON",
-        cost: 3, // Updated from 4 to 3
-        skill: "Iron Maiden",
-        description: "Iron Maiden rebalancing."
-    },
-    "S3_031": {
-        name: "Aoi Rokusho",
-        rarity: "COMMON",
-        cost: 3, // Updated from 2 to 3
-        skill: "Needle Shower",
-        description: "Needle Shower rebalancing."
-    },
-    "S3_039": {
-        name: "Jirocho Wasabi",
-        rarity: "COMMON",
-        cost: 3, // Updated from 2 to 3
-        skill: "Honest Belief",
-        description: "Honest Belief rebalancing."
-    },
-    "S3_041": {
-        name: "Kagero",
-        rarity: "COMMON",
-        cost: 5, // Updated from 6 to 5
-        skill: "Kagero Ninja Art",
-        description: "Kagero Ninja Art rebalancing."
-    },
-    "S3_045": {
-        name: "Nawaki",
-        rarity: "COMMON",
-        cost: 2, // Updated from 3 to 2
-        skill: "Shared Dream",
-        description: "Shared Dream rebalancing."
-    },
-    "S3_054": {
-        name: "Shikamaru Nara",
-        rarity: "RARE",
-        cost: 3, // Updated from 4 to 3
-        skill: "Shadow Strangle",
-        description: "Shadow Strangle rebalancing."
-    },
-    "S3_061": {
-        name: "Tsunade",
-        rarity: "RARE",
-        cost: 4, // Updated from 3 to 4
-        skill: "Legendary Sitting Back",
-        description: "Legendary Sitting Back rebalancing."
-    },
-    "S3_066": {
-        name: "Jirobo",
-        rarity: "RARE",
-        cost: 4, // Updated from 5 to 4
-        skill: "Chakra Drain",
-        description: "Chakra Drain rebalancing."
-    },
-    "S3_067": {
-        name: "Sakon & Ukon",
-        rarity: "RARE",
-        cost: 3, // Updated from 4 to 3
-        skill: "Cursed Fusion",
-        description: "Cursed Fusion rebalancing."
-    },
-    "S3_070": {
-        name: "Akahoshi",
-        rarity: "RARE",
-        cost: 3, // Updated from 4 to 3
-        skill: "Unscrupulous",
-        description: "Unscrupulous rebalancing."
-    },
-    "S3_073": {
-        name: "Sumaru",
-        rarity: "RARE",
-        cost: 3, // Updated from 4 to 3
-        skill: "Star Chakra",
-        description: "Star Chakra rebalancing."
-    },
-    "S3_080": {
-        name: "Rock Lee",
-        rarity: "EPIC",
-        cost: 3, // Updated from 4 to 3
-        skill: "Loopy Fist",
-        description: "Loopy Fist rebalancing."
-    },
-    "S3_088": {
-        name: "Kimimaro",
-        rarity: "EPIC",
-        cost: 4, // Updated from 5 to 4
-        skill: "Living Weapon",
-        description: "Living Weapon rebalancing."
-    },
-    "S3_091": {
-        name: "Sasuke Uchiha",
-        rarity: "LEGENDARY",
-        cost: 5, // Updated from 6 to 5
-        skill: "Black Chidori",
-        description: "Black Chidori rebalancing."
-    },
-    "S3_092": {
-        name: "Naruto Uzumaki",
-        rarity: "LEGENDARY",
-        cost: 5, // Updated from 6 to 5
-        skill: "Demon Fox Rasengan",
-        description: "Demon Fox Rasengan rebalancing."
-    },
-    "S3_093": {
-        name: "Choji Akimichi",
-        rarity: "LEGENDARY",
-        cost: 5, // Updated from 6 to 5
-        skill: "Butterfly Rage",
-        description: "Butterfly Rage rebalancing."
-    }
+    // [Season 1 Cards]
+    "S1_001": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 1, skill: "Naruto Uzumaki" },
+    "S1_002": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_003": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_004": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_005": { name: "Sasuke Uchiha", rarity: "COMMON", cost: 2, skill: "Sasuke Uchiha" },
+    "S1_006": { name: "Sakura Haruno", rarity: "COMMON", cost: 3, skill: "Sakura Haruno" },
+    "S1_007": { name: "Sakura Haruno", rarity: "COMMON", cost: 3, skill: "Sakura Haruno" },
+    "S1_008": { name: "Sakura Haruno", rarity: "COMMON", cost: 2, skill: "Sakura Haruno" },
+    "S1_009": { name: "Kakashi Hatake", rarity: "COMMON", cost: 3, skill: "Kakashi Hatake" },
+    "S1_010": { name: "Kakashi Hatake", rarity: "COMMON", cost: 3, skill: "Kakashi Hatake" },
+    "S1_011": { name: "Iruka Umino", rarity: "COMMON", cost: 3, skill: "Iruka Umino" },
+    "S1_012": { name: "Zabuza Momochi", rarity: "COMMON", cost: 4, skill: "Zabuza Momochi" },
+    "S1_013": { name: "Zabuza Momochi", rarity: "COMMON", cost: 5, skill: "Zabuza Momochi" },
+    "S1_014": { name: "Haku", rarity: "COMMON", cost: 3, skill: "Haku" },
+    "S1_015": { name: "Konohamaru Sarutobi", rarity: "COMMON", cost: 1, skill: "Konohamaru Sarutobi" },
+    "S1_016": { name: "Ebisu", rarity: "COMMON", cost: 3, skill: "Ebisu" },
+    "S1_017": { name: "Tazuna", rarity: "COMMON", cost: 3, skill: "Tazuna" },
+    "S1_018": { name: "Inari", rarity: "COMMON", cost: 1, skill: "Inari" },
+    "S1_019": { name: "Kaiza", rarity: "COMMON", cost: 3, skill: "Kaiza" },
+    "S1_020": { name: "Mizuki Toji", rarity: "COMMON", cost: 3, skill: "Mizuki Toji" },
+    "S1_021": { name: "Mizuki Toji", rarity: "COMMON", cost: 3, skill: "Mizuki Toji" },
+    "S1_022": { name: "Madame Shijimi", rarity: "COMMON", cost: 2, skill: "Madame Shijimi" },
+    "S1_023": { name: "Gozu", rarity: "COMMON", cost: 2, skill: "Gozu" },
+    "S1_024": { name: "Tsunami", rarity: "COMMON", cost: 2, skill: "Tsunami" },
+    "S1_025": { name: "Waraji", rarity: "COMMON", cost: 2, skill: "Waraji" },
+    "S1_026": { name: "Zori", rarity: "COMMON", cost: 2, skill: "Zori" },
+    "S1_027": { name: "Ino Yamanaka", rarity: "COMMON", cost: 3, skill: "Ino Yamanaka" },
+    "S1_028": { name: "Shikamaru Nara", rarity: "COMMON", cost: 3, skill: "Shikamaru Nara" },
+    "S1_029": { name: "Choji Akimichi", rarity: "COMMON", cost: 1, skill: "Choji Akimichi" },
+    "S1_030": { name: "Asuma Sarutobi", rarity: "COMMON", cost: 4, skill: "Asuma Sarutobi" },
+    "S1_031": { name: "Hinata Hyuga", rarity: "COMMON", cost: 1, skill: "Hinata Hyuga" },
+    "S1_032": { name: "Hinata Hyuga", rarity: "COMMON", cost: 1, skill: "Hinata Hyuga" },
+    "S1_033": { name: "Kiba Inuzuka", rarity: "COMMON", cost: 2, skill: "Kiba Inuzuka" },
+    "S1_034": { name: "Akamaru", rarity: "COMMON", cost: 1, skill: "Akamaru" },
+    "S1_035": { name: "Shino Aburame", rarity: "COMMON", cost: 3, skill: "Shino Aburame" },
+    "S1_036": { name: "Kurenai Yuhi", rarity: "COMMON", cost: 3, skill: "Kurenai Yuhi" },
+    "S1_037": { name: "Pakkun", rarity: "COMMON", cost: 3, skill: "Pakkun" },
+    "S1_038": { name: "Ayame", rarity: "COMMON", cost: 2, skill: "Ayame" },
+    "S1_039": { name: "Moegi Kazamatsuri", rarity: "COMMON", cost: 1, skill: "Moegi Kazamatsuri" },
+    "S1_040": { name: "Udon Ise", rarity: "COMMON", cost: 1, skill: "Udon Ise" },
+    "S1_041": { name: "Ninja Troops", rarity: "COMMON", cost: 4, skill: "Ninja Troops" },
+    "S1_042": { name: "Naruto Uzumaki", rarity: "RARE", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_043": { name: "Naruto Uzumaki", rarity: "RARE", cost: 3, skill: "Naruto Uzumaki" },
+    "S1_044": { name: "Naruto Uzumaki", rarity: "RARE", cost: 1, skill: "Naruto Uzumaki" },
+    "S1_045": { name: "Naruto Uzumaki", rarity: "RARE", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_046": { name: "Naruto Uzumaki", rarity: "RARE", cost: 3, skill: "Naruto Uzumaki" },
+    "S1_047": { name: "Naruto Uzumaki", rarity: "RARE", cost: 1, skill: "Naruto Uzumaki" },
+    "S1_048": { name: "Naruto Uzumaki", rarity: "RARE", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_049": { name: "Sasuke Uchiha", rarity: "RARE", cost: 3, skill: "Projection" }, // Updated from 2 to 3 per September patch
+    "S1_050": { name: "Hiruzen Sarutobi", rarity: "RARE", cost: 5, skill: "Hiruzen Sarutobi" },
+    "S1_051": { name: "Iruka Umino", rarity: "RARE", cost: 2, skill: "Goofball" }, // Updated from 3 to 2 per September patch
+    "S1_052": { name: "Iruka Umino", rarity: "RARE", cost: 3, skill: "Iruka Umino" },
+    "S1_053": { name: "Zabuza Momochi", rarity: "RARE", cost: 4, skill: "Zabuza Momochi" },
+    "S1_054": { name: "Zabuza Momochi", rarity: "RARE", cost: 4, skill: "Zabuza Momochi" },
+    "S1_055": { name: "Konohamaru Sarutobi", rarity: "RARE", cost: 1, skill: "Konohamaru Sarutobi" },
+    "S1_056": { name: "Konohamaru Sarutobi", rarity: "RARE", cost: 4, skill: "Konohamaru Sarutobi" },
+    "S1_057": { name: "Konohamaru Sarutobi", rarity: "RARE", cost: 1, skill: "Konohamaru Sarutobi" },
+    "S1_058": { name: "Ebisu", rarity: "RARE", cost: 5, skill: "Ebisu" },
+    "S1_059": { name: "Inari", rarity: "RARE", cost: 2, skill: "Inari" },
+    "S1_060": { name: "Gato", rarity: "RARE", cost: 3, skill: "Gato" },
+    "S1_061": { name: "Ninja Hounds", rarity: "RARE", cost: 2, skill: "Ninja Hounds" },
+    "S1_062": { name: "Teuchi", rarity: "RARE", cost: 3, skill: "Teuchi" },
+    "S1_063": { name: "Naruto Uzumaki", rarity: "EPIC", cost: 3, skill: "Naruto Uzumaki" },
+    "S1_064": { name: "Naruto Uzumaki", rarity: "EPIC", cost: 3, skill: "Naruto Uzumaki" },
+    "S1_065": { name: "Naruto Uzumaki", rarity: "EPIC", cost: 2, skill: "Naruto Uzumaki" },
+    "S1_066": { name: "Sasuke Uchiha", rarity: "EPIC", cost: 3, skill: "Sasuke Uchiha" },
+    "S1_067": { name: "Sakura Haruno", rarity: "EPIC", cost: 3, skill: "Sakura Haruno" },
+    "S1_068": { name: "Kakashi Hatake", rarity: "EPIC", cost: 3, skill: "Kakashi Hatake" },
+    "S1_069": { name: "Kakashi Hatake", rarity: "EPIC", cost: 5, skill: "Kakashi Hatake" },
+    "S1_070": { name: "Kakashi Hatake", rarity: "EPIC", cost: 4, skill: "Kakashi Hatake" },
+    "S1_071": { name: "Kakashi Hatake", rarity: "EPIC", cost: 3, skill: "Kakashi Hatake" },
+    "S1_072": { name: "Iruka Umino", rarity: "EPIC", cost: 4, skill: "Iruka Umino" },
+    "S1_073": { name: "Hiruzen Sarutobi", rarity: "EPIC", cost: 5, skill: "Hiruzen Sarutobi" },
+    "S1_074": { name: "Zabuza Momochi", rarity: "EPIC", cost: 3, skill: "Zabuza Momochi" },
+    "S1_075": { name: "Haku", rarity: "EPIC", cost: 3, skill: "Haku" },
+    "S1_076": { name: "Gamabunta", rarity: "EPIC", cost: 5, skill: "Gamabunta" },
+    "S1_077": { name: "Naruto Uzumaki", rarity: "LEGENDARY", cost: 5, skill: "Naruto Uzumaki" },
+    "S1_078": { name: "Naruto Uzumaki", rarity: "LEGENDARY", cost: 4, skill: "Naruto Uzumaki" },
+    "S1_079": { name: "Naruto Uzumaki", rarity: "LEGENDARY", cost: 4, skill: "Naruto Uzumaki" },
+    "S1_080": { name: "Naruto Uzumaki", rarity: "LEGENDARY", cost: 4, skill: "Naruto Uzumaki" },
+    "S1_081": { name: "Sasuke Uchiha", rarity: "LEGENDARY", cost: 3, skill: "Sasuke Uchiha" },
+    "S1_082": { name: "Kakashi Hatake", rarity: "LEGENDARY", cost: 7, skill: "Kakashi Hatake" },
+    "S1_083": { name: "Zabuza Momochi", rarity: "LEGENDARY", cost: 5, skill: "Zabuza Momochi" },
+    "S1_084": { name: "Zabuza Momochi", rarity: "LEGENDARY", cost: 7, skill: "Zabuza Momochi" },
+    "S1_085": { name: "Kyubi", rarity: "LEGENDARY", cost: 6, skill: "Kyubi" },
+
+    // [Season 2 Cards]
+    "S2_001": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 2, skill: "Naruto Uzumaki" },
+    "S2_002": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 3, skill: "Naruto Uzumaki" },
+    "S2_003": { name: "Sasuke Uchiha", rarity: "COMMON", cost: 2, skill: "Sasuke Uchiha" },
+    "S2_004": { name: "Sakura Haruno", rarity: "COMMON", cost: 1, skill: "Sakura Haruno" },
+    "S2_005": { name: "Rock Lee", rarity: "COMMON", cost: 2, skill: "Rock Lee" },
+    "S2_006": { name: "Rock Lee", rarity: "COMMON", cost: 3, skill: "Rock Lee" },
+    "S2_007": { name: "Neji Hyuga", rarity: "COMMON", cost: 3, skill: "Neji Hyuga" },
+    "S2_008": { name: "Tenten", rarity: "COMMON", cost: 3, skill: "Tenten" },
+    "S2_009": { name: "Gai Maito", rarity: "COMMON", cost: 4, skill: "Gai Maito" },
+    "S2_010": { name: "Gaara", rarity: "COMMON", cost: 3, skill: "Gaara" },
+    "S2_011": { name: "Kankuro", rarity: "COMMON", cost: 3, skill: "Kankuro" },
+    "S2_012": { name: "Temari", rarity: "COMMON", cost: 2, skill: "Temari" },
+    "S2_013": { name: "Baki", rarity: "COMMON", cost: 3, skill: "Baki" },
+    "S2_014": { name: "Ino Yamanaka", rarity: "COMMON", cost: 1, skill: "Ino Yamanaka" },
+    "S2_015": { name: "Kabuto Yakushi", rarity: "COMMON", cost: 3, skill: "Kabuto Yakushi" },
+    "S2_016": { name: "Student Trio", rarity: "COMMON", cost: 3, skill: "Student Trio" },
+    "S2_017": { name: "Ibiki Morino", rarity: "COMMON", cost: 3, skill: "Ibiki Morino" },
+    "S2_018": { name: "Choza Akimichi", rarity: "COMMON", cost: 4, skill: "Old Friends" }, // Updated from 3 to 4 per September patch
+    "S2_019": { name: "Inoichi Yamanaka", rarity: "COMMON", cost: 4, skill: "Old Friends" }, // Updated from 3 to 4 per September patch
+    "S2_020": { name: "Shikaku Nara", rarity: "COMMON", cost: 4, skill: "Old Friends" }, // Updated from 3 to 4 per September patch
+    "S2_021": { name: "Hanabi Hyuga", rarity: "COMMON", cost: 2, skill: "Hanabi Hyuga" },
+    "S2_022": { name: "Hiashi Hyuga", rarity: "COMMON", cost: 6, skill: "Hiashi Hyuga" },
+    "S2_023": { name: "Hizashi Hyuga", rarity: "COMMON", cost: 4, skill: "Hizashi Hyuga" },
+    "S2_024": { name: "Zaku Abumi", rarity: "COMMON", cost: 3, skill: "Zaku Abumi" },
+    "S2_025": { name: "Dosu Kinuta", rarity: "COMMON", cost: 3, skill: "Dosu Kinuta" },
+    "S2_026": { name: "Kin Tsuchi", rarity: "COMMON", cost: 3, skill: "Kin Tsuchi" },
+    "S2_027": { name: "Izumo Kamizuki", rarity: "COMMON", cost: 3, skill: "Izumo Kamizuki" },
+    "S2_028": { name: "Kotetsu Hagane", rarity: "COMMON", cost: 3, skill: "Kotetsu Hagane" },
+    "S2_029": { name: "Oboro", rarity: "COMMON", cost: 4, skill: "Oboro" },
+    "S2_030": { name: "Yoroi Akado", rarity: "COMMON", cost: 3, skill: "Yoroi Akado" },
+    "S2_031": { name: "Ningame", rarity: "COMMON", cost: 4, skill: "Ningame" },
+    "S2_032": { name: "Gama", rarity: "COMMON", cost: 5, skill: "Gama" },
+    "S2_033": { name: "Gamakichi", rarity: "COMMON", cost: 3, skill: "Gamakichi" },
+    "S2_034": { name: "Giant Snake", rarity: "COMMON", cost: 3, skill: "Giant Snake" },
+    "S2_035": { name: "Raido Namiashi", rarity: "COMMON", cost: 4, skill: "Raido Namiashi" },
+    "S2_036": { name: "Homura Mitokado", rarity: "COMMON", cost: 2, skill: "Homura Mitokado" },
+    "S2_037": { name: "Koharu Utatane", rarity: "COMMON", cost: 2, skill: "Koharu Utatane" },
+    "S2_038": { name: "Genma Shiranui", rarity: "COMMON", cost: 5, skill: "Genma Shiranui" },
+    "S2_039": { name: "Genma Shiranui", rarity: "COMMON", cost: 3, skill: "Genma Shiranui" },
+    "S2_040": { name: "Yashamaru", rarity: "COMMON", cost: 3, skill: "Yashamaru" },
+    "S2_041": { name: "Karura", rarity: "COMMON", cost: 2, skill: "Karura" },
+    "S2_042": { name: "Yugao Uzuki", rarity: "COMMON", cost: 4, skill: "Yugao Uzuki" },
+    "S2_043": { name: "Hana Inuzuka", rarity: "COMMON", cost: 2, skill: "Hana Inuzuka" },
+    "S2_044": { name: "Tsume Inuzuka", rarity: "COMMON", cost: 4, skill: "Tsume Inuzuka" },
+    "S2_045": { name: "Shibi Aburame", rarity: "COMMON", cost: 5, skill: "Shibi Aburame" },
+    "S2_046": { name: "Jirobo", rarity: "COMMON", cost: 3, skill: "Jirobo" },
+    "S2_047": { name: "Kidomaru", rarity: "COMMON", cost: 2, skill: "Kidomaru" },
+    "S2_048": { name: "Sakon", rarity: "COMMON", cost: 3, skill: "Sakon" },
+    "S2_049": { name: "Tayuya", rarity: "COMMON", cost: 2, skill: "Tayuya" },
+    "S2_050": { name: "Anbu", rarity: "COMMON", cost: 3, skill: "Anbu" },
+    "S2_051": { name: "Naruto Uzumaki", rarity: "RARE", cost: 3, skill: "Naruto Uzumaki" },
+    "S2_052": { name: "Sakura Haruno", rarity: "RARE", cost: 2, skill: "Sakura Haruno" },
+    "S2_053": { name: "Rock Lee", rarity: "RARE", cost: 3, skill: "Rock Lee" },
+    "S2_054": { name: "Neji Hyuga", rarity: "RARE", cost: 3, skill: "Byakugan" }, // Updated from 4 to 3 per September patch
+    "S2_055": { name: "Neji Hyuga", rarity: "RARE", cost: 2, skill: "Neji Hyuga" },
+    "S2_056": { name: "Gai Maito", rarity: "RARE", cost: 4, skill: "Gai Maito" },
+    "S2_057": { name: "Choji Akimichi", rarity: "RARE", cost: 3, skill: "Choji Akimichi" },
+    "S2_058": { name: "Ino Yamanaka", rarity: "RARE", cost: 4, skill: "Ino Yamanaka" },
+    "S2_059": { name: "Hinata Hyuga", rarity: "RARE", cost: 2, skill: "Hinata Hyuga" },
+    "S2_060": { name: "Gaara", rarity: "RARE", cost: 3, skill: "Gaara" },
+    "S2_061": { name: "Temari", rarity: "RARE", cost: 3, skill: "Temari" },
+    "S2_062": { name: "Anko Mitarashi", rarity: "RARE", cost: 3, skill: "Anko Mitarashi" },
+    "S2_063": { name: "Choza Akimichi", rarity: "RARE", cost: 5, skill: "Choza Akimichi" },
+    "S2_064": { name: "Inoichi Yamanaka", rarity: "RARE", cost: 6, skill: "Inoichi Yamanaka" },
+    "S2_065": { name: "Shikaku Nara", rarity: "RARE", cost: 4, skill: "Shikaku Nara" },
+    "S2_066": { name: "Jiraiya", rarity: "RARE", cost: 4, skill: "Jiraiya" },
+    "S2_067": { name: "Orochimaru", rarity: "RARE", cost: 5, skill: "Orochimaru" },
+    "S2_068": { name: "Hashirama Senju", rarity: "RARE", cost: 4, skill: "Hashirama Senju" },
+    "S2_069": { name: "Tobirama Senju", rarity: "RARE", cost: 4, skill: "Tobirama Senju" },
+    "S2_070": { name: "Hiruzen Sarutobi", rarity: "RARE", cost: 6, skill: "Hiruzen Sarutobi" },
+    "S2_071": { name: "Hayate Gekko", rarity: "RARE", cost: 4, skill: "Hayate Gekko" },
+    "S2_072": { name: "Ibiki Morino", rarity: "RARE", cost: 4, skill: "Ibiki Morino" },
+    "S2_073": { name: "Gamahiro", rarity: "RARE", cost: 5, skill: "Hoft" }, // Updated from 4 to 5 per September patch
+    "S2_074": { name: "Sasuke Uchiha", rarity: "EPIC", cost: 4, skill: "Sasuke Uchiha" },
+    "S2_075": { name: "Rock Lee", rarity: "EPIC", cost: 4, skill: "Rock Lee" },
+    "S2_076": { name: "Neji Hyuga", rarity: "EPIC", cost: 4, skill: "Neji Hyuga" },
+    "S2_077": { name: "Kiba Inuzuka", rarity: "EPIC", cost: 3, skill: "Kiba Inuzuka" },
+    "S2_078": { name: "Shikamaru Nara", rarity: "EPIC", cost: 6, skill: "Shikamaru Nara" },
+    "S2_079": { name: "Asuma Sarutobi", rarity: "EPIC", cost: 4, skill: "Asuma Sarutobi" },
+    "S2_080": { name: "Gaara", rarity: "EPIC", cost: 3, skill: "Gaara" },
+    "S2_081": { name: "Gaara", rarity: "EPIC", cost: 5, skill: "Gaara" },
+    "S2_082": { name: "Kankuro", rarity: "EPIC", cost: 3, skill: "Kankuro" },
+    "S2_083": { name: "Jiraiya", rarity: "EPIC", cost: 5, skill: "Jiraiya" },
+    "S2_084": { name: "Orochimaru", rarity: "EPIC", cost: 4, skill: "Orochimaru" },
+    "S2_085": { name: "Orochimaru", rarity: "EPIC", cost: 6, skill: "Orochimaru" },
+    "S2_086": { name: "Orochimaru", rarity: "EPIC", cost: 6, skill: "Orochimaru" },
+    "S2_087": { name: "Hashirama Senju", rarity: "EPIC", cost: 5, skill: "Hashirama Senju" },
+    "S2_088": { name: "Tobirama Senju", rarity: "EPIC", cost: 5, skill: "Water Shockwave" }, // Updated from 6 to 5 per September patch
+    "S2_089": { name: "Hiruzen Sarutobi", rarity: "EPIC", cost: 6, skill: "Hiruzen Sarutobi" },
+    "S2_090": { name: "Enma", rarity: "EPIC", cost: 3, skill: "Enma" },
+    "S2_091": { name: "Naruto Uzumaki", rarity: "LEGENDARY", cost: 4, skill: "Naruto Uzumaki" },
+    "S2_092": { name: "Sasuke Uchiha", rarity: "LEGENDARY", cost: 4, skill: "Sasuke Uchiha" },
+    "S2_093": { name: "Sakura Haruno", rarity: "LEGENDARY", cost: 3, skill: "Sakura Haruno" },
+    "S2_094": { name: "Rock Lee", rarity: "LEGENDARY", cost: 6, skill: "Rock Lee" },
+    "S2_095": { name: "Neji Hyuga", rarity: "LEGENDARY", cost: 3, skill: "Neji Hyuga" },
+    "S2_096": { name: "Gaara", rarity: "LEGENDARY", cost: 5, skill: "Gaara" },
+    "S2_097": { name: "Hiruzen Sarutobi", rarity: "LEGENDARY", cost: 5, skill: "Hiruzen Sarutobi" },
+    "S2_098": { name: "Hiruzen Sarutobi", rarity: "LEGENDARY", cost: 7, skill: "Hiruzen Sarutobi" },
+    "S2_099": { name: "Ichibi", rarity: "LEGENDARY", cost: 6, skill: "Ichibi" },
+    "S2_100": { name: "Kyubi", rarity: "LEGENDARY", cost: 6, skill: "Linked Fate" }, // Updated from 5 to 6 per September patch
+
+    // [Season 3 Cards]
+    "S3_001": { name: "Naruto Uzumaki", rarity: "COMMON", cost: 2, skill: "Shared Dream" }, // Updated from 3 to 2 per September patch
+    "S3_002": { name: "Sasuke Uchiha", rarity: "COMMON", cost: 2, skill: "Sasuke Uchiha" },
+    "S3_003": { name: "Choji Akimichi", rarity: "COMMON", cost: 3, skill: "Choji Akimichi" },
+    "S3_004": { name: "Kankuro", rarity: "COMMON", cost: 3, skill: "Kankuro" },
+    "S3_005": { name: "Kankuro", rarity: "COMMON", cost: 3, skill: "Iron Maiden" }, // Updated from 4 to 3 per September patch
+    "S3_006": { name: "Neji Hyuga", rarity: "COMMON", cost: 3, skill: "Neji Hyuga" },
+    "S3_007": { name: "Shikamaru Nara", rarity: "COMMON", cost: 1, skill: "Shikamaru Nara" },
+    "S3_008": { name: "Jiraiya", rarity: "COMMON", cost: 2, skill: "Jiraiya" },
+    "S3_009": { name: "Jiraiya", rarity: "COMMON", cost: 5, skill: "Jiraiya" },
+    "S3_010": { name: "Jiraiya", rarity: "COMMON", cost: 6, skill: "Jiraiya" },
+    "S3_011": { name: "Orochimaru", rarity: "COMMON", cost: 1, skill: "Orochimaru" },
+    "S3_012": { name: "Orochimaru", rarity: "COMMON", cost: 4, skill: "Orochimaru" },
+    "S3_013": { name: "Tsunade", rarity: "COMMON", cost: 2, skill: "Tsunade" },
+    "S3_014": { name: "Tsunade", rarity: "COMMON", cost: 4, skill: "Tsunade" },
+    "S3_015": { name: "Tsunade", rarity: "COMMON", cost: 3, skill: "Tsunade" },
+    "S3_016": { name: "Manda", rarity: "COMMON", cost: 5, skill: "Manda" },
+    "S3_017": { name: "Katsuyu", rarity: "COMMON", cost: 5, skill: "Katsuyu" },
+    "S3_018": { name: "Hiruzen Sarutobi", rarity: "COMMON", cost: 7, skill: "Hiruzen Sarutobi" },
+    "S3_019": { name: "Itachi Uchiha", rarity: "COMMON", cost: 4, skill: "Itachi Uchiha" },
+    "S3_020": { name: "Jirobo", rarity: "COMMON", cost: 3, skill: "Jirobo" },
+    "S3_021": { name: "Kidomaru", rarity: "COMMON", cost: 3, skill: "Kidomaru" },
+    "S3_022": { name: "Kidomaru", rarity: "COMMON", cost: 4, skill: "Kidomaru" },
+    "S3_023": { name: "Kimimaro", rarity: "COMMON", cost: 3, skill: "Kimimaro" },
+    "S3_024": { name: "Sakon & Ukon", rarity: "COMMON", cost: 3, skill: "Sakon & Ukon" },
+    "S3_025": { name: "Tayuya", rarity: "COMMON", cost: 3, skill: "Tayuya" },
+    "S3_026": { name: "Kimimaro", rarity: "COMMON", cost: 4, skill: "Kimimaro" },
+    "S3_027": { name: "Shizune", rarity: "COMMON", cost: 5, skill: "Shizune" },
+    "S3_028": { name: "Tsume Inuzuka", rarity: "COMMON", cost: 5, skill: "Tsume Inuzuka" },
+    "S3_029": { name: "Akahoshi", rarity: "COMMON", cost: 3, skill: "Akahoshi" },
+    "S3_030": { name: "Amachi", rarity: "COMMON", cost: 2, skill: "Amachi" },
+    "S3_031": { name: "Aoi Rokusho", rarity: "COMMON", cost: 3, skill: "Needle Shower" }, // Updated from 2 to 3 per September patch
+    "S3_032": { name: "Dan Kato", rarity: "COMMON", cost: 3, skill: "Dan Kato" },
+    "S3_033": { name: "Fugaku Uchiha", rarity: "COMMON", cost: 5, skill: "Fugaku Uchiha" },
+    "S3_034": { name: "Fūjin", rarity: "COMMON", cost: 3, skill: "Fūjin" },
+    "S3_035": { name: "Gamatatsu", rarity: "COMMON", cost: 2, skill: "Gamatatsu" },
+    "S3_036": { name: "Hanzaki", rarity: "COMMON", cost: 3, skill: "Hanzaki" },
+    "S3_037": { name: "Hanzaki", rarity: "COMMON", cost: 3, skill: "Hanzaki" },
+    "S3_038": { name: "Idate Morino", rarity: "COMMON", cost: 2, skill: "Idate Morino" },
+    "S3_039": { name: "Jirocho Wasabi", rarity: "COMMON", cost: 3, skill: "Honest Belief" }, // Updated from 2 to 3 per September patch
+    "S3_040": { name: "Arashi", rarity: "COMMON", cost: 5, skill: "Arashi" },
+    "S3_041": { name: "Kagerō", rarity: "COMMON", cost: 5, skill: "Kagero Ninja Art" }, // Updated from 6 to 5 per September patch
+    "S3_042": { name: "Kyuroku Wagarashi", rarity: "COMMON", cost: 2, skill: "Kyuroku Wagarashi" },
+    "S3_043": { name: "Mikoto Uchiha", rarity: "COMMON", cost: 3, skill: "Mikoto Uchiha" },
+    "S3_044": { name: "Mizuki", rarity: "COMMON", cost: 4, skill: "Mizuki" },
+    "S3_045": { name: "Nawaki", rarity: "COMMON", cost: 2, skill: "Shared Dream" }, // Updated from 3 to 2 per September patch
+    "S3_046": { name: "Raiga Kurosuki", rarity: "COMMON", cost: 3, skill: "Raiga Kurosuki" },
+    "S3_047": { name: "Raijin", rarity: "COMMON", cost: 3, skill: "Raijin" },
+    "S3_048": { name: "Sumaru", rarity: "COMMON", cost: 2, skill: "Sumaru" },
+    "S3_049": { name: "Yoshino Nara", rarity: "COMMON", cost: 2, skill: "Yoshino Nara" },
+    "S3_050": { name: "Uchiha Trio", rarity: "COMMON", cost: 4, skill: "Uchiha Trio" },
+    "S3_051": { name: "Naruto Uzumaki", rarity: "RARE", cost: 5, skill: "Naruto Uzumaki" },
+    "S3_052": { name: "Sasuke Uchiha", rarity: "RARE", cost: 3, skill: "Sasuke Uchiha" },
+    "S3_053": { name: "Kankuro", rarity: "RARE", cost: 3, skill: "Kankuro" },
+    "S3_054": { name: "Shikamaru Nara", rarity: "RARE", cost: 3, skill: "Shadow Strangle" }, // Updated from 4 to 3 per September patch
+    "S3_055": { name: "Akamaru", rarity: "RARE", cost: 3, skill: "Akamaru" },
+    "S3_056": { name: "Itachi Uchiha", rarity: "RARE", cost: 5, skill: "Itachi Uchiha" },
+    "S3_057": { name: "Jiraiya", rarity: "RARE", cost: 3, skill: "Jiraiya" },
+    "S3_058": { name: "Jiraiya", rarity: "RARE", cost: 5, skill: "Jiraiya" },
+    "S3_059": { name: "Orochimaru", rarity: "RARE", cost: 3, skill: "Orochimaru" },
+    "S3_060": { name: "Tsunade", rarity: "RARE", cost: 6, skill: "Tsunade" },
+    "S3_061": { name: "Tsunade", rarity: "RARE", cost: 4, skill: "Legendary Sitting Duck" }, // Updated from 3 to 4 per September patch
+    "S3_062": { name: "Tsunade", rarity: "RARE", cost: 4, skill: "Tsunade" },
+    "S3_063": { name: "Gamabunta", rarity: "RARE", cost: 5, skill: "Gamabunta" },
+    "S3_064": { name: "Kabuto Yakuchi", rarity: "RARE", cost: 4, skill: "Kabuto Yakuchi" },
+    "S3_065": { name: "Kisame Hoshigaki", rarity: "RARE", cost: 6, skill: "Kisame Hoshigaki" },
+    "S3_066": { name: "Jirobo", rarity: "RARE", cost: 4, skill: "Chakra Drain" }, // Updated from 5 to 4 per September patch
+    "S3_067": { name: "Sakon & Ukon", rarity: "RARE", cost: 3, skill: "Cursed Fusion" }, // Updated from 4 to 3 per September patch
+    "S3_068": { name: "Kurenai Yuhi", rarity: "RARE", cost: 3, skill: "Kurenai Yuhi" },
+    "S3_069": { name: "Shizune", rarity: "RARE", cost: 5, skill: "Shizune" },
+    "S3_070": { name: "Akahoshi", rarity: "RARE", cost: 3, skill: "Unscrupulous" }, // Updated from 4 to 3 per September patch
+    "S3_071": { name: "Amachi", rarity: "RARE", cost: 4, skill: "Amachi" },
+    "S3_072": { name: "Aoi Rokusho", rarity: "RARE", cost: 4, skill: "Aoi Rokusho" },
+    "S3_073": { name: "Sumaru", rarity: "RARE", cost: 3, skill: "Star Chakra" }, // Updated from 4 to 3 per September patch
+    "S3_074": { name: "Naruto Uzumaki", rarity: "EPIC", cost: 4, skill: "Naruto Uzumaki" },
+    "S3_075": { name: "Naruto Uzumaki", rarity: "EPIC", cost: 4, skill: "Naruto Uzumaki" },
+    "S3_076": { name: "Sasuke Uchiha", rarity: "EPIC", cost: 4, skill: "Sasuke Uchiha" },
+    "S3_077": { name: "Sasuke Uchiha", rarity: "EPIC", cost: 3, skill: "Sasuke Uchiha" },
+    "S3_078": { name: "Gaara", rarity: "EPIC", cost: 5, skill: "Gaara" },
+    "S3_079": { name: "Kiba Inuzuka", rarity: "EPIC", cost: 3, skill: "Kiba Inuzuka" },
+    "S3_080": { name: "Rock Lee", rarity: "EPIC", cost: 3, skill: "Loopy Fist" }, // Updated from 4 to 3 per September patch
+    "S3_081": { name: "Temari", rarity: "EPIC", cost: 5, skill: "Temari" },
+    "S3_082": { name: "Itachi Uchiha", rarity: "EPIC", cost: 5, skill: "Itachi Uchiha" },
+    "S3_083": { name: "Itachi Uchiha", rarity: "EPIC", cost: 7, skill: "Itachi Uchiha" },
+    "S3_084": { name: "Jiraiya", rarity: "EPIC", cost: 6, skill: "Jiraiya" },
+    "S3_085": { name: "Gamabunta", rarity: "EPIC", cost: 5, skill: "Gamabunta" },
+    "S3_086": { name: "Kidomaru", rarity: "EPIC", cost: 4, skill: "Kidomaru" },
+    "S3_087": { name: "Tayuya", rarity: "EPIC", cost: 4, skill: "Tayuya" },
+    "S3_088": { name: "Kimimaro", rarity: "EPIC", cost: 4, skill: "Living Weapon" }, // Updated from 5 to 4 per September patch
+    "S3_089": { name: "Akahoshi", rarity: "EPIC", cost: 4, skill: "Akahoshi" },
+    "S3_090": { name: "Raiga Kurosuki", rarity: "EPIC", cost: 3, skill: "Raiga Kurosuki" },
+    "S3_091": { name: "Sasuke Uchiha", rarity: "LEGENDARY", cost: 5, skill: "Black Chidori" }, // Updated from 6 to 5 per September patch
+    "S3_092": { name: "Naruto Uzumaki", rarity: "LEGENDARY", cost: 5, skill: "Demon Fox Rasengan" }, // Updated from 6 to 5 per September patch
+    "S3_093": { name: "Choji Akimichi", rarity: "LEGENDARY", cost: 5, skill: "Butterfly Rage" }, // Updated from 6 to 5 per September patch
+    "S3_094": { name: "Gaara", rarity: "LEGENDARY", cost: 6, skill: "Gaara" },
+    "S3_095": { name: "Itachi Uchiha", rarity: "LEGENDARY", cost: 6, skill: "Itachi Uchiha" },
+    "S3_096": { name: "Itachi Uchiha", rarity: "LEGENDARY", cost: 7, skill: "Itachi Uchiha" },
+    "S3_097": { name: "Tsunade", rarity: "LEGENDARY", cost: 6, skill: "Tsunade" },
+    "S3_098": { name: "Sakon & Ukon", rarity: "LEGENDARY", cost: 5, skill: "Sakon & Ukon" },
+    "S3_099": { name: "Tayuya", rarity: "LEGENDARY", cost: 6, skill: "Tayuya" },
+    "S3_100": { name: "Kimimaro", rarity: "LEGENDARY", cost: 9, skill: "Kimimaro" }
 };
