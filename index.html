@@ -9,13 +9,13 @@
 </head>
 <body>
   <div class="app-container">
-    <header class="navbar" style="display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 10px 20px;">
+    <header class="navbar">
       <div class="logo" style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
         <span class="logo-icon">🍥</span>
-        <h1 style="font-size: 1.25rem; white-space: nowrap; margin: 0;">Naruto Deck Builder <span style="color: var(--accent-orange, #f97316);">PRO</span></h1>
+        <h1 style="font-size: 1.15rem; white-space: nowrap; margin: 0;">Naruto Deck Builder <span style="color: var(--accent-orange, #f97316);">PRO</span></h1>
       </div>
       
-      <nav class="nav-tabs" style="display: flex; gap: 6px; align-items: center;">
+      <nav class="nav-tabs" style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
         <button class="tab-btn active" data-tab="collectionTab" onclick="switchTab('collectionTab')">
           🗃️ Collection (<span id="uniqueOwnedCount">0</span>)
         </button>
@@ -23,244 +23,252 @@
           🃏 Active Deck (<span id="deckCountBadge">0</span>/10)
         </button>
         <button class="tab-btn" data-tab="aiTab" onclick="switchTab('aiTab')">
-          ⚡ AI Deck Calculator
+          ⚡ AI Calculator
         </button>
         <button class="tab-btn" data-tab="databaseTab" onclick="switchTab('databaseTab')">
           📚 Database
         </button>
       </nav>
 
-      <!-- LOCKED SINGLE-LINE STATS BAR -->
-      <div class="stats-bar" style="display: flex; align-items: center; gap: 12px; font-size: 0.85rem; white-space: nowrap; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08);">
-        <span>Unique Owned: <strong id="uniqueOwnedCountNav" style="color: var(--accent-orange, #f97316);">0</strong></span>
+      <!-- LOCKED STATS BAR -->
+      <div class="stats-bar" style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 0.85rem; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08);">
+        <span>Unique: <strong id="uniqueOwnedCountNav" style="color: var(--accent-orange, #f97316);">0</strong></span>
         <span style="color: rgba(255,255,255,0.2);">|</span>
-        <span>Total Owned: <strong id="totalOwnedCount" style="color: #3b82f6;">0</strong></span>
+        <span>Total: <strong id="totalOwnedCount" style="color: #3b82f6;">0</strong></span>
       </div>
     </header>
 
     <main class="main-content">
       <!-- TAB 1: COLLECTION VIEW -->
       <section id="collectionTab" class="tab-content active">
-        <div class="panel-header" style="flex-direction: column; align-items: stretch; gap: 12px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h2>Your Collection</h2>
-            <div style="display: flex; gap: 10px;">
-              <label for="collectionFileInput" class="file-upload-btn">📂 Import Collection JSON</label>
-              <input type="file" id="collectionFileInput" accept=".json" onchange="handleCollectionUpload(event)" />
-              <button type="button" class="action-btn help-btn" onclick="toggleHelpModal(true)">❓ How to Get JSON?</button>
+        <div class="panel-header" style="flex-direction: column; align-items: stretch; gap: 8px; margin-bottom: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <h2 style="margin:0; font-size: 1.3rem;">Your Collection</h2>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <label for="collectionFileInput" class="file-upload-btn" style="cursor:pointer; padding:6px 12px; font-size:0.85rem;">📂 Import JSON</label>
+              <input type="file" id="collectionFileInput" accept=".json" onchange="handleCollectionUpload(event)" style="display:none;" />
+              <button type="button" class="action-btn help-btn" onclick="toggleHelpModal(true)" style="padding:6px 10px; font-size:0.85rem;">❓ Help</button>
             </div>
           </div>
 
-          <!-- ENHANCED FILTER BAR -->
-          <div class="filter-bar-container" style="display: flex; flex-wrap: wrap; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-            
-            <input type="text" id="searchInput" placeholder="Search name, jutsu, clan..." oninput="filterCollection()" style="flex: 1 1 180px; padding: 6px 10px; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: #fff;" />
+          <!-- COLLAPSIBLE FILTER ACCORDION -->
+          <details class="filter-accordion">
+            <summary>🔍 Filter & Sort Options (Tap to Open)</summary>
+            <div class="filter-bar-container" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 10px;">
+              
+              <input type="text" id="searchInput" placeholder="Search name, jutsu, clan..." oninput="filterCollection()" style="flex: 1 1 100%; padding: 8px; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: #fff;" />
 
-            <select id="sortByFilter" class="styled-select" onchange="filterCollection()">
-              <option value="ID">Sort: Card ID</option>
-              <option value="RARITY">Sort: Rarity</option>
-              <option value="COST">Sort: Energy Cost</option>
-              <option value="POWER">Sort: Power / Chakra</option>
-            </select>
+              <select id="sortByFilter" class="styled-select" onchange="filterCollection()">
+                <option value="ID">Sort: Card ID</option>
+                <option value="RARITY">Sort: Rarity</option>
+                <option value="COST">Sort: Energy Cost</option>
+                <option value="POWER">Sort: Power / Chakra</option>
+              </select>
 
-            <select id="skillTypeFilter" class="styled-select" onchange="filterCollection()">
-              <option value="ALL">All Skill Types</option>
-              <option value="Rush">Rush</option>
-              <option value="Slow">Slow</option>
-              <option value="Push">Push</option>
-              <option value="Pin">Pin</option>
-              <option value="Chakra">Chakra</option>
-              <option value="Weaken">Weaken</option>
-              <option value="Guard">Guard</option>
-              <option value="Switch">Switch</option>
-              <option value="Teleport">Teleport</option>
-              <option value="Burn">Burn</option>
-              <option value="Focus">Focus</option>
-              <option value="Heal">Heal</option>
-              <option value="Seal">Seal</option>
-              <option value="Summon">Summon</option>
-            </select>
+              <select id="skillTypeFilter" class="styled-select" onchange="filterCollection()">
+                <option value="ALL">All Skill Types</option>
+                <option value="Rush">Rush</option>
+                <option value="Slow">Slow</option>
+                <option value="Push">Push</option>
+                <option value="Pin">Pin</option>
+                <option value="Chakra">Chakra</option>
+                <option value="Weaken">Weaken</option>
+                <option value="Guard">Guard</option>
+                <option value="Switch">Switch</option>
+                <option value="Teleport">Teleport</option>
+                <option value="Burn">Burn</option>
+                <option value="Focus">Focus</option>
+                <option value="Heal">Heal</option>
+                <option value="Seal">Seal</option>
+                <option value="Summon">Summon</option>
+              </select>
 
-            <select id="costFilter" class="styled-select" onchange="filterCollection()">
-              <option value="ALL">All Energy Costs</option>
-              <option value="1">Cost 1</option>
-              <option value="2">Cost 2</option>
-              <option value="3">Cost 3</option>
-              <option value="4">Cost 4</option>
-              <option value="5">Cost 5</option>
-              <option value="6">Cost 6+</option>
-            </select>
+              <select id="costFilter" class="styled-select" onchange="filterCollection()">
+                <option value="ALL">All Energy Costs</option>
+                <option value="1">Cost 1</option>
+                <option value="2">Cost 2</option>
+                <option value="3">Cost 3</option>
+                <option value="4">Cost 4</option>
+                <option value="5">Cost 5</option>
+                <option value="6">Cost 6+</option>
+              </select>
 
-            <select id="powerFilter" class="styled-select" onchange="filterCollection()">
-              <option value="ALL">All Power / Chakra</option>
-              <option value="1">Power 1</option>
-              <option value="2">Power 2</option>
-              <option value="3">Power 3</option>
-              <option value="4">Power 4</option>
-              <option value="5">Power 5+</option>
-            </select>
+              <select id="powerFilter" class="styled-select" onchange="filterCollection()">
+                <option value="ALL">All Power / Chakra</option>
+                <option value="1">Power 1</option>
+                <option value="2">Power 2</option>
+                <option value="3">Power 3</option>
+                <option value="4">Power 4</option>
+                <option value="5">Power 5+</option>
+              </select>
 
-            <select id="rarityFilter" class="styled-select" onchange="filterCollection()">
-              <option value="ALL">All Rarities</option>
-              <option value="Legendary">Legendary</option>
-              <option value="Epic">Epic</option>
-              <option value="Rare">Rare</option>
-              <option value="Common">Common</option>
-            </select>
+              <select id="rarityFilter" class="styled-select" onchange="filterCollection()">
+                <option value="ALL">All Rarities</option>
+                <option value="Legendary">Legendary</option>
+                <option value="Epic">Epic</option>
+                <option value="Rare">Rare</option>
+                <option value="Common">Common</option>
+              </select>
 
-            <select id="seasonFilter" class="styled-select" onchange="filterCollection()">
-              <option value="ALL">All Seasons</option>
-              <option value="S1">Season 1</option>
-              <option value="S2">Season 2</option>
-              <option value="S3">Season 3</option>
-            </select>
+              <select id="seasonFilter" class="styled-select" onchange="filterCollection()">
+                <option value="ALL">All Seasons</option>
+                <option value="S1">Season 1</option>
+                <option value="S2">Season 2</option>
+                <option value="S3">Season 3</option>
+              </select>
 
-            <button type="button" onclick="resetCollectionFilters()" class="action-btn danger" style="padding: 6px 12px; font-size: 0.85rem;">🔄 Reset</button>
-          </div>
+              <button type="button" onclick="resetCollectionFilters()" class="action-btn danger" style="width: 100%; padding: 8px; font-size: 0.9rem;">🔄 Reset Filters</button>
+            </div>
+          </details>
         </div>
 
-        <p class="tab-hint">💡 <strong>Click any card</strong> in your collection to add it to your Active Deck! (Duplicates are automatically restricted).</p>
+        <p class="tab-hint" style="font-size: 0.8rem; margin: 4px 0;">💡 Tap any card to add it to your Active Deck!</p>
         <div id="collectionGrid" class="card-grid">
           <div class="placeholder-msg">
             <p>No collection loaded yet.</p>
-            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--accent-orange);">Need help exporting your cards? Click <strong>"❓ How to Get JSON?"</strong> above!</p>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: var(--accent-orange);">Tap <strong>"❓ Help"</strong> above for JSON export steps!</p>
           </div>
         </div>
       </section>
 
       <!-- TAB 2: ACTIVE DECK BUILDER VIEW -->
       <section id="deckTab" class="tab-content">
-        <div class="panel-header">
+        <div class="panel-header" style="margin-bottom: 8px;">
           <h2>Active Deck (<span id="deckTitleBadge">0 / 10 Cards</span>)</h2>
-          <div class="controls-row">
-            <button class="action-btn success" onclick="saveDeckToLocalStorage()">💾 Save Deck (Browser)</button>
-            <button class="action-btn primary" onclick="exportDeckJSON()">📄 Export JSON Deck</button>
-            <button class="action-btn danger" onclick="clearActiveDeck()">🗑️ Clear Deck</button>
+          <div class="controls-row" style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button class="action-btn success" onclick="saveDeckToLocalStorage()" style="flex:1;">💾 Save</button>
+            <button class="action-btn primary" onclick="exportDeckJSON()" style="flex:1;">📄 Export</button>
+            <button class="action-btn danger" onclick="clearActiveDeck()" style="flex:1;">🗑️ Clear</button>
           </div>
         </div>
-        <p class="tab-hint">💡 <strong>Click any card in your deck</strong> to remove it! Decks are limited to 10 cards.</p>
+        <p class="tab-hint" style="font-size: 0.8rem; margin: 4px 0;">💡 Tap any card in your deck to remove it.</p>
         <div id="activeDeckGrid" class="card-grid">
-          <div class="placeholder-msg">Your deck is currently empty. Click cards in your Collection or Database, or run the AI Calculator!</div>
+          <div class="placeholder-msg">Your deck is currently empty.</div>
         </div>
       </section>
 
       <!-- TAB 3: AI DECK CALCULATOR -->
       <section id="aiTab" class="tab-content">
-        <div class="panel-header">
-          <h2>AI Deck Calculator</h2>
-          <div class="controls-row" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-            <select id="strategySelect" class="styled-select">
+        <div class="panel-header" style="margin-bottom: 8px;">
+          <h2>AI Calculator</h2>
+          <div class="controls-row" style="display: flex; gap: 8px; align-items: center; flex-direction: column; width: 100%; margin-top: 6px;">
+            <select id="strategySelect" class="styled-select" style="width: 100%;">
               <option value="active_deck">📋 Use Active Deck</option>
               <option value="balanced">⚡ Balanced Team & Clan Synergy</option>
               <option value="team7">🔥 Team 7 Synergistic Aggro</option>
               <option value="rarity">🌟 Highest Rarity Power Deck</option>
               <option value="jutsu">📜 Jutsu Combo Focus</option>
             </select>
-            <button id="calcBtn" class="action-btn primary" onclick="calculateOptimalDeckUI()">⚡ Calculate Strategy</button>
-            <button id="loadAiDeckBtn" class="action-btn success" onclick="loadCalculatedDeckToActive()" disabled>📥 Load to Active Deck</button>
+            <div style="display: flex; gap: 6px; width: 100%;">
+              <button id="calcBtn" class="action-btn primary" onclick="calculateOptimalDeckUI()" style="flex: 1;">⚡ Calculate</button>
+              <button id="loadAiDeckBtn" class="action-btn success" onclick="loadCalculatedDeckToActive()" style="flex: 1;" disabled>📥 Load to Deck</button>
+            </div>
           </div>
         </div>
         <div id="aiSummary" class="ai-summary-box">
           <h3>Calculated Deck Performance</h3>
           <p id="aiSynergyScore">Synergy Score: --</p>
-          <p id="aiStrategyInfo">Import your collection first, select a strategy, and click calculate to preview the optimal cards.</p>
+          <p id="aiStrategyInfo" style="font-size: 0.85rem;">Import collection first and calculate to preview optimal cards.</p>
           
           <!-- CHAKRA & ENERGY CHART -->
           <div class="chakra-chart-container" style="margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="font-size: 0.9rem; margin: 0; color: var(--accent-orange, #f97316);">📊 Chakra & Energy Chart</h4>
-              <span id="deckCardCountLabel" style="font-size: 0.8rem; color: #94a3b8;">0 / 10 Cards</span>
+              <h4 style="font-size: 0.85rem; margin: 0; color: var(--accent-orange, #f97316);">📊 Chakra & Energy Chart</h4>
+              <span id="deckCardCountLabel" style="font-size: 0.75rem; color: #94a3b8;">0 / 10 Cards</span>
             </div>
             
-            <div id="gameStyleChakraChart" style="background: rgba(15, 23, 42, 0.7); padding: 10px; border-radius: 6px; border: 1px solid #334155; display: flex; flex-direction: column; gap: 6px;">
+            <div id="gameStyleChakraChart" style="background: rgba(15, 23, 42, 0.7); padding: 8px; border-radius: 6px; border: 1px solid #334155; display: flex; flex-direction: column; gap: 6px;">
               <!-- Populated dynamically -->
             </div>
           </div>
         </div>
         <div id="aiDeckGrid" class="card-grid">
-          <div class="placeholder-msg">Click "Calculate Strategy" to preview the optimal cards here.</div>
+          <div class="placeholder-msg">Click "Calculate" to preview optimal cards.</div>
         </div>
       </section>
 
       <!-- TAB 4: DATABASE VIEW -->
       <section id="databaseTab" class="tab-content">
-        <div class="panel-header" style="flex-direction: column; align-items: stretch; gap: 12px;">
+        <div class="panel-header" style="flex-direction: column; align-items: stretch; gap: 8px; margin-bottom: 8px;">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h2>Master Card Database</h2>
-            <button id="toggleDbLimitBtn" type="button" class="action-btn primary" onclick="toggleDatabaseLimit()" style="padding: 6px 14px; white-space: nowrap;">📖 Show All Cards</button>
+            <h2 style="font-size: 1.3rem; margin:0;">Database</h2>
+            <button id="toggleDbLimitBtn" type="button" class="action-btn primary" onclick="toggleDatabaseLimit()" style="padding: 6px 10px; font-size: 0.8rem;">📖 Show All</button>
           </div>
 
-          <!-- DATABASE FILTER BAR (Matched to Collection) -->
-          <div class="filter-bar-container" style="display: flex; flex-wrap: wrap; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-            
-            <input type="text" id="dbSearchInput" placeholder="Search name, jutsu, clan..." oninput="filterDatabase()" style="flex: 1 1 180px; padding: 6px 10px; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: #fff;" />
+          <!-- DATABASE FILTER ACCORDION -->
+          <details class="filter-accordion">
+            <summary>🔍 Filter & Sort Database (Tap to Open)</summary>
+            <div class="filter-bar-container" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 10px;">
+              
+              <input type="text" id="dbSearchInput" placeholder="Search database name, ID..." oninput="filterDatabase()" style="flex: 1 1 100%; padding: 8px; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: #fff;" />
 
-            <select id="dbSortByFilter" class="styled-select" onchange="filterDatabase()">
-              <option value="ID">Sort: Card ID</option>
-              <option value="RARITY">Sort: Rarity</option>
-              <option value="COST">Sort: Energy Cost</option>
-              <option value="POWER">Sort: Power / Chakra</option>
-            </select>
+              <select id="dbSortByFilter" class="styled-select" onchange="filterDatabase()">
+                <option value="ID">Sort: Card ID</option>
+                <option value="RARITY">Sort: Rarity</option>
+                <option value="COST">Sort: Energy Cost</option>
+                <option value="POWER">Sort: Power / Chakra</option>
+              </select>
 
-            <select id="dbSkillTypeFilter" class="styled-select" onchange="filterDatabase()">
-              <option value="ALL">All Skill Types</option>
-              <option value="Rush">Rush</option>
-              <option value="Slow">Slow</option>
-              <option value="Push">Push</option>
-              <option value="Pin">Pin</option>
-              <option value="Chakra">Chakra</option>
-              <option value="Weaken">Weaken</option>
-              <option value="Guard">Guard</option>
-              <option value="Switch">Switch</option>
-              <option value="Teleport">Teleport</option>
-              <option value="Burn">Burn</option>
-              <option value="Focus">Focus</option>
-              <option value="Heal">Heal</option>
-              <option value="Seal">Seal</option>
-              <option value="Summon">Summon</option>
-            </select>
+              <select id="dbSkillTypeFilter" class="styled-select" onchange="filterDatabase()">
+                <option value="ALL">All Skill Types</option>
+                <option value="Rush">Rush</option>
+                <option value="Slow">Slow</option>
+                <option value="Push">Push</option>
+                <option value="Pin">Pin</option>
+                <option value="Chakra">Chakra</option>
+                <option value="Weaken">Weaken</option>
+                <option value="Guard">Guard</option>
+                <option value="Switch">Switch</option>
+                <option value="Teleport">Teleport</option>
+                <option value="Burn">Burn</option>
+                <option value="Focus">Focus</option>
+                <option value="Heal">Heal</option>
+                <option value="Seal">Seal</option>
+                <option value="Summon">Summon</option>
+              </select>
 
-            <select id="dbCostFilter" class="styled-select" onchange="filterDatabase()">
-              <option value="ALL">All Energy Costs</option>
-              <option value="1">Cost 1</option>
-              <option value="2">Cost 2</option>
-              <option value="3">Cost 3</option>
-              <option value="4">Cost 4</option>
-              <option value="5">Cost 5</option>
-              <option value="6">Cost 6+</option>
-            </select>
+              <select id="dbCostFilter" class="styled-select" onchange="filterDatabase()">
+                <option value="ALL">All Energy Costs</option>
+                <option value="1">Cost 1</option>
+                <option value="2">Cost 2</option>
+                <option value="3">Cost 3</option>
+                <option value="4">Cost 4</option>
+                <option value="5">Cost 5</option>
+                <option value="6">Cost 6+</option>
+              </select>
 
-            <select id="dbPowerFilter" class="styled-select" onchange="filterDatabase()">
-              <option value="ALL">All Power / Chakra</option>
-              <option value="1">Power 1</option>
-              <option value="2">Power 2</option>
-              <option value="3">Power 3</option>
-              <option value="4">Power 4</option>
-              <option value="5">Power 5+</option>
-            </select>
+              <select id="dbPowerFilter" class="styled-select" onchange="filterDatabase()">
+                <option value="ALL">All Power / Chakra</option>
+                <option value="1">Power 1</option>
+                <option value="2">Power 2</option>
+                <option value="3">Power 3</option>
+                <option value="4">Power 4</option>
+                <option value="5">Power 5+</option>
+              </select>
 
-            <select id="dbRarityFilter" class="styled-select" onchange="filterDatabase()">
-              <option value="ALL">All Rarities</option>
-              <option value="Legendary">Legendary</option>
-              <option value="Epic">Epic</option>
-              <option value="Rare">Rare</option>
-              <option value="Common">Common</option>
-            </select>
+              <select id="dbRarityFilter" class="styled-select" onchange="filterDatabase()">
+                <option value="ALL">All Rarities</option>
+                <option value="Legendary">Legendary</option>
+                <option value="Epic">Epic</option>
+                <option value="Rare">Rare</option>
+                <option value="Common">Common</option>
+              </select>
 
-            <select id="seasonSelect" class="styled-select" onchange="filterDatabase()">
-              <option value="all">All Seasons</option>
-              <option value="season_1">Season 1</option>
-              <option value="season_2">Season 2</option>
-              <option value="season_3">Season 3</option>
-            </select>
+              <select id="seasonSelect" class="styled-select" onchange="filterDatabase()">
+                <option value="all">All Seasons</option>
+                <option value="season_1">Season 1</option>
+                <option value="season_2">Season 2</option>
+                <option value="season_3">Season 3</option>
+              </select>
 
-            <button type="button" onclick="resetDatabaseFilters()" class="action-btn danger" style="padding: 6px 12px; font-size: 0.85rem;">🔄 Reset</button>
-          </div>
+              <button type="button" onclick="resetDatabaseFilters()" class="action-btn danger" style="width: 100%; padding: 8px; font-size: 0.9rem;">🔄 Reset Filters</button>
+            </div>
+          </details>
         </div>
 
-        <p class="tab-hint">💡 <strong>Browse the full database</strong> and add any card directly to your Active Deck!</p>
+        <p class="tab-hint" style="font-size: 0.8rem; margin: 4px 0;">💡 Tap any card to add it to your Active Deck!</p>
         <div id="databaseGrid" class="card-grid">
-          <div class="placeholder-msg">Loading master database...</div>
+          <div class="placeholder-msg">Loading database...</div>
         </div>
       </section>
 
@@ -271,17 +279,17 @@
   <div id="helpModal" class="modal-backdrop" style="display: none;" onclick="if(event.target === this) toggleHelpModal(false)">
     <div class="modal-card">
       <div class="modal-header">
-        <h3>📜 How to Get Your Collection JSON File</h3>
+        <h3>📜 How to Get Your Collection JSON</h3>
         <button class="modal-close-btn" onclick="toggleHelpModal(false)">&times;</button>
       </div>
-      <div class="modal-body">
-        <ol class="steps-list">
-          <li><strong>Log In:</strong> Go to <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a> and sign in.</li>
-          <li><strong>Open Developer Tools:</strong> Press <kbd>F12</kbd> (or right-click anywhere and select <strong>Inspect</strong>).</li>
-          <li><strong>Open Network Tab:</strong> Click the <strong>Network</strong> tab at the top of the inspector panel.</li>
-          <li><strong>Refresh Page:</strong> Press <kbd>F5</kbd> to reload the page so requests are logged.</li>
-          <li><strong>Locate Response:</strong> Type <code>me</code> in the Network filter box, right-click the <code>me</code> request &rarr; <strong>Copy</strong> &rarr; <strong>Copy response</strong>.</li>
-          <li><strong>Save JSON File:</strong> Paste the copied text into a text file and save it as <code>naruto_collection.json</code>.</li>
+      <div class="modal-body" style="font-size: 0.85rem;">
+        <ol class="steps-list" style="padding-left: 15px; margin: 0; line-height: 1.5;">
+          <li><strong>Log In:</strong> Go to <a href="https://app.narutoninjacards.com" target="_blank" style="color:var(--accent-blue);">app.narutoninjacards.com</a>.</li>
+          <li><strong>Open Dev Tools:</strong> Press <kbd>F12</kbd> or Inspect.</li>
+          <li><strong>Network Tab:</strong> Click the Network tab.</li>
+          <li><strong>Refresh:</strong> Press <kbd>F5</kbd> to reload.</li>
+          <li><strong>Copy Response:</strong> Find the <code>me</code> request, right-click &rarr; Copy &rarr; Copy response.</li>
+          <li><strong>Save:</strong> Save as <code>naruto_collection.json</code>.</li>
         </ol>
       </div>
       <div class="modal-footer">
